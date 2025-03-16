@@ -1,0 +1,108 @@
+<div class="navbar-area fixed-top">
+    <!-- Menu For Mobile Device -->
+    <div class="mobile-nav">
+        <a href="index.html" class="logo">
+            <img src="assets/img/logo.png" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Menu For Desktop Device -->
+    <div class="main-nav">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/logo.png" alt="Logo">
+                </a>
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link dropdown-toggle active">Home</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link active">Home Page 1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="index-2.html" class="nav-link">Home Page 2</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="index-3.html" class="nav-link">Home Page 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link dropdown-toggle">Attorneys</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="attorney.html" class="nav-link">Attorney</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="attorney-details.html" class="nav-link">Attorney Details</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link dropdown-toggle">Case Studies</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="case-study.html" class="nav-link">Case Study</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="case-study-details.html" class="nav-link">Case Study Details</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link dropdown-toggle">Blogs</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="blog.html" class="nav-link">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="blog-details.html" class="nav-link">Blog Details</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link dropdown-toggle">Pages</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="practice.html" class="nav-link">Practice</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="practice-details.html" class="nav-link">Practice Details</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="appointment.html" class="nav-link">Appointment</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="testimonial.html" class="nav-link">Testimonial</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="faq.html" class="nav-link">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="404.html" class="nav-link">404</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="terms-conditions.html" class="nav-link">Terms & Conditions</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="side-nav">
+                        <a href="appointment.html">Get Appointment</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
