@@ -18,7 +18,7 @@
 		<!-- END #sidebar -->
 
 		<!-- BEGIN #content -->
-		@include('admin.adminComponents.adminDashboard')
+        @include('admin.adminComponents.adminAddBlog')
 		<!-- END #content -->
 
 		<!-- BEGIN theme-panel -->
@@ -29,6 +29,7 @@
 	<!-- END #app -->
 
 	@include('./admin.adminLayouts.adminJs')
+    <script src="http://parsleyjs.org/dist/parsley.js"></script>
 	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9213e8312ffde195","version":"2025.1.0","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"4db8c6ef997743fda032d4f73cfeff63","b":1}' crossorigin="anonymous"></script>
 </body>
 
