@@ -18,3 +18,4 @@ Route::middleware([
 });
 Route::get('/home',[HomeController::class,'index'])->name('home');
 Route::get('/blogs',[BlogController::class,'add_blog'])->name('blogs');
+Route::post('/admin/blog/store', [BlogController::class, 'store'])->name('admin.blog.store');

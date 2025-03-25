@@ -1,70 +1,135 @@
 <div id="content" class="app-content">
-    <!-- BEGIN breadcrumb -->
-    <ol class="breadcrumb float-xl-end">
-        <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
-        <li class="breadcrumb-item"><a href="javascript:;">Form Stuff</a></li>
-        <li class="breadcrumb-item active">Form Validation</li>
-    </ol>
-    <!-- END breadcrumb -->
     <!-- BEGIN page-header -->
-    <h1 class="page-header">Form Validation <small>header small text goes here...</small></h1>
+    <h1 class="page-header">Add Blogs</h1>
     <!-- END page-header -->
     <!-- BEGIN row -->
     <div class="row">
-        <!-- BEGIN col-6 -->
+        <!-- BEGIN col-12 -->
         <div class="col-xl-12">
             <!-- BEGIN panel -->
             <div class="panel panel-inverse" data-sortable-id="form-validation-1">
-                <!-- BEGIN panel-heading -->
-                {{-- <div class="panel-heading">
-                    <h4 class="panel-title">Basic Form Validation</h4>
-                    <div class="panel-heading-btn">
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
-                    </div>
-                </div> --}}
-                <!-- END panel-heading -->
                 <!-- BEGIN panel-body -->
                 <div class="panel-body">
-                    <form class="form-horizontal" data-parsley-validate="true" name="demo-form">
+                    <div id="responseMessage"></div>
+                    <form id="addBlogForm" class="form-horizontal" data-parsley-validate="true" method="POST"
+                        action="{{ route('admin.blog.store') }}" enctype="multipart/form-data">
+                        @csrf
+                        <!-- Blog Title -->
                         <div class="form-group row mb-3">
-                            <label class="col-lg-4 col-form-label form-label" for="fullname">Full Name * :</label>
+                            <label class="col-lg-4 col-form-label form-label" for="blog_title">Blog Title *:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" id="fullname" name="fullname" placeholder="Required" data-parsley-required="true" />
+                                <input class="form-control" type="text" id="blog_title" name="blog_title"
+                                    placeholder="Enter Blog Title" data-parsley-required="true" />
                             </div>
                         </div>
+
+                        <!-- Blog Slug -->
                         <div class="form-group row mb-3">
-                            <label class="col-lg-4 col-form-label form-label" for="email">Email * :</label>
+                            <label class="col-lg-4 col-form-label form-label" for="blog_slug">Blog Slug *:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" id="email" name="email" data-parsley-type="email" placeholder="Email" data-parsley-required="true" />
+                                <input class="form-control" type="text" id="blog_slug" name="blog_slug"
+                                    placeholder="Enter Blog Slug" data-parsley-required="true" />
                             </div>
                         </div>
+
+                        <!-- Blog Type -->
                         <div class="form-group row mb-3">
-                            <label class="col-lg-4 col-form-label form-label" for="website">Website :</label>
+                            <label class="col-lg-4 col-form-label form-label" for="blog_type">Blog Type *:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="url" id="website" name="website" data-parsley-type="url" placeholder="url" />
+                                <select class="form-control" id="blog_type" name="blog_type"
+                                    data-parsley-required="true">
+                                    <option value="">Select Type</option>
+                                    <option value="news">News</option>
+                                    <option value="tutorial">Tutorial</option>
+                                    <option value="review">Review</option>
+                                </select>
                             </div>
                         </div>
+
+                        <!-- Thumbnail Image -->
                         <div class="form-group row mb-3">
-                            <label class="col-lg-4 col-form-label form-label" for="message">Message (20 chars min, 200 max) :</label>
+                            <label class="col-lg-4 col-form-label form-label" for="thumbnail_img">Thumbnail Image
+                                *:</label>
                             <div class="col-lg-8">
-                                <textarea class="form-control" id="message" name="message" rows="4" data-parsley-minlength="20" data-parsley-maxlength="100" placeholder="Range from 20 - 200"></textarea>
+                                <input class="form-control" type="file" id="thumbnail_img" name="thumbnail_img"
+                                    accept="image/*" data-parsley-required="true" />
                             </div>
                         </div>
+
+                        <!-- Main Image -->
                         <div class="form-group row mb-3">
-                            <label class="col-lg-4 col-form-label form-label" for="message">Digits :</label>
+                            <label class="col-lg-4 col-form-label form-label" for="main_img">Main Image *:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" id="digits" name="digits" data-parsley-type="digits" placeholder="Digits" />
+                                <input class="form-control" type="file" id="main_img" name="main_img"
+                                    accept="image/*" data-parsley-required="true" />
                             </div>
                         </div>
+
+                        <!-- Posted On -->
                         <div class="form-group row mb-3">
-                            <label class="col-lg-4 col-form-label form-label" for="message">Number :</label>
+                            <label class="col-lg-4 col-form-label form-label" for="posted_on">Posted On *:</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" id="number" name="number" data-parsley-type="number" placeholder="Number" />
+                                <input class="form-control" type="datetime-local" id="posted_on" name="posted_on"
+                                    data-parsley-required="true" />
                             </div>
                         </div>
+
+                        <!-- Short Description -->
+                        <div class="form-group row mb-3">
+                            <label class="col-lg-4 col-form-label form-label" for="short_desc">Short Description
+                                *:</label>
+                            <div class="col-lg-8">
+                                <textarea class="form-control" id="short_desc" name="short_desc" rows="3" placeholder="Enter a short description"
+                                    data-parsley-required="true"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Main Description -->
+                        <div class="form-group row mb-3">
+                            <label class="col-lg-4 col-form-label form-label" for="main_desc">Main Description
+                                *:</label>
+                            <div class="col-lg-8">
+                                <textarea id="summernote" name="main_desc" class="summernote form-control" data-parsley-required="true"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="form-group row mb-3">
+                            <label class="col-lg-4 col-form-label form-label" for="tags">Tags *:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text" id="tags" name="tags"
+                                    placeholder="Enter tags (comma-separated)" data-parsley-required="true" />
+                            </div>
+                        </div>
+
+                        <!-- SEO Meta -->
+                        <div class="form-group row mb-3">
+                            <label class="col-lg-4 col-form-label form-label" for="meta_title">Meta Title *:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text" id="meta_title" name="meta_title"
+                                    placeholder="Enter Meta Title" data-parsley-required="true" />
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            <label class="col-lg-4 col-form-label form-label" for="meta_description">Meta Description
+                                *:</label>
+                            <div class="col-lg-8">
+                                <textarea class="form-control" id="meta_description" name="meta_description" rows="3"
+                                    placeholder="Enter Meta Description" data-parsley-required="true"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            <label class="col-lg-4 col-form-label form-label" for="meta_keywords">Meta Keywords
+                                *:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text" id="meta_keywords" name="meta_keywords"
+                                    placeholder="Enter Keywords (comma-separated)" data-parsley-required="true" />
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
                         <div class="form-group row">
                             <label class="col-lg-4 col-form-label form-label">&nbsp;</label>
                             <div class="col-lg-8">
@@ -74,107 +139,9 @@
                     </form>
                 </div>
                 <!-- END panel-body -->
-                <!-- BEGIN hljs-wrapper -->
-                <div class="hljs-wrapper">
-                    <pre><code class="html" data-url="../assets/data/form-validation/code-1.json"></code></pre>
-                </div>
-                <!-- END hljs-wrapper -->
             </div>
             <!-- END panel -->
         </div>
-        <!-- END col-6 -->
-        <!-- BEGIN col-6 -->
-        {{-- <div class="col-xl-6">
-            <!-- BEGIN panel -->
-            <div class="panel panel-inverse" data-sortable-id="form-validation-2">
-                <!-- BEGIN panel-heading -->
-                <div class="panel-heading">
-                    <h4 class="panel-title">Extra Validation Field</h4>
-                    <div class="panel-heading-btn">
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a>
-                    </div>
-                </div>
-                <!-- END panel-heading -->
-                <!-- BEGIN panel-body -->
-                <div class="panel-body">
-                    <form data-parsley-validate="true">
-                        <div class="form-group row mb-3">
-                            <label class="col-lg-4 col-form-label form-label">AlphaNum* :</label>
-                            <div class="col-lg-8">
-                                <input class="form-control" type="text" id="alphanum" name="alphanum"  data-parsley-type="alphanum" placeholder="Alphanumeric String."  data-parsley-required="true" />
-                            </div>
-                        </div>
-                        <div class="form-group row mb-3">
-                            <label class="col-lg-4 col-form-label form-label">Required Select Box :</label>
-                            <div class="col-lg-8">
-                                <select class="form-select" id="select-required" name="selectBox" data-parsley-required="true">
-                                    <option value="">Please choose</option>
-                                    <option value="foo">Foo</option>
-                                    <option value="bar">Bar</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row mb-3">
-                            <label class="col-lg-4 col-form-label form-label">Required Radio Button :</label>
-                            <div class="col-lg-8 pt-2">
-                                <div class="form-check">
-                                    <input type="radio" class="form-check-input" name="radiorequired" value="foo" id="radioRequired1" data-parsley-required="true" />
-                                    <label class="form-check-label" for="radioRequired1">Radio Button 1</label>
-                                </div>
-                                <div class="form-check mt-2">
-                                    <input type="radio" class="form-check-input" name="radiorequired" id="radioRequired2" value="bar" />
-                                    <label class="form-check-label" for="radioRequired2">Radio Button 2</label>
-                                </div>
-                                <div class="form-check mt-2">
-                                    <input type="radio" class="form-check-input" name="radiorequired" id="radioRequired3" value="key" /> 
-                                    <label class="form-check-label" for="radioRequired3">Radio Button 2</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row mb-3">
-                            <label class="col-lg-4 col-form-label form-label">Check at least 2 checkboxes :</label>
-                            <div class="col-lg-8 pt-2">
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="mincheck1" name="mincheck[]" data-parsley-mincheck="2" value="foo" required /> 
-                                    <label class="form-check-label" for="mincheck1">Checkbox 1</label>
-                                </div>
-                                <div class="form-check mt-2">
-                                    <input type="checkbox" class="form-check-input" id="mincheck2" name="mincheck[]" value="bar" /> 
-                                    <label class="form-check-label" for="mincheck2">Checkbox 2</label>
-                                </div>
-                                <div class="form-check mt-2">
-                                    <input type="checkbox" class="form-check-input" id="mincheck3" name="mincheck[]" value="baz" />
-                                    <label class="form-check-label" for="mincheck3">Checkbox 3</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row mb-3">
-                            <label class="col-lg-4 col-form-label form-label">Regular Expression :</label>
-                            <div class="col-lg-8">
-                                <input class="form-control parsley-validated" type="text" id="data-regexp" data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="hexa color code" data-required="true" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-4 col-form-label form-label">&nbsp;</label>
-                            <div class="col-lg-8">
-                                <button type="submit" class="btn btn-danger">Validate</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <!-- END panel-body -->
-                <!-- BEGIN hljs-wrapper -->
-                <div class="hljs-wrapper">
-                    <pre><code class="html" data-url="../assets/data/form-validation/code-2.json"></code></pre>
-                </div>
-                <!-- END hljs-wrapper -->
-            </div>
-            <!-- END panel -->
-        </div> --}}
-        <!-- END col-6 -->
     </div>
     <!-- END row -->
 </div>
