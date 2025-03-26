@@ -78,4 +78,30 @@ class BlogController extends Controller
             return response()->json(['success' => false, 'message' => $e->getMessage()]);
         }
     }
+
+    public function blog_listing()
+    {
+        $blogs = Blog::all();
+        return view('admin.blogs.blogListing', compact('blogs'));
+    }
+
+    public function getBlogsData()
+    {
+        $blogs = Blog::all();
+        return response()->json($blogs);
+    }
+
+    public function updateStatus(Request $request)
+    {
+        try {
+            $blog = Blog::findOrFail($request->id);
+            $blog->status = $request->status;
+            $blog->save();
+
+            return response()->json(['success' => true, 'message' => 'Status updated successfully!']);
+        } catch (\Exception $e) {
+            Log::error('Error updating blog status:', ['error' => $e->getMessage()]);
+            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        }
+    }
 }

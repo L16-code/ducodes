@@ -60,7 +60,7 @@
                 </a>
             </div> --}}
             <div class="menu-item">
-                <a href="{{ url('blogs') }}" class="menu-link">
+                <a href="{{ url('blog-listing') }}" class="menu-link">
                     <div class="menu-icon">
                         <i class="fa fa-calendar"></i>
                     </div>
@@ -88,4 +88,5 @@
     <!-- END scrollbar -->
 </div>
 <div class="app-sidebar-bg" data-bs-theme="dark"></div>
-<div class="app-sidebar-mobile-backdrop"><a href="#" data-dismiss="app-sidebar-mobile" class="stretched-link"></a></div>
+<div class="app-sidebar-mobile-backdrop"><a href="#" data-dismiss="app-sidebar-mobile" class="stretched-link"></a>
+</div>
