@@ -7,7 +7,7 @@
                 <a class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
                     <div class="menu-profile-cover with-shadow"></div>
                     <div class="menu-profile-image">
-                        <img src="admincss/assets/img/user/user-13.jpg" alt="" />
+                        <img src="{{ asset('admincss/assets/img/user/user-13.jpg') }}" alt="" />
                     </div>
                     <div class="menu-profile-info">
                         <div class="d-flex align-items-center">
@@ -60,7 +60,7 @@
                 </a>
             </div> --}}
             <div class="menu-item">
-                <a href="{{ url('blog-listing') }}" class="menu-link">
+                <a href="{{ url('admin/blog-listing') }}" class="menu-link">
                     <div class="menu-icon">
                         <i class="fa fa-calendar"></i>
                     </div>

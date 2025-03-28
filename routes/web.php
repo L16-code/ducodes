@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
-
-Route::get('/',[HomeController::class,'homepage'])->name('homepage');
+use App\Http\Middleware\AdminMiddleware;
+Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
 
 Route::middleware([
     'auth:sanctum',
@@ -15,10 +14,16 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
-Route::get('/home',[HomeController::class,'index'])->name('home');
-Route::get('/blogs',[BlogController::class,'add_blog'])->name('blogs');
-Route::get('/blog-listing',[BlogController::class,'blog_listing'])->name('blog-listing');
-Route::post('/admin/blog/store', [BlogController::class, 'store'])->name('admin.blog.store');
-Route::get('/admin/blogs/data', [BlogController::class, 'getBlogsData'])->name('admin.blogs.data');
-Route::post('/admin/blog/status/update', [BlogController::class, 'updateStatus'])->name('admin.blog.status.update');
+
+// Admin Routes Group
+Route::middleware([AdminMiddleware::class])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/blogs', [BlogController::class, 'add_blog'])->name('blogs');
+    Route::get('/blog-listing', [BlogController::class, 'blog_listing'])->name('blog-listing');
+    Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
+    Route::get('/blogs/data', [BlogController::class, 'getBlogsData'])->name('blogs.data');
+    Route::post('/blog/status/update', [BlogController::class, 'updateStatus'])->name('blog.status.update');
+    Route::get('/blog/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::post('/blog/update/{id}', [BlogController::class, 'update'])->name('blog.update');
+});

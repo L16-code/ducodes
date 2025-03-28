@@ -5,18 +5,21 @@
 <head>
     @include('./admin.adminLayouts.adminStyles')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="../admincss/assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
-    <link href="../admincss/assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css"
+    <link href="{{ asset('admincss/assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css ') }} "
         rel="stylesheet" />
-    <link href="../admincss/assets/plugins/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" />
-    <link href="../admincss/assets/plugins/datatables.net-colreorder-bs5/css/colReorder.bootstrap5.min.css"
+    <link href="{{ asset('admincss/assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css') }}"
         rel="stylesheet" />
-    <link href="../admincss/assets/plugins/datatables.net-keytable-bs5/css/keyTable.bootstrap5.min.css"
+    <link href="{{ asset('admincss/assets/plugins/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css ') }} "
         rel="stylesheet" />
-    <link href="../admincss/assets/plugins/datatables.net-rowreorder-bs5/css/rowReorder.bootstrap5.min.css"
+    <link href="{{ asset('admincss/assets/plugins/datatables.net-colreorder-bs5/css/colReorder.bootstrap5.min.css') }}"
         rel="stylesheet" />
-    <link href="../admincss/assets/plugins/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" />
-    <link href="../admincss/assets/plugins/switchery/dist/switchery.min.css" rel="stylesheet" />
+    <link href="{{ asset('admincss/assets/plugins/datatables.net-keytable-bs5/css/keyTable.bootstrap5.min.css') }}"
+        rel="stylesheet" />
+    <link href="{{ asset('admincss/assets/plugins/datatables.net-rowreorder-bs5/css/rowReorder.bootstrap5.min.css') }}"
+        rel="stylesheet" />
+    <link href="{{ asset('admincss/assets/plugins/datatables.net-select-bs5/css/select.bootstrap5.min.css ') }} "
+        rel="stylesheet" />
+    <link href="{{ asset('admincss/assets/plugins/switchery/dist/switchery.min.css ') }} " rel="stylesheet" />
 </head>
 
 <body>
@@ -56,33 +59,39 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-bs4.min.js"></script>
 
 <!-- Mirrored from seantheme.com/color-admin/admin/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Mar 2025 11:29:17 GMT -->
-<script src="../admincss/assets/plugins/datatables.net/js/dataTables.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-colreorder/js/dataTables.colReorder.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-colreorder-bs5/js/colReorder.bootstrap5.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-keytable-bs5/js/keyTable.bootstrap5.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-rowreorder/js/dataTables.rowReorder.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-rowreorder-bs5/js/rowReorder.bootstrap5.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-select/js/dataTables.select.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-select-bs5/js/select.bootstrap5.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="../admincss/assets/plugins/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="../admincss/assets/plugins/pdfmake/build/pdfmake.min.js"></script>
-<script src="../admincss/assets/plugins/pdfmake/build/vfs_fonts.js"></script>
-<script src="../admincss/assets/plugins/jszip/dist/jszip.min.js"></script>
-<script src="../admincss/assets/js/demo/table-manage-combine.demo.js"></script>
-<script src="../admincss/assets/plugins/%40highlightjs/cdn-assets/highlight.min.js"></script>
-<script src="../admincss/assets/js/demo/render.highlight.js"></script>
-<script src="../admincss/assets/plugins/switchery/dist/switchery.min.js"></script>
-{{-- for notification --}}
-<link href="../admincss/assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
-<script src="../admincss/assets/plugins/gritter/js/jquery.gritter.js"></script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net/js/dataTables.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js') }}">
+</script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}">
+</script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-colreorder/js/dataTables.colReorder.min.js') }}">
+</script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-colreorder-bs5/js/colReorder.bootstrap5.min.js') }}">
+</script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-keytable-bs5/js/keyTable.bootstrap5.min.js') }}">
+</script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-rowreorder/js/dataTables.rowReorder.min.js') }}">
+</script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-rowreorder-bs5/js/rowReorder.bootstrap5.min.js') }}">
+</script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-select/js/dataTables.select.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-select-bs5/js/select.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-buttons/js/buttons.colVis.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/pdfmake/build/pdfmake.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/pdfmake/build/vfs_fonts.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/jszip/dist/jszip.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/js/demo/table-manage-combine.demo.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/%40highlightjs/cdn-assets/highlight.min.js') }}"></script>
+<script src="{{ asset('admincss/assets/js/demo/render.highlight.js') }}"></script>
+<script src="{{ asset('admincss/assets/plugins/switchery/dist/switchery.min.js') }}"></script>
+
+
 <script>
     $(document).ready(function() {
         // Fetch blog data asynchronously

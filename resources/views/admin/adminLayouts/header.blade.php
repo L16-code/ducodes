@@ -38,7 +38,8 @@
                 </a>
                 <a href="javascript:;" class="dropdown-item media">
                     <div class="media-left">
-                        <img src="admincss/assets/img/user/user-1.jpg" class="media-object" alt="" />
+                        <img src="{{ asset('admincss/assets/img/user/user-1.jpg') }}" class="media-object"
+                            alt="" />
                         <i class="fab fa-facebook-messenger text-blue media-object-icon"></i>
                     </div>
                     <div class="media-body">
@@ -49,7 +50,8 @@
                 </a>
                 <a href="javascript:;" class="dropdown-item media">
                     <div class="media-left">
-                        <img src="admincss/assets/img/user/user-1.jpg" class="media-object" alt="" />
+                        <img src="{{ asset('admincss/assets/img/user/user-1.jpg') }}" class="media-object"
+                            alt="" />
                         <i class="fab fa-facebook-messenger text-blue media-object-icon"></i>
                     </div>
                     <div class="media-body">
@@ -85,7 +87,7 @@
 
         <div class="navbar-item navbar-user dropdown">
             <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
-                <img src="admincss/assets/img/user/user-13.jpg" alt="" />
+                <img src="{{ asset('admincss/assets/img/user/user-13.jpg') }}" alt="" />
                 <span>
                     <span class="d-none d-md-inline fw-bold">{{ Auth::user()->name }}</span>
                     <b class="caret"></b>
@@ -103,7 +105,8 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-                <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
+                <a href="#" class="dropdown-item"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
             </div>
         </div>
     </div>

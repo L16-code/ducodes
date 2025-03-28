@@ -6,7 +6,7 @@
         <li class="breadcrumb-item"><a href="javascript:;">Managed Tables</a></li>
         <li class="breadcrumb-item active">Extension Combination</li>
     </ol> --}}
-    <a href="{{ url('blogs') }}" class="float-xl-end btn btn-primary">
+    <a href="{{ url('admin/blogs') }}" class="float-xl-end btn btn-primary">
         Add Blogs
     </a>
     <!-- END breadcrumb -->

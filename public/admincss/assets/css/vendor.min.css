@@ -13064,7 +13064,7 @@ print {
     font-style: normal;
     font-weight: 900;
     font-display: block;
-    src: url(https://seantheme.com/color-admin/admin/assets/webfonts/fa-solid-900.woff2) format("woff2"), url(https://seantheme.com/color-admin/admin/assets/webfonts/fa-solid-900.ttf) format("truetype")
+    src: url(https://seantheme.com/color-admin/admin/assets/webfonts/fa-solid-900.woff2) format("woff2"), url("") format("truetype")
 }
 
 .fa-solid,
@@ -13083,7 +13083,7 @@ print {
     font-family: "Font Awesome 5 Free";
     font-display: block;
     font-weight: 900;
-    src: url(https://seantheme.com/color-admin/admin/assets/webfonts/fa-solid-900.woff2) format("woff2"), url(https://seantheme.com/color-admin/admin/assets/webfonts/fa-solid-900.ttf) format("truetype")
+    src: url(https://seantheme.com/color-admin/admin/assets/webfonts/fa-solid-900.woff2) format("woff2"), url("") format("truetype")
 }
 
 @font-face {
@@ -13096,7 +13096,7 @@ print {
 @font-face {
     font-family: FontAwesome;
     font-display: block;
-    src: url(https://seantheme.com/color-admin/admin/assets/webfonts/fa-solid-900.woff2) format("woff2"), url(https://seantheme.com/color-admin/admin/assets/webfonts/fa-solid-900.ttf) format("truetype")
+    src: url(https://seantheme.com/color-admin/admin/assets/webfonts/fa-solid-900.woff2) format("woff2"), url("") format("truetype")
 }
 
 @font-face {
@@ -15287,11 +15287,12 @@ a.ui-button:active {
         overflow: auto !important
     }
 }
-.logout-button{
-    a{
+
+.logout-button {
+    a {
         color: #fff !important;
 
-        &:hover{
+        &:hover {
             color: #fff !important;
         }
     }

@@ -22,7 +22,7 @@
         <!-- END #sidebar -->
 
         <!-- BEGIN #content -->
-        @include('admin.adminComponents.adminAddBlog')
+        @include('admin.adminComponents.adminEditBlog')
         <!-- END #content -->
 
         <!-- BEGIN theme-panel -->
@@ -47,7 +47,6 @@
 
 <script>
     $(document).ready(function() {
-        console.log("lod")
         $('#summernote').summernote({
             height: 300, // Set the height of the editor
             toolbar: [
@@ -64,13 +63,13 @@
         });
     });
 
-    document.getElementById('addBlogForm').addEventListener('submit', function(e) {
+    document.getElementById('editBlogForm').addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent default form submission
         const form = e.target;
         const formData = new FormData(form);
-        // Clear previous messages
         const responseMessage = document.getElementById('responseMessage');
-        responseMessage.innerHTML = '';
+        responseMessage.innerHTML = ''; // Clear previous messages
+
         fetch(form.action, {
                 method: 'POST',
                 headers: {
@@ -83,28 +82,24 @@
             .then(data => {
                 if (data.success) {
                     responseMessage.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
-                    form.reset(); // Reset the form
-                    $('#summernote').summernote('reset'); // Reset Summernote
                     setTimeout(() => {
                         window.location.href = "{{ url('admin/blog-listing') }}";
-                        $.gritter.add({
-                            title: 'Success',
-                            text: 'Blog added Successfully',
-                            sticky: false,
-                            time: 1500,
-                            class_name: 'my-sticky-class gritter-light'
-                        });
-                    }, 1500);
+                    }, 1000);
+                    $.gritter.add({
+                        title: 'Success',
+                        text: 'Blog Updated Successfully',
+                        sticky: false,
+                        time: 1500,
+                        class_name: 'my-sticky-class gritter-light'
+                    });
                 } else {
                     responseMessage.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
                 }
             })
             .catch(error => {
-                console.log("error", error);
+                console.error('Error:', error);
                 responseMessage.innerHTML =
                     `<div class="alert alert-danger">An error occurred. Please try again.</div>`;
-                console
-                    .error('Error:', error);
             });
     });
 </script>
