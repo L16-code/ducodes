@@ -19,10 +19,21 @@ class HomeController extends Controller
                 return redirect()->back();
             }
         }
-        // return view('home');
     }
     public function homepage()
     {
         return view('home.homepage');
+    }
+    public function about()
+    {
+        return view('home.about');
+    }
+    public function blogs()
+    {
+        return view('home.blogs');
+    }
+    public function error_page()
+    {
+        return view('admin.404');
     }
 }

@@ -16,86 +16,27 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle active">Home</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="index.html" class="nav-link active">Home Page 1</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="index-2.html" class="nav-link">Home Page 2</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="index-3.html" class="nav-link">Home Page 3</a>
-                                </li>
-                            </ul>
+                            <a href="{{ url('/') }}"
+                                class="nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link">About</a>
+                            <a href="{{ url('about') }}"
+                                class="nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle">Attorneys</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="attorney.html" class="nav-link">Attorney</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="attorney-details.html" class="nav-link">Attorney Details</a>
-                                </li>
-                            </ul>
+                            <a href="#"
+                                class="nav-link {{ Request::is('attorneys*') ? 'active' : '' }}">Attorneys</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle">Case Studies</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="case-study.html" class="nav-link">Case Study</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="case-study-details.html" class="nav-link">Case Study Details</a>
-                                </li>
-                            </ul>
+                            <a href="#" class="nav-link {{ Request::is('case-studies*') ? 'active' : '' }}">Case
+                                Studies</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle">Blogs</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="blog.html" class="nav-link">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="blog-details.html" class="nav-link">Blog Details</a>
-                                </li>
-                            </ul>
+                            <a href="#" class="nav-link {{ Request::is('blogs*') ? 'active' : '' }}">Blogs</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link dropdown-toggle">Pages</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="practice.html" class="nav-link">Practice</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="practice-details.html" class="nav-link">Practice Details</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="appointment.html" class="nav-link">Appointment</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="testimonial.html" class="nav-link">Testimonial</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="faq.html" class="nav-link">FAQ</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="404.html" class="nav-link">404</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="terms-conditions.html" class="nav-link">Terms & Conditions</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact</a>
+                            <a href="{{ url('contact') }}"
+                                class="nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
                         </li>
                     </ul>
                     <div class="side-nav">
