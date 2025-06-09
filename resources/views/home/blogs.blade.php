@@ -42,90 +42,15 @@
     <!-- End Page Title -->
 
     <!-- Blog -->
-    <section class="blog-area blog-area-two  pt-100">
+    <section class="blog-area blog-area-two pt-100">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="blog-item wow fadeInUp" data-wow-delay=".3s">
-                        <a href="blog-details.html">
-                            <img src="assets/img/home-one/blog/1.jpg" alt="Blog">
-                        </a>
-                        <div class="blog-inner">
-                            <span>Rights Case</span>
-                            <h3>
-                                <a href="blog-details.html">Justice May For You If You Are Innocent</a>
-                            </h3>
-                            <ul>
-                                <li>
-                                    <i class="icofont-calendar"></i>
-                                    20 Feb 2024
-                                </li>
-                                <li>
-                                    <i class="icofont-user-alt-7"></i>
-                                    <a href="#">John Doe</a>
-                                </li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor contratc
-                                ut labore.</p>
-                            <a class="blog-link" href="blog-details.html">
-                                Read More
-                                <i class="icofont-simple-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="blog-item wow fadeInUp" data-wow-delay=".4s">
-                        <a href="blog-details.html">
-                            <img src="assets/img/home-one/blog/2.jpg" alt="Blog">
-                        </a>
-                        <div class="blog-inner">
-                            <span>Business Case</span>
-                            <h3>
-                                <a href="blog-details.html">By Whom Your Business Is Being Loss?</a>
-                            </h3>
-                            <ul>
-                                <li>
-                                    <i class="icofont-calendar"></i>
-                                    20 Feb 2024
-                                </li>
-                                <li>
-                                    <i class="icofont-user-alt-7"></i>
-                                    <a href="#">John Doe</a>
-                                </li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor contratc
-                                ut labore.</p>
-                            <a class="blog-link" href="blog-details.html">
-                                Read More
-                                <i class="icofont-simple-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div id="blog-container" class="row justify-content-center">
+                {{-- Blogs will be dynamically loaded here --}}
             </div>
-            <div class="case-pagination">
-                <ul>
-                    <li>
-                        <a href="blog.html">
-                            <i class="icofont-simple-left"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="blog.html">1</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">2</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">3</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">
-                            <i class="icofont-simple-right"></i>
-                        </a>
-                    </li>
-                </ul>
+            <div class="text-center mt-4">
+                <button id="load-more-btn"
+                    style="background-color: #b69d74 ; border-color: #b69d74; color: white; border-radius: 25px; padding: 10px 20px; font-size: 16px; cursor: pointer; display: inline-block; text-decoration: none;"
+                    onclick="loadMoreBlogs()">Load More</button>
             </div>
         </div>
     </section>
@@ -138,6 +63,67 @@
 
     <!-- Essential JS -->
     @include('home.homejs')
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentPage = 1;
+
+            function loadBlogs(page) {
+                fetch(`/api/blogs?page=${page}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const blogContainer = document.getElementById('blog-container');
+                        // Clear "Load More" button if no more data
+                        if (!data.next_page_url) {
+                            document.getElementById('load-more-btn').style.display = 'none';
+                        }
+
+                        // Populate blogs
+                        data.data.forEach(blog => {
+                            blogContainer.innerHTML += `
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="blog-item">
+                                        <a href="blog/${blog.blog_slug}">
+                                            <img src="/storage/${blog.thumbnail_img}" alt="Blog" height="250px" width="300px">
+                                        </a>
+                                        <div class="blog-inner">
+                                            <span>${blog.blog_type}</span>
+                                            <h3>
+                                                <a href="blog/${blog.blog_slug}">${blog.blog_title}</a>
+                                            </h3>
+                                            <ul>
+                                                <li>
+                                                    <i class="icofont-calendar"></i>
+                                                   ${new Date(blog.posted_on).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
+                                                </li>
+                                                <li>
+                                                    <i class="icofont-user-alt-7"></i>
+                                                    <a href="blog/${blog.blog_slug}">Admin</a>
+                                                </li>
+                                            </ul>
+                                            <p>${blog.short_desc}</p>
+                                            <a class="blog-link" href="blog/${blog.blog_slug}">
+                                                Read More
+                                                <i class="icofont-simple-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    });
+            }
+
+            function loadMoreBlogs() {
+                currentPage++;
+                loadBlogs(currentPage);
+            }
+
+            // Initial load
+            loadBlogs(currentPage);
+            window.loadMoreBlogs = loadMoreBlogs; // Expose function globally
+        });
+    </script>
 
 </body>
 

@@ -36,4 +36,9 @@ class Blog extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getUrlAttribute()
+    {
+        return route('blog.details', ['slug' => $this->blog_slug]);
+    }
 }

@@ -1,23 +1,138 @@
 {{-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script> --}}
-<script src="assets/js/bootstrap.bundle.min.js"></script>
+{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 <!-- Meanmenu JS -->
-<script src="assets/js/jquery.meanmenu.js"></script>
+<script src="{{ asset('assets/js/jquery.meanmenu.js') }}"></script>
 <!-- Nice Select JS -->
-<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
 <!-- Form Ajaxchimp JS -->
-<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
 <!-- Form Validator JS -->
-<script src="assets/js/form-validator.min.js"></script>
-<!-- Contact JS -->
-<script src="assets/js/contact-form-script.js"></script>
+<script src="{{ asset('assets/js/form-validator.min.js') }}"></script>
 <!-- Owl Carousel JS -->
-<script src="assets/js/owl.carousel.min.js"></script>
+<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
 <!-- Odometer JS -->
-<script src="assets/js/odometer.min.js"></script>
-<script src="assets/js/jquery.appear.min.js"></script>
+<script src="{{ asset('assets/js/odometer.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.appear.min.js') }}"></script>
 <!-- Magnific Popup JS -->
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
 <!-- animate__animated animate__JS -->
-<script src="assets/js/wow.min.js"></script>
+<script src="{{ asset('assets/js/wow.min.js') }}"></script>
 <!-- Custom JS -->
-<script src="assets/js/custom.js"></script>
+<script src="{{ asset('assets/js/custom.js') }}"></script> --}}
+
+<!-- Contact JS -->
+{{-- <script src="{{ asset('assets/js/contact-form-script.js') }}"></script> --}}
+
+
+<!--begin: Main script -->
+<script src="{{ asset('assets/js/theme.bundle.min.js') }}"></script>
+<!--/end: Main script -->
+
+<!--begin:Swiper slider-->
+<script src="{{ asset('assets/vendor/node_modules/js/swiper-bundle.min.js') }}"></script>
+<script>
+    //Main Hero Slider
+    var sliderThumbs = new Swiper('.progress-swiper-thumbs', {
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        history: false,
+        breakpoints: {
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+            },
+        },
+        on: {
+            'afterInit': function (swiper) {
+                swiper.el.querySelectorAll('.swiper-pagination-progress-inner')
+                    .forEach($progress => $progress.style.transitionDuration =
+                        `${swiper.params.autoplay.delay}ms`)
+            }
+        }
+    });
+    var swiperClassic = new Swiper(".swiper-classic", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        effect: "creative",
+        creativeEffect: {
+            prev: {
+                shadow: true,
+                translate: ["-20%", 0, -1],
+            },
+            next: {
+                translate: ["100%", 0, 0],
+            },
+        },
+        thumbs: {
+            swiper: sliderThumbs
+        },
+    });
+
+    //swiper partners
+    var swiperPartners5 = new Swiper(".swiper-partners", {
+        slidesPerView: 2,
+        loop: true,
+        spaceBetween: 16,
+        autoplay: true,
+        breakpoints: {
+            768: {
+                slidesPerView: 4
+            },
+            1024: {
+                slidesPerView: 5
+            }
+        },
+        pagination: {
+            el: ".swiper-partners-pagination",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".swiper-partners-button-next",
+            prevEl: ".swiper-partners-button-prev"
+        }
+    });
+
+    //swiper Testimonials
+    var swiperTestimonails = new Swiper(".swiper-testimonials", {
+        autoHeight: true,
+        spaceBetween: 16,
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 16
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 16
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            }
+        },
+        pagination: {
+            el: ".swiper-testimonials-pagination",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".swiper-testimonials-button-next",
+            prevEl: ".swiper-testimonials-button-prev"
+        }
+    });
+
+</script>

@@ -16,43 +16,43 @@
     <!-- Navbar -->
     @include('home.navbar')
     <!-- End Navbar -->
+    <main class="main-content" id="main-content">
+        <!-- Banner -->
+        @include('home.homeComponents.banner')
+        <!-- End Banner -->
 
-    <!-- Banner -->
-    @include('home.homeComponents.banner')
-    <!-- End Banner -->
+        <!-- Help -->
+        @include('home.homeComponents.homeAbout')
+        <!-- End Help -->
 
-    <!-- Help -->
-    @include('home.homeComponents.help')
-    <!-- End Help -->
+        <!-- Practice -->
+        @include('home.homeComponents.homeService')
+        <!-- End Practice -->
 
-    <!-- Practice -->
-    @include('home.homeComponents.practice')
-    <!-- End Practice -->
+        <!-- Expertise -->
+        {{-- @include('home.homeComponents.expertise') --}}
+        <!-- End Expertise -->
 
-    <!-- Expertise -->
-    @include('home.homeComponents.expertise')
-    <!-- End Expertise -->
+        <!-- portfolio -->
+        {{-- @include('home.homeComponents.portfolio') --}}
+        <!-- End portfolio -->
 
-    <!-- portfolio -->
-    @include('home.homeComponents.portfolio')
-    <!-- End portfolio -->
+        <!-- Team -->
+        {{-- @include('home.homeComponents.team') --}}
+        <!-- End Team -->
 
-    <!-- Team -->
-    @include('home.homeComponents.team')
-    <!-- End Team -->
+        <!-- Contact Form -->
+        {{-- @include('home.homeComponents.contactForm') --}}
+        <!-- End Contact Form -->
 
-    <!-- Contact Form -->
-    @include('home.homeComponents.contactForm')
-    <!-- End Contact Form -->
+        <!-- Blog -->
+        {{-- @include('home.homeComponents.blog') --}}
+        <!-- End Blog -->
 
-    <!-- Blog -->
-    @include('home.homeComponents.blog')
-    <!-- End Blog -->
-
+    </main>
     <!-- Footer -->
     @include('home.footer')
     <!-- End Footer -->
-
 
     <!-- Essential JS -->
     @include('home.homejs')

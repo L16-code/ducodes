@@ -4,10 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
 use App\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\ContactController;
 // user routes
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
+Route::get('/api/blogs', [HomeController::class, 'getBlogs'])->name('api.blogs');
+Route::get('/blog/{slug}', [HomeController::class, 'blogDetails'])->name('blog.details');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 // route for user login
 Route::middleware([
     'auth:sanctum',
