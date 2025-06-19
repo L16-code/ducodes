@@ -29,18 +29,6 @@
         @include('home.homeComponents.homeService')
         <!-- End Practice -->
 
-        <!-- Expertise -->
-        {{-- @include('home.homeComponents.expertise') --}}
-        <!-- End Expertise -->
-
-        <!-- portfolio -->
-        {{-- @include('home.homeComponents.portfolio') --}}
-        <!-- End portfolio -->
-
-        <!-- Team -->
-        {{-- @include('home.homeComponents.team') --}}
-        <!-- End Team -->
-
         <!-- Contact Form -->
         {{-- @include('home.homeComponents.contactForm') --}}
         <!-- End Contact Form -->
@@ -48,7 +36,9 @@
         <!-- Blog -->
         {{-- @include('home.homeComponents.blog') --}}
         <!-- End Blog -->
-
+        <div class="cursor">
+            <div class="cursor__inner"></div>
+        </div>
     </main>
     <!-- Footer -->
     @include('home.footer')

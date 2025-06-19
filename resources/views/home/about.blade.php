@@ -20,30 +20,20 @@
     @include('home.navbar')
     <!-- End Navbar -->
 
-    <!-- Page Title -->
-    @include('home.homeComponents.about.aboutPageTitle')
-    <!-- End Page Title -->
-
     <!-- Help -->
     @include('home.homeComponents.about.aboutHelp')
     <!-- End Help -->
 
-    <!-- Expertise -->
-    @include('home.homeComponents.about.aboutExpertise')
-    <!-- End Expertise -->
-
-    <!-- About -->
-    @include('home.homeComponents.about.aboutDesc')
-    <!-- End About -->
-
     <!-- Footer -->
     @include('home.footer')
     <!-- End Footer -->
-
-
+    <div class="cursor">
+        <div class="cursor__inner"></div>
+    </div>
     <!-- Essential JS -->
     @include('home.homejs')
 
+    
 </body>
 
 <!-- Mirrored from templates.hibootstrap.com/lyzo/default/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Mar 2025 10:47:57 GMT -->
