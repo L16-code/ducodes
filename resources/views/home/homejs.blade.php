@@ -24,6 +24,7 @@
 <!-- Contact JS -->
 {{-- <script src="{{ asset('assets/js/contact-form-script.js') }}"></script> --}}
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
 
 <!--begin: Main script -->
 <script src="{{ asset('assets/js/theme.bundle.min.js') }}"></script>
