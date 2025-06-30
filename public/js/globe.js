@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Check if the globe container exists
-    const container = document.getElementById("globe");
-    if (!container) return;
+    const globeDiv = document.getElementById("globe");
+    if (!globeDiv) return;
+
+    // Get the parent banner container for wider particle spreading
+    const bannerContainer = document.querySelector(".banner-container");
+    const container = bannerContainer || globeDiv.parentElement;
 
     // Import Three.js from CDN
     const script = document.createElement("script");
@@ -19,11 +23,20 @@ document.addEventListener("DOMContentLoaded", function () {
             antialias: true,
         });
 
+        // Position the renderer absolutely to cover the entire banner area
+        renderer.domElement.style.position = "absolute";
+        renderer.domElement.style.top = "1";
+        renderer.domElement.style.left = "35%";
+        renderer.domElement.style.width = "100%";
+        renderer.domElement.style.height = "100%";
+        renderer.domElement.style.pointerEvents = "none"; // Allow clicks to pass through
+
         // Set renderer size and append to container
         function updateRendererSize() {
-            const size =
-                Math.min(container.offsetWidth, container.offsetHeight) * 0.9;
-            renderer.setSize(size, size);
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            // Update camera aspect ratio
+            camera.aspect = container.offsetWidth / container.offsetHeight;
+            camera.updateProjectionMatrix();
         }
 
         updateRendererSize();
@@ -37,10 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const group = new THREE.Group();
 
         // Create particles
-        const geometry = new THREE.SphereGeometry(0.1, 16, 16);
+        const geometry = new THREE.SphereGeometry(0.2, 16, 16);
         const material = new THREE.MeshPhongMaterial({
-            color: 0x00ffc8,
-            emissive: 0x00ffc8,
+            color: "#00ffc8",
+            emissive: "#00ffc8",
             wireframe: true,
             transparent: true,
             opacity: 0.8,
@@ -78,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let isHovered = false;
 
         // Handle hover events
-        container.addEventListener("mouseenter", () => {
+        globeDiv.addEventListener("mouseenter", () => {
             isHovered = true;
 
             for (let i = 0; i < particles; i++) {
@@ -93,9 +106,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        container.addEventListener("mouseleave", () => {
+        globeDiv.addEventListener("mouseleave", () => {
             isHovered = false;
         });
+
+        // Make sure the animation can work across the entire container
+        container.style.position = "relative";
 
         // Handle resize
         window.addEventListener("resize", function () {

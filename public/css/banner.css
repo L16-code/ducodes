@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
-    padding-bottom: 100px; /* Space for the wave */
+    overflow: visible; /* Changed from hidden to visible to allow particle overflow */
+    padding: 40px 0 100px; /* Added top padding */
 }
 
 .banner-container {
@@ -20,7 +20,7 @@
     justify-content: space-between;
     flex: 1;
     position: relative;
-    z-index: 1;
+    z-index: 10     ;
 }
 
 .banner-content {
@@ -65,12 +65,15 @@
 
 .globe-container {
     flex: 0 1 50%;
-    height: 60vh;
-    min-height: 400px;
+    height: 80vh; /* Increased height to accommodate overflow */
+    min-height: 500px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible; /* Allow particles to overflow */
+    margin: -100px 0; /* Negative margin to compensate for increased height */
+    z-index: 1; /* Ensure it stays above other elements */
 }
 
 #globe {
@@ -89,14 +92,19 @@
     left: 0;
     width: 100%;
     height: 100px;
-    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMzIwIDUyQzE3MyA5OCAwIDAgMCAwaDEyODB2MTQwSDBzMTQ3LTQ2IDMyMC05MGMxMzctMzUgMTQzLTM1IDI4MC03MHMxNDMtMzUgMjgwLTcwYzEzNy0zNSAxQzE4MzctMzUgMTk3MyAwIDIxMTAgMGMxMzcuMzUgMCAyNzMuNjUgMzUgNDEwIDcwczI3My42NSA3MCA0MTEgNzBjMTM3LjM1IDAgMjc0LTM1IDQxMC03MHMxNDAtMzUgMTQwLTM1djE0MEgwc1M0YzMuNS0yMjAgNTAtMjY3IDMyMC0zMTh6IiBmaWxsPSIjMDBmZmM4IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==') repeat-x;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMzIwIDUyQzE3MyA5OCAwIDAgMCAwaDEyODB2MTQwSDBzMTQ3LTQ2IDMyMC05MGMxMzctMzUgMTQzLTM1IDI4MC03MHMxNDMtMzUgMjgwLTcwYzEzNy0zNSAxQzE4MzctMzUgMTk3MyAwIDIxMTAgMGMxMzcuMzUgMCAyNzMuNjUgMzUgNDEwIDcwczI3My42NSA3MCA0MTEgNzBjMTM3LjM1IDAgMjc0LTM1IDQxMC03MHMxNDAtMzUgMTQwLTM1djE0MEgwc1M0YzMuNS0yMjAgNTAtMjY3IDMyMC0zMTh6IiBmaWxsPSIjMDBmZmM4IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==")
+        repeat-x;
     background-size: 1280px 100px;
     animation: wave 20s linear infinite;
 }
 
 @keyframes wave {
-    0% { background-position-x: 0; }
-    100% { background-position-x: 1280px; }
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1280px;
+    }
 }
 
 #globe {
@@ -120,14 +128,19 @@
     left: 0;
     width: 100%;
     height: 100px;
-    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMzIwIDUyQzE3MyA5OCAwIDAgMCAwaDEyODB2MTQwSDBzMTQ3LTQ2IDMyMC05MGMxMzctMzUgMTQzLTM1IDI4MC03MHMxNDMtMzUgMjgwLTcwYzEzNy0zNSAxQzE4MzctMzUgMTk3MyAwIDIxMTAgMGMxMzcuMzUgMCAyNzMuNjUgMzUgNDEwIDcwczI3My42NSA3MCA0MTEgNzBjMTM3LjM1IDAgMjc0LTM1IDQxMC03MHMxNDAtMzUgMTQwLTM1djE0MEgwc1M0YzMuNS0yMjAgNTAtMjY3IDMyMC0zMTh6IiBmaWxsPSIjMDBmZmM4IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==') repeat-x;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMzIwIDUyQzE3MyA5OCAwIDAgMCAwaDEyODB2MTQwSDBzMTQ3LTQ2IDMyMC05MGMxMzctMzUgMTQzLTM1IDI4MC03MHMxNDMtMzUgMjgwLTcwYzEzNy0zNSAxQzE4MzctMzUgMTk3MyAwIDIxMTAgMGMxMzcuMzUgMCAyNzMuNjUgMzUgNDEwIDcwczI3My42NSA3MCA0MTEgNzBjMTM3LjM1IDAgMjc0LTM1IDQxMC03MHMxNDAtMzUgMTQwLTM1djE0MEgwc1M0YzMuNS0yMjAgNTAtMjY3IDMyMC0zMTh6IiBmaWxsPSIjMDBmZmM4IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==")
+        repeat-x;
     background-size: 1280px 100px;
     animation: wave 20s linear infinite;
 }
 
 @keyframes wave {
-    0% { background-position-x: 0; }
-    100% { background-position-x: 1280px; }
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1280px;
+    }
 }
 
 /* Responsive Design */
@@ -142,17 +155,17 @@
         flex-direction: column;
         text-align: center;
     }
-    
+
     .banner-content {
         padding-right: 0;
         margin-bottom: 40px;
     }
-    
+
     .banner p {
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .globe-container {
         width: 100%;
         height: 300px;
@@ -163,11 +176,11 @@
     .banner h1 {
         font-size: 2.5rem;
     }
-    
+
     .banner p {
         font-size: 1rem;
     }
-    
+
     .btn-join {
         padding: 10px 25px;
     }
