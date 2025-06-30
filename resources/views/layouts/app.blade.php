@@ -13,6 +13,15 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        
+        <!-- Custom CSS -->
+        <link href="{{ asset('css/banner.css') }}" rel="stylesheet">
+        
+        <!-- Three.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        
+        <!-- Custom JS -->
+        <script src="{{ asset('js/globe.js') }}" defer></script>
 
         <!-- Styles -->
         @livewireStyles

@@ -1,0 +1,174 @@
+/* Banner Section */
+.banner {
+    background-color: #000;
+    color: white;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100px; /* Space for the wave */
+}
+
+.banner-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.banner-content {
+    flex: 0 1 50%;
+    padding: 40px 40px 40px 0;
+}
+
+.banner h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0 0 20px;
+    line-height: 1.1;
+}
+
+.banner h1 span {
+    color: #00ffc8;
+    display: block;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.btn-join {
+    display: inline-block;
+    background-color: #00ffc8;
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-join:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 255, 200, 0.3);
+}
+
+.globe-container {
+    flex: 0 1 50%;
+    height: 60vh;
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#globe {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+#globe:active {
+    cursor: grabbing;
+}
+
+.wave-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMzIwIDUyQzE3MyA5OCAwIDAgMCAwaDEyODB2MTQwSDBzMTQ3LTQ2IDMyMC05MGMxMzctMzUgMTQzLTM1IDI4MC03MHMxNDMtMzUgMjgwLTcwYzEzNy0zNSAxQzE4MzctMzUgMTk3MyAwIDIxMTAgMGMxMzcuMzUgMCAyNzMuNjUgMzUgNDEwIDcwczI3My42NSA3MCA0MTEgNzBjMTM3LjM1IDAgMjc0LTM1IDQxMC03MHMxNDAtMzUgMTQwLTM1djE0MEgwc1M0YzMuNS0yMjAgNTAtMjY3IDMyMC0zMTh6IiBmaWxsPSIjMDBmZmM4IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==') repeat-x;
+    background-size: 1280px 100px;
+    animation: wave 20s linear infinite;
+}
+
+@keyframes wave {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 1280px; }
+}
+
+#globe {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+    transition: transform 0.3s ease;
+}
+
+#globe:active {
+    cursor: grabbing;
+}
+
+.globe-container:hover #globe {
+    transform: scale(1.05);
+}
+
+.wave-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMzIwIDUyQzE3MyA5OCAwIDAgMCAwaDEyODB2MTQwSDBzMTQ3LTQ2IDMyMC05MGMxMzctMzUgMTQzLTM1IDI4MC03MHMxNDMtMzUgMjgwLTcwYzEzNy0zNSAxQzE4MzctMzUgMTk3MyAwIDIxMTAgMGMxMzcuMzUgMCAyNzMuNjUgMzUgNDEwIDcwczI3My42NSA3MCA0MTEgNzBjMTM3LjM1IDAgMjc0LTM1IDQxMC03MHMxNDAtMzUgMTQwLTM1djE0MEgwc1M0YzMuNS0yMjAgNTAtMjY3IDMyMC0zMTh6IiBmaWxsPSIjMDBmZmM4IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==') repeat-x;
+    background-size: 1280px 100px;
+    animation: wave 20s linear infinite;
+}
+
+@keyframes wave {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 1280px; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .banner h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .banner-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .banner p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .globe-container {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+    
+    .banner p {
+        font-size: 1rem;
+    }
+    
+    .btn-join {
+        padding: 10px 25px;
+    }
+}
