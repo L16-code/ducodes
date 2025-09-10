@@ -24,12 +24,7 @@
     <!-- Help -->
     @include('home.homeComponents.about.aboutHelp')
     <!-- End Help -->
-    <div class="container">
-        <h1>Interactive 3D Globe</h1>
-        <div id="globe-container">
-            <div class="globe-title">Digital Planet</div>
-        </div>
-    </div>
+
     <!-- Footer -->
     @include('home.footer')
     <!-- End Footer -->
