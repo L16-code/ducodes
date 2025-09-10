@@ -46,7 +46,7 @@
     #globe-container {
         width: 100%;
         height: 80vh;
-        background-color: #fffafa;
+        background-color:rgb(3, 3, 3);
         cursor: pointer;
         position: relative;
         overflow: hidden;
@@ -83,8 +83,8 @@
         container.appendChild(renderer.domElement);
 
         // Particle settings
-        const particles = 1500;
-        const radius = 6; // Globe radius
+        const particles = 3200;
+        const radius = 7; // Globe radius
         const positions = new Float32Array(particles * 3);
         const originalPositions = new Float32Array(particles * 3); // Store original positions
         const targetPositions = new Float32Array(particles * 3); // For scattered positions
