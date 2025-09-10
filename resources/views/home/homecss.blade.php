@@ -53,5 +53,7 @@
         <link rel="stylesheet" href="{{ asset('assets/vendor/node_modules/css/glightbox.min.css') }}" />
         <!-- Main CSS -->
         <link href="{{ asset('assets/css/theme.min.css') }}" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="{{ asset('css/navbar-custom.css') }}" rel="stylesheet">
 
         <title>Home</title>

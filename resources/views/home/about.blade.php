@@ -28,9 +28,9 @@
     <!-- Footer -->
     @include('home.footer')
     <!-- End Footer -->
-    {{-- <div class="cursor">
+    <div class="cursor">
         <div class="cursor__inner"></div>
-    </div> --}}
+    </div>
 
     <!-- Essential JS -->
     @include('home.homejs')
@@ -41,7 +41,7 @@
     #globe-container {
         width: 100%;
         height: 80vh;
-        background-color:rgb(3, 3, 3);
+        background-color: rgb(3, 3, 3);
         cursor: pointer;
         position: relative;
         overflow: hidden;
@@ -65,130 +65,145 @@
         opacity: 0;
     }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script>
+<!-- Three.js is already included in homejs.blade.php -->
+{{-- <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Scene setup
+        // Check if container exists
         const container = document.getElementById('globe-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(container.offsetWidth, container.offsetHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-        container.appendChild(renderer.domElement);
-
-        // Particle settings
-        const particles = 3200;
-        const radius = 7; // Globe radius
-        const positions = new Float32Array(particles * 3);
-        const originalPositions = new Float32Array(particles * 3); // Store original positions
-        const targetPositions = new Float32Array(particles * 3); // For scattered positions
-
-        // Geometry and material for particles
-        const geometry = new THREE.SphereGeometry(0.15, 16, 16);
-        const material = new THREE.MeshStandardMaterial({
-            color: 0x00ffff,
-            emissive: 0x004d99,
-            transparent: true,
-            opacity: 0.9,
-        });
-
-        // Particle group
-        const group = new THREE.Group();
-
-        // Initialize particle positions
-        for (let i = 0; i < particles; i++) {
-            // Randomized spherical distribution
-            const theta = Math.random() * Math.PI * 2;
-            const phi = Math.acos(2 * Math.random() - 1);
-            const r = radius;
-
-            const x = r * Math.sin(phi) * Math.cos(theta);
-            const y = r * Math.sin(phi) * Math.sin(theta);
-            const z = r * Math.cos(phi);
-
-            // Store original positions
-            originalPositions[i * 3] = x;
-            originalPositions[i * 3 + 1] = y;
-            originalPositions[i * 3 + 2] = z;
-
-            positions[i * 3] = x;
-            positions[i * 3 + 1] = y;
-            positions[i * 3 + 2] = z;
-
-            // Create mesh for each particle
-            const sphere = new THREE.Mesh(geometry, material);
-            sphere.position.set(x, y, z);
-            group.add(sphere);
+        if (!container) {
+            console.error('Globe container not found');
+            return;
         }
+        
+        try {
+            // Scene setup
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            
+            // Create renderer with error handling
+            const renderer = new THREE.WebGLRenderer({ 
+                antialias: true, 
+                alpha: true,
+                powerPreference: 'high-performance'
+            });
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+            
+            // Particle settings
+            const particles = 3200;
+            const radius = 7; // Globe radius
+            const positions = new Float32Array(particles * 3);
+            const originalPositions = new Float32Array(particles * 3); // Store original positions
+            const targetPositions = new Float32Array(particles * 3); // For scattered positions
 
-        scene.add(group);
+            // Geometry and material for particles
+            const geometry = new THREE.SphereGeometry(0.15, 16, 16);
+            const material = new THREE.MeshStandardMaterial({
+                color: 0x00ffff,
+                emissive: 0x004d99,
+                transparent: true,
+                opacity: 0.9,
+            });
 
-        // Lights
-        const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
-        const pointLight = new THREE.PointLight(0xffffff, 1.5);
-        pointLight.position.set(10, 10, 10);
-        scene.add(ambientLight, pointLight);
+            // Particle group
+            const group = new THREE.Group();
 
-        // Camera position
-        camera.position.z = 15;
-
-        // Interaction states
-        let isHovered = false;
-
-        // Scatter particles on hover
-        container.addEventListener('mouseenter', () => {
-            isHovered = true;
-
-            // Generate target positions for scattering
+            // Initialize particle positions
             for (let i = 0; i < particles; i++) {
-                const i3 = i * 3;
+                // Randomized spherical distribution
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.acos(2 * Math.random() - 1);
+                const r = radius;
 
-                // Randomized scattering distance (slight outward movement)
-                const scatterFactor = 1.2 + Math.random() * 0.5; // Slight scattering (1.2x to 1.7x original distance)
-                targetPositions[i3] = originalPositions[i3] * scatterFactor;
-                targetPositions[i3 + 1] = originalPositions[i3 + 1] * scatterFactor;
-                targetPositions[i3 + 2] = originalPositions[i3 + 2] * scatterFactor;
+                const x = r * Math.sin(phi) * Math.cos(theta);
+                const y = r * Math.sin(phi) * Math.sin(theta);
+                const z = r * Math.cos(phi);
+
+                // Store original positions
+                originalPositions[i * 3] = x;
+                originalPositions[i * 3 + 1] = y;
+                originalPositions[i * 3 + 2] = z;
+
+                positions[i * 3] = x;
+                positions[i * 3 + 1] = y;
+                positions[i * 3 + 2] = z;
+
+                // Create mesh for each particle
+                const sphere = new THREE.Mesh(geometry, material);
+                sphere.position.set(x, y, z);
+                group.add(sphere);
             }
-        });
 
-        // Reset particles on mouse leave
-        container.addEventListener('mouseleave', () => {
-            isHovered = false;
-        });
+            scene.add(group);
 
-        // Animation loop
-        const animate = () => {
-            requestAnimationFrame(animate);
+            // Lights
+            const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
+            const pointLight = new THREE.PointLight(0xffffff, 1.5);
+            pointLight.position.set(10, 10, 10);
+            scene.add(ambientLight, pointLight);
 
-            const speed = 0.02; // Slower transition speed
+            // Camera position
+            camera.position.z = 15;
 
-            for (let i = 0; i < particles; i++) {
-                const i3 = i * 3;
-                const sphere = group.children[i];
+            // Interaction states
+            let isHovered = false;
 
-                // Move towards target positions smoothly
-                if (isHovered) {
-                    sphere.position.x += (targetPositions[i3] - sphere.position.x) * speed;
-                    sphere.position.y += (targetPositions[i3 + 1] - sphere.position.y) * speed;
-                    sphere.position.z += (targetPositions[i3 + 2] - sphere.position.z) * speed;
-                } else {
-                    // Return to original positions
-                    sphere.position.x += (originalPositions[i3] - sphere.position.x) * speed;
-                    sphere.position.y += (originalPositions[i3 + 1] - sphere.position.y) * speed;
-                    sphere.position.z += (originalPositions[i3 + 2] - sphere.position.z) * speed;
+            // Scatter particles on hover
+            container.addEventListener('mouseenter', () => {
+                isHovered = true;
+
+                // Generate target positions for scattering
+                for (let i = 0; i < particles; i++) {
+                    const i3 = i * 3;
+
+                    // Randomized scattering distance (slight outward movement)
+                    const scatterFactor = 1.2 + Math.random() * 0.5; // Slight scattering (1.2x to 1.7x original distance)
+                    targetPositions[i3] = originalPositions[i3] * scatterFactor;
+                    targetPositions[i3 + 1] = originalPositions[i3 + 1] * scatterFactor;
+                    targetPositions[i3 + 2] = originalPositions[i3 + 2] * scatterFactor;
                 }
-            }
+            });
 
-            group.rotation.y += 0.002; // Rotate the globe slowly
-            renderer.render(scene, camera);
-        };
+            // Reset particles on mouse leave
+            container.addEventListener('mouseleave', () => {
+                isHovered = false;
+            });
 
-        animate();
+            // Animation loop
+            const animate = () => {
+                requestAnimationFrame(animate);
+
+                const speed = 1; // Faster transition speed
+
+                for (let i = 0; i < particles; i++) {
+                    const i3 = i * 3;
+                    const sphere = group.children[i];
+
+                    // Move towards target positions smoothly
+                    if (isHovered) {
+                        sphere.position.x += (targetPositions[i3] - sphere.position.x) * speed;
+                        sphere.position.y += (targetPositions[i3 + 1] - sphere.position.y) * speed;
+                        sphere.position.z += (targetPositions[i3 + 2] - sphere.position.z) * speed;
+                    } else {
+                        // Return to original positions
+                        sphere.position.x += (originalPositions[i3] - sphere.position.x) * speed;
+                        sphere.position.y += (originalPositions[i3 + 1] - sphere.position.y) * speed;
+                        sphere.position.z += (originalPositions[i3 + 2] - sphere.position.z) * speed;
+                    }
+                }
+
+                group.rotation.y += 0.01; // Rotate the globe faster
+                renderer.render(scene, camera);
+            };
+
+            animate();
+        } catch (error) {
+            console.error('Error initializing globe:', error);
+        }
     });
 </script>
-
-
+ --}}
 
 
 </html>

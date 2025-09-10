@@ -33,12 +33,12 @@
         <!-- Contact Form -->
         {{-- @include('home.homeComponents.contactForm') --}}
         <!-- End Contact Form -->
-        <div class="container">
+        {{-- <div class="container">
             <h1>Interactive 3D Globe</h1>
             <div id="globe-container">
                 <div class="globe-title">Digital Planet</div>
             </div>
-        </div>
+        </div> --}}
         <!-- Blog -->
         {{-- @include('home.homeComponents.blog') --}}
         <!-- End Blog -->
@@ -52,7 +52,6 @@
 
     <!-- Essential JS -->
     @include('home.homejs')
-    <script src="{{ asset('js/globe.js') }}"></script>
 </body>
 
 </html>
