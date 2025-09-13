@@ -164,36 +164,10 @@
                     </li>
                     <!--end:hire a developer-->
                     <!--begin:blog-->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside">Blog
                         </a>
-                        <div class="dropdown-menu">
-                            <div class="dropend">
-                                <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
-                                    href="#">Blog
-                                    Layouts</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="blog-classic.html">Blog classic</a>
-                                    <a class="dropdown-item" href="blog-standard.html">Blog standard</a>
-                                    <a class="dropdown-item" href="blog-masonry.html">Blog Masonry</a>
-                                    <a class="dropdown-item" href="blog-sidebar.html">Blog Sidebar</a>
-                                    <a class="dropdown-item" href="blog-magazine.html">Blog magazine</a>
-                                </div>
-                            </div>
-                            <div class="dropend">
-                                <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
-                                    href="#">Article
-                                    Layouts</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="blog-article-basic.html">Basic</a>
-                                    <a class="dropdown-item" href="blog-article-video.html">Video</a>
-                                    <a class="dropdown-item" href="blog-article-gallery.html">Gallery</a>
-                                    <a class="dropdown-item" href="blog-article-parallax.html">Parallax
-                                        Header</a>
-                                </div>
-                            </div>
-                        </div>
                     </li>
                     <!--end:blog-->
 

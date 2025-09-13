@@ -13,11 +13,23 @@
         <div class="row pt-lg-12 pb-12 pb-lg-15">
             <div class="col-xl-8 col-lg-10 mx-auto text-center text-white" data-aos data-aos-delay="100"
                 data-aos-mirror="true" data-aos-once="false">
-                <h1 class="splitting-up display-2 fw-bolder mb-lg-4 mb-0" data-splitting>
+                {{-- <h1 class="splitting-up display-2 fw-bolder mb-lg-4 mb-0" data-splitting>
+
+
                     Empowering
                     <span class="text-warning">Business Leaders</span> To Reach Their
                     Full Potential
-                </h1>
+                </h1> --}}
+                <div class="position-relative d-table mb-5 z-1">
+                    <h1 class="display-3 me-lg-n15 mb-4 position-relative">Empowering Businesses With <br>
+
+                        <!--Typed section heading-->
+                        <span class="" style="color:#2196F3;"
+                            data-typed='{"strings": ["AI App Development","GEN AI Chatbot Development","Zoho Development", "Salesforce Development", "HubSpot Development", "Website Development", "Mobile App Development","Power BI Solutions"]}'>
+                        </span>
+                        <p class="text-white">To Unlock Your Full Potential</p>
+                    </h1>
+                </div>
             </div>
         </div>
     </div>
@@ -37,14 +49,19 @@
             </svg>
 
             <div class="position-relative">
-                <div class="mb-3">
-                    <h2 class="mb-0 fs-1 text-white">Get a free quote
-                    </h2>
+                <div class="row g-2 justify-content-center w-100 mb-3">
+                    <div class="col-md-12 col-lg-8">
+                        <h2 class="mb-0 fs-1 text-white">Get a free quote
+                        </h2>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <button type="button" class="btn btn-warning btn-lg w-100">Send request</button>
+                    </div>
                 </div>
                 <!--Phone-->
-                <p class="mb-5 lead text-white"><i class="bi bi-phone me-2 align-middle text-warning"></i>
-                    +01 555 3456 382</p>
-
+                {{-- <p class="mb-5 lead text-white"><i class="bi bi-phone me-2 align-middle text-warning"></i>
+                    +01 555 3456 382
+                </p> --}}
                 <!--Request form-->
                 <form>
                     <div class="row g-2 justify-content-center w-100">
@@ -57,9 +74,21 @@
                                 class="form-control bg-dark bg-opacity-10 text-white form-control-lg shadow-none border-0">
                         </div>
                         <div class="col-md-12 col-lg-4">
-                            <button type="button" class="btn btn-warning btn-lg w-100">Send request</button>
+                            <input type="email" placeholder="Email"
+                                class="form-control bg-dark bg-opacity-10 text-white form-control-lg shadow-none border-0">
                         </div>
                     </div>
+                    <div class="row g-2 justify-content-center w-100 mt-3">
+                        <div class="col-md-12 col-lg-12">
+                            <textarea type="text" placeholder="About Your Project"
+                                class="form-control bg-dark bg-opacity-10 text-white form-control-lg shadow-none border-0"></textarea>
+                        </div>
+                    </div>
+                    {{-- <div class="row g-2 justify-content-center w-100 mt-3">
+                        <div class="col-md-12 col-lg-4">
+                            <button type="button" class="btn btn-warning btn-lg w-100">Send request</button>
+                        </div>
+                    </div> --}}
                 </form>
             </div>
         </div>
