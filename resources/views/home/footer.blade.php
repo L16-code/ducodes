@@ -87,10 +87,10 @@
             <div class="col-lg-5 ms-auto">
                 <div class="py-5 bg-white-25 bg-gradient px-4 rounded-4">
                     <h5 class="mb-4 text-white">Contact</h5>
-                    <div class="mb-2"><a href="tel:+1123456789" class="fs-5 link-hover-underline">+1 1234 56789</a>
+                    <div class="mb-2"><a href="tel:+919549312341" class="fs-5 link-hover-underline">+91 9549312341</a>
                     </div>
-                    <div><a href="mailto:hello@domain.com?subject=Hello!"
-                            class="fs-5 link-hover-underline">support@domain.com</a>
+                    <div><a href="mailto:support@ducodes.com?subject=Hello!"
+                            class="fs-5 link-hover-underline">support@ducodes.com</a>
                     </div>
                     <hr class="my-4 text-white my-sm-5">
                     <h5 class="mb-4 text-white">Have a project?</h5>
