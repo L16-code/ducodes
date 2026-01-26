@@ -24,15 +24,15 @@ class HomeController extends Controller
     }
     public function homepage()
     {
-        return view('home.homepage');
+        return view('frontend.pages.home');
     }
     public function about()
     {
-        return view('home.about');
+        return view('frontend.pages.about');
     }
     public function blogs()
     {
-        return view('home.blogs');
+        return view('frontend.pages.blogs');
     }
     public function error_page()
     {
@@ -53,10 +53,10 @@ class HomeController extends Controller
         ->where('id', '!=', $blog->id) 
         ->take(3)
         ->get();
-        return view('home.blog-details', compact('blog','recentBlogs', 'relatedBlogs'));
+        return view('frontend.pages.blog-details', compact('blog','recentBlogs', 'relatedBlogs'));
     }
     public function contact()
     {
-        return view('home.contact');
+        return view('frontend.pages.contact');
     }
 }
