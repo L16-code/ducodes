@@ -1,10 +1,25 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Contact Us')
+@section('title', 'Contact DuCodes - Get a Free Project Quote')
+@section('meta_description', 'Get in touch with DuCodes for a free software development quote. Call +91 9549312341, email support@ducodes.com, or use the contact form below.')
+
+@push('schema')
+<script type="application/ld+json">{!! json_encode([
+    App\Support\Seo::webPageSchema(
+        'Contact DuCodes',
+        'Get in touch with DuCodes for a free software development quote.',
+        url()->current()
+    ),
+    App\Support\Seo::breadcrumbSchema([
+        'Home' => route('homepage'),
+        'Contact Us' => url()->current(),
+    ]),
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
+@endpush
 
 @section('content')
     <section class="position-relative">
-        <div class="container position-relative pt-12 pt-lg-15">
+        <div class="container position-relative pt-6 pt-lg-7">
             <div class="row">
                 <div class="col-lg-8 col-md-10">
                     <h1 class="display-4 mb-3">
@@ -15,7 +30,7 @@
                 </div>
             </div>
             <!--/.row-->
-            <img src="assets/img/1200x600/2.jpg" class="img-fluid rounded-block" alt="">
+            <img src="{{ asset('assets/img/1200x600/2.jpg') }}" class="img-fluid rounded-block" alt="DuCodes software development team collaborating on a client project">
         </div>
         <!--/.content-->
     </section>
@@ -62,7 +77,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
                     <div class="position-relative">
-                        <h1>Contact Form</h1>
+                        <h2>Contact Form</h2>
                         <p class="mb-3 lead w-lg-75">
                             Use the contact form if you have questions about our products. Our sales team will
                             be happy to help you:
@@ -70,6 +85,11 @@
                         <div class="width-7x pt-1 bg-primary mb-7"></div>
                         <form id="contactForm" action="{{ route('contact.store') }}" method="POST" class="needs-validation mb-5 mb-lg-7" novalidate>
                             @csrf
+                            <!-- Honeypot: hidden from real users via CSS, only bots fill this in -->
+                            <div class="d-none" aria-hidden="true">
+                                <label for="website">Leave this field empty</label>
+                                <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+                            </div>
                             <div class="row">
                                 <div class="col-sm-6 mb-3">
                                     <label class="form-label" for="name">Your name</label>
@@ -86,11 +106,15 @@
                                     </div>
                                 </div>
 
-                                <div class="w-100"></div>
+                                <div class="col-sm-6 mb-3">
+                                    <label class="form-label" for="phone_number">Your phone number</label>
+                                    <input type="tel" name="phone_number" class="form-control" id="phone_number"
+                                        placeholder="+91 98765 43210" required>
+                                </div>
 
-                                <div class="col-sm-12 mb-3">
+                                <div class="col-sm-6 mb-3">
                                     <label class="form-label" for="subject">Subject</label>
-                                    <input type="text" class="form-control" name="subject" id="subject"
+                                    <input type="text" class="form-control" name="msg_subject" id="subject"
                                         placeholder="Web Design" required>
                                 </div>
                             </div>
@@ -100,6 +124,16 @@
                                 <textarea class="form-control" name="message" placeholder="Hi there...." required></textarea>
                                 <div class="invalid-feedback">
                                     Please enter a message in the textarea.
+                                </div>
+                            </div>
+
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" name="grid_check" value="1" id="grid_check" required>
+                                <label class="form-check-label small" for="grid_check">
+                                    I agree to be contacted by DuCodes regarding my inquiry.
+                                </label>
+                                <div class="invalid-feedback">
+                                    Please confirm you agree to be contacted.
                                 </div>
                             </div>
 

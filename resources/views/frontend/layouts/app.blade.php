@@ -4,14 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
-    <title>@yield('title', 'Home') - {{ config('app.name', 'DuCodes') }}</title>
-    
+    <meta name="theme-color" content="#0d1b2a">
+
+    @include('frontend.partials.seo')
+
     @include('frontend.partials.styles')
-    
+
+    @include('frontend.partials.analytics-head')
+
     @stack('styles')
 </head>
 <body>
+    @include('frontend.partials.analytics-body')
+
+    <a class="skip-link visually-hidden-focusable" href="#main-content">Skip to main content</a>
+
     <!-- Preloader -->
     @include('frontend.partials.loader')
     <!-- End Preloader -->
@@ -31,7 +38,7 @@
     <!-- End Footer -->
 
     @include('frontend.partials.scripts')
-    
+
     @stack('scripts')
 </body>
 </html>

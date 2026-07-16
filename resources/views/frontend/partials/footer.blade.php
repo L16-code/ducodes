@@ -79,8 +79,7 @@
                         <h5 class="mb-4 text-white">Company</h5>
                         <nav class="nav flex-column">
                             <a href="{{ route('about') }}" class="nav-link p-0 mb-3">About us</a>
-                            <a href="#" class="nav-link p-0 mb-3">Career</a>
-                            <a href="#" class="nav-link p-0 mb-3">Team</a>
+                            <a href="{{ route('contact') }}" class="nav-link p-0 mb-3">Contact us</a>
                             <a href="{{ route('blogs') }}" class="nav-link p-0">Blog</a>
                         </nav>
                     </div>
@@ -132,17 +131,13 @@
         <div class="row justify-content-between">
             <div class="col-md-7 mb-4 mb-md-0">
                 <div class="nav small">
-                    <a href="#" class="nav-link ps-0">Privacy Policy</a>
-                    <a href="#" class="nav-link ps-0">Terms and Conditions</a>
-                    <a href="#" class="nav-link ps-0">Press kit</a>
+                    <a href="{{ route('privacy-policy') }}" class="nav-link ps-0">Privacy Policy</a>
+                    <a href="{{ route('terms') }}" class="nav-link ps-0">Terms and Conditions</a>
                 </div>
             </div>
 
             <div class="col-md-5 text-md-end">
-                <span class="d-block lh-sm small text-white-50">&copy; Copyright
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>. DuCodes
+                <span class="d-block lh-sm small text-white-50">&copy; Copyright {{ date('Y') }}. DuCodes
                 </span>
             </div>
         </div>

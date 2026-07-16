@@ -27,37 +27,37 @@
             <div class="col-md-4 mb-5 mb-md-0" data-aos="fade-right" data-aos-delay="100" data-aos-duration="400">
             <!--:Icon:-->
                 <div class="width-5x height-5x mb-5 flex-center">
-                    <img data-inject-svg src="assets/img/graphics/icons/hand-shake.svg" class="w-100 h-100 fill-primary"
+                    <img data-inject-svg src="{{ asset('assets/img/graphics/icons/hand-shake.svg') }}" class="w-100 h-100 fill-primary"
                         alt="">
                 </div>
                 <h5 class="mb-3">Relationships</h5>
                 <p class="mb-0">
-                    Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing
-                    industries layouts and visual mockups.
+                    We work as an extension of your team, not a vendor that disappears after launch — with
+                    direct communication throughout the project and support after it ships.
                 </p>
             </div>
             <div class="col-md-4 mb-5 mb-md-0" data-aos="fade-right" data-aos-delay="150" data-aos-duration="400">
                 <!--:Icon:-->
                 <div class="width-5x height-5x mb-5 flex-center">
-                    <img data-inject-svg src="assets/img/graphics/icons/target.svg" class="w-100 h-100 fill-warning"
+                    <img data-inject-svg src="{{ asset('assets/img/graphics/icons/target.svg') }}" class="w-100 h-100 fill-warning"
                         alt="">
                 </div>
                 <h5 class="mb-3">Mission & vision</h5>
                 <p class="mb-0">
-                    Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing
-                    industries layouts and visual mockups.
+                    We build practical, maintainable software — Laravel, React, AI, and CRM/ERP integrations
+                    included — so businesses can run more efficiently and scale without rebuilding from scratch.
                 </p>
             </div>
             <div class="col-md-4" data-aos="fade-right" data-aos-delay="200" data-aos-duration="400">
                 <!--:Icon:-->
                 <div class="width-5x height-5x mb-5 flex-center">
-                    <img data-inject-svg src="assets/img/graphics/icons/magic-wand.svg" class="w-100 h-100 fill-info"
+                    <img data-inject-svg src="{{ asset('assets/img/graphics/icons/magic-wand.svg') }}" class="w-100 h-100 fill-info"
                         alt="">
                 </div>
                 <h5 class="mb-3">Best results</h5>
                 <p class="mb-0">
-                    Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing
-                    industries layouts and visual mockups.
+                    From planning through QA and deployment, we focus on clean code and clear communication so
+                    your project ships on time and keeps working long after launch.
                 </p>
             </div>
         </div>

@@ -1,9 +1,8 @@
-<main class="main-content" id="main-content">
-    <section class="position-relative overflow-hidden bg-dark text-white">
+<section class="position-relative overflow-hidden bg-dark text-white">
         <!--Video-->
         <div class="w-100 h-100 opacity-25 position-absolute end-0 top-0 bg-cover bg-no-repeat bg-center"
-            style="background-image: url(assets/videos/officeloop-cover.jpg);">
-            <div class="jarallax bg-dark h-100 w-100" data-speed=".2" data-video-src="mp4:./assets/videos/officeloop.mp4">
+            style="background-image: url({{ asset('assets/videos/officeloop-cover.jpg') }});">
+            <div class="jarallax bg-dark h-100 w-100" data-speed=".2" data-video-src="mp4:{{ asset('assets/videos/officeloop.mp4') }}">
             </div>
         </div>
         <!--divider-->
@@ -20,18 +19,14 @@
                 fill-opacity="0.3"></path>
         </svg>
 
-        <div class="container position-relative z-2 pt-12 pb-12">
+        <div class="container position-relative z-2 pt-6 pb-12">
             <div class="row pb-9 pb-lg-12 pt-lg-9">
                 <div class="col-12 mx-auto text-center col-xl-8">
-                    <h1 class="display-4 mb-5 mb-lg-7">We are a brand of collective & creativity</h1>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <!--play button-->
-                        <a href="https://vimeo.com/353105087" data-glightbox data-gallery="gallery07"
-                            class="d-flex width-10x height-10x btn btn-outline-white btn-circle-ripple me-3 p-0 rounded-circle align-items-center justify-content-center fs-1">
-                            <i class="bi bi-play"></i>
-                        </a>
-                        <small class="text-white-50 text-uppercase fw-bold ms-3">Watch story </small>
-                    </div>
+                    <h1 class="display-4 mb-5 mb-lg-7">We build software that helps businesses grow</h1>
+                    <p class="lead text-white-50 mb-0">
+                        DuCodes is a custom software development company based in Jaipur, India, building web
+                        platforms, mobile apps, AI solutions, and CRM/ERP integrations for clients worldwide.
+                    </p>
                 </div>
             </div>
         </div>
@@ -43,75 +38,36 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <h6 class="fst-italic font-serif mb-3" data-aos="fade-right" data-aos-duration="700">
                         Realise your potential </h6>
-                    <h1 class="display-5 mb-4" data-aos="fade-left" data-aos-delay="100"
+                    <h2 class="display-5 mb-4" data-aos="fade-left" data-aos-delay="100"
                         data-aos-duration="700">
-                        We create digital design experiences
-                    </h1>
+                        We build reliable software, end to end
+                    </h2>
                     <p class="mb-5 w-lg-75" data-aos="fade-right" data-aos-delay="150" data-aos-duration="700">
-                        We are a professional digital studio based in California, Usa. We make good
-                        designs for small to large businesses, Building good designs is our passion. Drop us a
-                        line and say hello to us without any hesitation. We would love to discuss about your
-                        next project.
+                        DuCodes is a software development team based in Jaipur, India, working with businesses
+                        of every size on web platforms, mobile apps, and AI-driven products. From Laravel and
+                        React to Zoho, Salesforce, and HubSpot integrations, we handle the full lifecycle of a
+                        project — planning, development, QA, and ongoing support. Get in touch and let's talk
+                        about what you're building.
                     </p>
                     <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-                        <a href="#" class="btn btn-primary btn-hover-arrow hover-lift"><span>What we
-                                offer</span></a>
+                        <a href="{{ route('contact') }}" class="btn btn-primary btn-hover-arrow hover-lift"><span>Get in
+                                touch</span></a>
                     </div>
                 </div>
                 <div class="col-lg-6 ms-auto position-relative">
                     <div class="rellax position-absolute top-0 mt-n3 end-0 width-16x h-auto" data-rellax-speed="-1" data-rellax-percentage=".9">
-                        <img src="assets/img/vectors/pattern-dots3.svg" data-inject-svg
+                        <img src="{{ asset('assets/img/vectors/pattern-dots3.svg') }}" data-inject-svg
                         class=" fill-success w-100 h-auto" alt="">
                     </div>
                     <div class="position-relative ps-9 ps-lg-12 pb-9 pb-lg-12 pe-5 pt-5" data-aos="fade-right"
                         data-aos-delay="200" data-aos-duration="700">
-                        <img src="assets/img/960x1140/5.jpg" alt=""
-                            class="img-fluid rounded-4 shadow-lg position-relative">
-                        <img src="assets/img/960x900/4.jpg" alt=""
-                            class="img-fluid position-absolute shadow-lg rounded-4 bottom-0 start-0 w-lg-60 w-50">
+                        <img src="{{ asset('assets/img/960x1140/5.jpg') }}" alt="Software developers collaborating at a workstation"
+                            class="img-fluid rounded-4 shadow-lg position-relative" loading="lazy" decoding="async">
+                        <img src="{{ asset('assets/img/960x900/4.jpg') }}" alt="Developers reviewing code together"
+                            class="img-fluid position-absolute shadow-lg rounded-4 bottom-0 start-0 w-lg-60 w-50" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="position-relative">
-        <div class="container py-9 py-lg-11">
-            <div class="row">
-                <div class="col-md-4 mb-5 mb-md-0">
-                    <h6 class="fst-italic font-serif">We have been</h6>
-                    <h5 class="mb-3">
-                        <span data-countup='{"startVal": 0,"suffix":"+"}' data-to="5" data-aos=""
-                            data-aos-id="countup:in" class="display-5 text-primary"></span>
-                    </h5>
-                    <p class="mb-0">
-                        <strong>Years of experience</strong> adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua.
-                    </p>
-                </div>
-                <div class="col-md-4 mb-5 mb-md-0">
-                    <h6 class="fst-italic font-serif">Accuracy</h6>
-                    <h5 class="mb-3">
-                        <span data-countup='{"startVal": 0,"suffix":"%","decimalPlaces":2}' data-to="99.99"
-                            data-aos="" data-aos-id="countup:in" class="display-5 text-primary"></span>
-                    </h5>
-                    <p class="mb-0">
-                        Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua.
-                    </p>
-                </div>
-                <div class="col-md-4 mb-5 mb-md-0">
-                    <h6 class="fst-italic font-serif">Sales</h6>
-                    <h5 class="mb-3">
-                        <span data-countup='{"startVal": 0,"suffix":"+"}' data-to="20000" data-aos=""
-                            data-aos-id="countup:in" class="display-5 text-primary"></span>
-                    </h5>
-                    <p class="mb-0">
-                        Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua.
-                    </p>
-                </div>
-            </div>
-        </div>
         </div>
     </section>
     <section class="position-relative bg-success bg-opacity-10 overflow-hidden">
@@ -132,148 +88,16 @@
         <div class="container position-relative">
             <div class="position-relative">
                 <div class="row py-9">
-                    <div class="col-lg-10 col-xl-8 py-9 offset-lg-1 position-relative z-1">
-                        <figure class="mb-0 position-relative">
-                            <div class="position-relative">
-                                <!--Avatar Image-->
-                                <img class="position-relative avatar xl rounded-circle shadow"
-                                    src="assets/img/avatar/12.jpg" alt="">
-                            </div>
-                            <div class="pt-4">
-                                <blockquote>
-                                    <h2 class="display-6 font-serif mb-5 mb-lg-7">
-                                        " They're very responsive and go above and beyond to meet our needs. We
-                                        continue working with them, which is the best sign of our satisfaction.
-                                        "
-                                    </h2>
-                                </blockquote>
-                                <figcaption>
-                                    <h6 class="mb-1">
-                                        Joseph Foxx
-                                    </h6>
-                                    <span class="text-body-secondary small">
-                                        Staff Engineer, Any inc.
-                                    </span>
-                                </figcaption>
-                            </div>
-                        </figure>
+                    <div class="col-lg-10 col-xl-8 py-9 offset-lg-1 position-relative z-1 text-center text-lg-start">
+                        <h2 class="display-6 font-serif mb-4">Want to work with us?</h2>
+                        <p class="lead mb-4">
+                            We're a software development team that partners closely with each client from
+                            planning through launch and ongoing support. Tell us about your project and we'll
+                            get back to you with next steps.
+                        </p>
+                        <a href="{{ route('contact') }}" class="btn btn-primary btn-lg hover-lift">Start a conversation</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="position-relative">
-        <div class="container py-9 py-lg-11">
-            <div class="row mb-7 mb-lg-9">
-                <div class="col-lg-10 col-xl-8 mx-auto text-center" data-aos="fade-up" data-aos-duration="700">
-                    <h2 class="display-5">Meet our dedicated highly skilled super team</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 mb-7 mt-auto text-center" data-aos="fade-up" data-aos-delay="100"
-                    data-aos-duration="700">
-                    <div class="position-relative mb-4 overflow-hidden width-18x height-18x mx-auto rounded-circle">
-                        <img src="assets/img/team/1.jpg" alt="" class="img-fluid">
-                    </div>
-                    <div>
-                        <h5 class="mb-1">
-                            Jordy Eubanks
-                        </h5>
-                        <p class="d-block text-body-secondary small mb-3">Creative director</p>
-                        <p class="w-lg-75 mx-auto mb-2">
-                            Duis aute irure dolor in velit esse cillum fugiat nulla pariatur.
-                        </p>
-                        <small class="text-body-secondary">London, UK</small>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-7 mt-auto text-center" data-aos="fade-up" data-aos-delay="100"
-                    data-aos-duration="700">
-                    <div class="position-relative mb-4 overflow-hidden width-18x height-18x mx-auto rounded-circle">
-                        <img src="assets/img/team/2.jpg" alt="" class="img-fluid">
-                    </div>
-                    <div>
-                        <h5 class="mb-1">
-                            Olive Mathews
-                        </h5>
-                        <p class="d-block text-body-secondary small mb-3">Visual designer</p>
-                        <p class="w-lg-75 mx-auto mb-2">
-                            Duis aute irure dolor in velit esse cillum fugiat nulla pariatur.
-                        </p>
-                        <small class="text-body-secondary">Texas, US</small>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-7 mt-auto text-center" data-aos="fade-up" data-aos-delay="100"
-                    data-aos-duration="700">
-                    <div class="position-relative mb-4 overflow-hidden width-18x height-18x mx-auto rounded-circle">
-                        <img src="assets/img/team/3.jpg" alt="" class="img-fluid">
-                    </div>
-                    <div>
-                        <h5 class="mb-1">
-                            Aarav Lynn
-                        </h5>
-                        <p class="d-block text-body-secondary small mb-3">Developer</p>
-                        <p class="w-lg-75 mx-auto mb-2">
-                            Duis aute irure dolor in velit esse cillum fugiat nulla pariatur.
-                        </p>
-                        <small class="text-body-secondary">Wellington, NZ</small>
-                    </div>
-                </div>
-                <div class="py-4"></div>
-                <div class="col-lg-4 mb-7 mb-lg-0 mt-auto text-center" data-aos="fade-up" data-aos-delay="100"
-                    data-aos-duration="700">
-                    <div class="position-relative mb-4 overflow-hidden width-18x height-18x mx-auto rounded-circle">
-                        <img src="assets/img/team/5.jpg" alt="" class="img-fluid">
-                    </div>
-                    <div>
-                        <h5 class="mb-1">
-                            Eva Calvert
-                        </h5>
-                        <p class="d-block text-body-secondary small mb-3">Motion designer</p>
-                        <p class="w-lg-75 mx-auto mb-2">
-                            Duis aute irure dolor in velit esse cillum fugiat nulla pariatur.
-                        </p>
-                        <small class="text-body-secondary">Paris, FR</small>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-7 mb-lg-0 mt-auto text-center" data-aos="fade-up" data-aos-delay="100"
-                    data-aos-duration="700">
-                    <div class="position-relative mb-4 overflow-hidden width-18x height-18x mx-auto rounded-circle">
-                        <img src="assets/img/team/6.jpg" alt="" class="img-fluid">
-                    </div>
-                    <div>
-                        <h5 class="mb-1">
-                            Amiya Potts
-                        </h5>
-                        <p class="d-block text-body-secondary small mb-3">Strategist / Copywriter</p>
-                        <p class="w-lg-75 mx-auto mb-2">
-                            Duis aute irure dolor in velit esse cillum fugiat nulla pariatur.
-                        </p>
-                        <small class="text-body-secondary">California, USA</small>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="250" data-aos-duration="700">
-                    <div class="position-relative overflow-hidden h-100">
-                        <div class="position-relative flex-grow-1 d-flex flex-column h-100 text-center">
-                            <div
-                                class="width-18x height-18x mb-4 mx-auto bg-gradient-primary text-white shadow position-relative rounded-circle flex-column flex-center">
-                               <small class="d-block mb-2 opacity-50">New opening</small>
-                                <h3 class="mb-0"> Visual <br>designer</h3>
-                            </div>
-                            <div class="flex-grow-1">
-                                <h3 class="mb-1 fs-5 w-md-60 mx-auto">
-                                    Become a member of our super team
-                                </h3>
-                            </div>
-                            <div class="p-4">
-                                <a href="#!" class="link-underline h6 text-dark pb-1">View Job Openings
-                                    <i class="bi bi-arrow-right fs-5"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-</main>

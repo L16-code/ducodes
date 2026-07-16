@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /admin
+Disallow: /home
+Allow: /
+
+Sitemap: https://ducodes.com/sitemap.xml

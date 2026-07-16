@@ -1,9 +1,8 @@
-<header class="z-fixed pt-lg-2 header-transparent header-absolute-top header-sticky">
-    <nav class="navbar shadow-none navbar-expand-lg navbar-light">
+<header class="z-fixed site-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid px-xl-9 position-relative">
             <a class="navbar-brand" href="{{ route('homepage') }}">
-                <span class="navbar-brand-light fw-bold fs-3 text-white">DuCodes</span>
-                {{-- <span class="navbar-brand-dark fw-bold fs-3 text-white">DuCodes</span> --}}
+                <span class="navbar-brand-light fw-bold fs-3 text-primary">DuCodes</span>
             </a>
             <div class=" d-flex align-items-center navbar-no-collapse-items order-lg-last ">
                 <button class="navbar-toggler order-last" type="button" data-bs-toggle="collapse"
@@ -33,34 +32,34 @@
                                 <div class="row mx-0">
                                     <div class="col-lg-5 position-relative">
                                         <div class="py-1 py-lg-3 d-lg-flex flex-column">
-                                            <a href="index.html" class="dropdown-item">Mobile App Development</a>
-                                            <a href="index-landing-agency.html" class="dropdown-item">Software
+                                            <a href="{{ route('hire.developer', 'react-native') }}" class="dropdown-item">Mobile App Development</a>
+                                            <a href="{{ route('contact') }}" class="dropdown-item">Software
                                                 Development</a>
-                                            <a href="index-landing-business.html" class="dropdown-item">Zoho
+                                            <a href="{{ route('hire.developer', 'zoho') }}" class="dropdown-item">Zoho
                                                 Development</a>
-                                            <a href="index-landing-business.html" class="dropdown-item">Salesforce
+                                            <a href="{{ route('hire.developer', 'salesforce') }}" class="dropdown-item">Salesforce
                                                 Development</a>
-                                            <a href="index-landing-business.html" class="dropdown-item">HubSpot
+                                            <a href="{{ route('hire.developer', 'hubspot') }}" class="dropdown-item">HubSpot
                                                 Development</a>
-                                            <a href="index-landing-startup.html" class="dropdown-item">Gen Ai
+                                            <a href="{{ route('hire.developer', 'gen-ai') }}" class="dropdown-item">Gen Ai
                                                 Chatbot</a>
-                                            <a href="index-landing-startup.html" class="dropdown-item">Power BI
+                                            <a href="{{ route('hire.developer', 'power-bi') }}" class="dropdown-item">Power BI
                                                 Solutions</a>
-                                            <a href="index-landing-startup.html" class="dropdown-item">Payment Gateway
+                                            <a href="{{ route('contact') }}" class="dropdown-item">Payment Gateway
                                                 Integrations</a>
-                                            <a href="index-landing-startup.html" class="dropdown-item">Digital Marketing
+                                            <a href="{{ route('hire.developer', 'seo') }}" class="dropdown-item">Digital Marketing
                                                 Solutions</a>
-                                            <a href="index-landing-classic.html" class="dropdown-item">Web
+                                            <a href="{{ route('hire.developer', 'laravel') }}" class="dropdown-item">Web
                                                 Development</a>
-                                            <a href="index-landing-startup.html" class="dropdown-item">E-commerce
+                                            <a href="{{ route('hire.developer', 'shopify') }}" class="dropdown-item">E-commerce
                                                 development</a>
-                                            <a href="index-landing-creative.html" class="dropdown-item">Graphic
+                                            <a href="{{ route('hire.developer', 'graphic-designer') }}" class="dropdown-item">Graphic
                                                 Designing</a>
                                         </div>
                                     </div>
                                     <!--/.col-->
                                     <div class="col-lg-7 d-none rounded-end overflow-hidden px-0 d-lg-block position-relative bg-no-repeat bg-cover bg-center"
-                                        style="background-image: url('assets/img/960x1140/3.jpg')">
+                                        style="background-image: url('{{ asset('assets/img/960x1140/3.jpg') }}')">
                                         <div
                                             class="position-absolute rounded-end w-100 h-100 top-0 start-0 bg-gradient-primary opacity-75">
                                         </div>
@@ -180,22 +179,9 @@
                             <a class="dropdown-item" href="{{ route('contact') }}">
                                 Contact Us
                             </a>
-                            <a class="dropdown-item" target="_blank" href="mission-vision.html">
-                                Mission & Vision
-                            </a>
-                            <a class="dropdown-item" target="_blank" href="internship.html">
-                                Internship
-                            </a>
                         </div>
                     </li>
                     <!--end:company-->
-
-                    <!--begin:managed services-->
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">Managed Services
-                        </a>
-                    </li>
-                    <!--end:managed services-->
                     <!--end:Pages-->
                 </ul>
                 <!--end:Navbar items-->

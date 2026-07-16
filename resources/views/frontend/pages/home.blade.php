@@ -1,9 +1,16 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Home')
+@section('title', 'DuCodes - Custom Software, AI & Web Development Company')
+@section('meta_description', 'DuCodes builds custom software, AI applications, and web platforms for businesses. Laravel, React, Node.js, Zoho, Salesforce & HubSpot development, with a free project quote.')
 
-@push('styles')
-<link href="{{ asset('css/banner.css') }}" rel="stylesheet">
+@push('schema')
+<script type="application/ld+json">{!! json_encode(
+    App\Support\Seo::webPageSchema(
+        'DuCodes - Custom Software, AI & Web Development Company',
+        'DuCodes builds custom software, AI applications, and web platforms for businesses. Laravel, React, Node.js, Zoho, Salesforce & HubSpot development, with a free project quote.',
+        url()->current()
+    ),
+JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
 @endpush
 
 @section('content')

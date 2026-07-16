@@ -1,6 +1,6 @@
 <!--Main hero-->
 <section class="position-relative overflow-hidden bg-dark jarallax" data-speed=".2">
-    <img src="assets/img/backgrounds/bg2.jpg" alt="" class="jarallax-img opacity-50">
+    <img src="{{ asset('assets/img/backgrounds/bg2.jpg') }}" alt="" class="jarallax-img opacity-50">
 
     <!--Divider shape-->
     <svg class="position-absolute start-0 bottom-0" style="color: var(--bs-body-bg);" preserveAspectRatio="none"
@@ -9,8 +9,8 @@
             d="M122 22.8261L0 0V120H1460V0L1338 22.8261C1217 44.1304 973 88.2609 730 88.2609C487 88.2609 243 44.1304 122 22.8261Z"
             fill="currentColor" />
     </svg>
-    <div class="container pt-12 pb-12 position-relative z-1">
-        <div class="row pt-lg-12 pb-12 pb-lg-15">
+    <div class="container pt-6 pb-12 position-relative z-1">
+        <div class="row pt-lg-6 pb-12 pb-lg-15">
             <div class="col-xl-8 col-lg-10 mx-auto text-center text-white" data-aos data-aos-delay="100"
                 data-aos-mirror="true" data-aos-once="false">
                 {{-- <h1 class="splitting-up display-2 fw-bolder mb-lg-4 mb-0" data-splitting>
@@ -24,10 +24,10 @@
                     <h1 class="display-3 me-lg-n15 mb-4 position-relative">Empowering Businesses With <br>
 
                         <!--Typed section heading-->
-                        <span class="" style="color:#2196F3;"
+                        <span class="d-block" style="color:#2196F3;"
                             data-typed='{"strings": ["AI App Development","GEN AI Chatbot Development","Zoho Development", "Salesforce Development", "HubSpot Development", "Website Development", "Mobile App Development","Power BI Solutions"]}'>
                         </span>
-                        <p class="text-white">To Unlock Your Full Potential</p>
+                        <span class="d-block text-white">To Unlock Your Full Potential</span>
                     </h1>
                 </div>
             </div>

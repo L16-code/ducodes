@@ -1,6 +1,21 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Hire ' . $title . ' Developer - DuCodes')
+@section('meta_description', $description)
+
+@push('schema')
+<script type="application/ld+json">{!! json_encode([
+    App\Support\Seo::serviceSchema(
+        'Hire ' . $title . ' Developers',
+        $description,
+        url()->current()
+    ),
+    App\Support\Seo::breadcrumbSchema([
+        'Home' => route('homepage'),
+        'Hire ' . $title . ' Developer' => url()->current(),
+    ]),
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
+@endpush
 
 @section('content')
     <!-- Hero Section -->
@@ -14,8 +29,8 @@
                 fill="currentColor" />
         </svg>
 
-        <div class="container pt-12 pb-12 position-relative z-1">
-            <div class="row pt-lg-12 pb-12 pb-lg-15">
+        <div class="container pt-6 pb-12 position-relative z-1">
+            <div class="row pt-lg-6 pb-12 pb-lg-15">
                 <div class="col-xl-8 col-lg-10 mx-auto text-center text-white">
                     <h1 class="display-3 fw-bolder mb-4">
                         Hire Expert {{ $title }} Developer

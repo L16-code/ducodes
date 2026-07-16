@@ -1,25 +1,27 @@
 /* Custom styles for navbar */
 
-/* DEFAULT STATE - ALL NAVBAR LINKS SHOULD BE BLACK */
+/* Always-visible solid header. The theme's original transparent/absolute
+   header only turns solid after scrolling past a full viewport height
+   (scrollY > clientHeight, baked into theme.bundle.min.js) — that assumes
+   every page has a hero at least that tall. Most pages here don't, so the
+   header stayed transparent (invisible white-on-white) indefinitely. A
+   plain sticky solid header is correct everywhere instead. */
+header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background-color: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+}
+
 .navbar-light .nav-link,
 .navbar-light .nav-link.active,
 .navbar-light .nav-link.dropdown-toggle {
     color: #000 !important;
 }
 
-/* SPECIAL CASE - ONLY when navbar is at the top and transparent, links are WHITE */
-header.header-transparent.header-absolute-top:not(.sticky-fixed):not(.is-fixed) .navbar-light .nav-link,
-header.header-transparent.header-absolute-top:not(.sticky-fixed):not(.is-fixed) .navbar-light .nav-link.active,
-header.header-transparent.header-absolute-top:not(.sticky-fixed):not(.is-fixed) .navbar-light .nav-link.dropdown-toggle {
-    color: #fff !important;
-}
-@media (min-width: 992px) {
-    header.header-sticky.is-sticky .navbar.navbar-expand-lg.navbar-light {
-        background-color: #110e0e !important;
-    }
-}
 @media (max-width: 991.98px) {
     .navbar-expand-lg.navbar.navbar-light .navbar-collapse {
-        background-color: #110e0e !important;
+        background-color: #fff;
     }
 }

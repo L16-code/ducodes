@@ -41,16 +41,23 @@ class HomeController extends Controller
 
     public function getBlogs(Request $request)
     {
-        $blogs = Blog::paginate(6); // Fetch 6 blogs per page
+        $blogs = Blog::where('status', 'active')
+            ->latest('posted_on')
+            ->paginate(6); // Fetch 6 blogs per page
         return response()->json($blogs);
     }
 
     public function blogDetails($slug)
     {
-        $blog = Blog::where('blog_slug', $slug)->firstOrFail();
-        $recentBlogs = Blog::latest()->take(5)->get();
+        $blog = Blog::where('blog_slug', $slug)->where('status', 'active')->firstOrFail();
+        $recentBlogs = Blog::where('status', 'active')
+            ->where('id', '!=', $blog->id)
+            ->latest('posted_on')
+            ->take(5)
+            ->get();
         $relatedBlogs = Blog::where('blog_type',$blog->blog_type)
-        ->where('id', '!=', $blog->id) 
+        ->where('status', 'active')
+        ->where('id', '!=', $blog->id)
         ->take(3)
         ->get();
         return view('frontend.pages.blog-details', compact('blog','recentBlogs', 'relatedBlogs'));
