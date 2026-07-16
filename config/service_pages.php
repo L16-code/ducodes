@@ -1,0 +1,391 @@
+<?php
+
+return [
+
+    'laravel-development' => [
+        'title' => 'Laravel Development Services',
+        'meta_description' => 'Custom Laravel development for web applications, APIs, and internal tools — from greenfield builds to modernizing legacy PHP systems.',
+        'tagline' => 'Custom Laravel applications built for maintainability, not just launch day.',
+        'intro' => [
+            'Laravel is our primary framework for building web applications — this site itself runs on it. We use it for customer-facing platforms, internal admin tools, APIs that power mobile apps, and integrations that connect a business\'s existing software together.',
+            'Laravel\'s strength is how much groundwork it removes: authentication, queues, caching, and database migrations are handled by well-tested framework conventions instead of custom code that someone has to maintain forever. That lets us spend engineering time on the parts of your application that are actually unique to your business.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'Convention-first architecture', 'body' => 'We follow Laravel\'s own conventions (Eloquent relationships, form requests, policies, queued jobs) rather than fighting the framework — that keeps the codebase readable for whoever maintains it after us.'],
+            ['title' => 'Built for handoff', 'body' => 'Every project is documented well enough that your team — or a different agency — can pick it up without reverse-engineering our decisions.'],
+            ['title' => 'API-first when it matters', 'body' => 'If your Laravel app needs to power a mobile app or a separate frontend, we design the API layer (Sanctum, resource classes, versioning) from day one instead of bolting it on later.'],
+            ['title' => 'Realistic about legacy code', 'body' => 'A lot of our Laravel work is modernizing older PHP applications incrementally, not rewriting everything from scratch on day one — a full rewrite is rarely the lowest-risk path.'],
+        ],
+        'process' => [
+            ['title' => 'Discovery', 'body' => 'We map your actual workflow and data model before writing code — most costly rework comes from misunderstood requirements, not bad code.'],
+            ['title' => 'Architecture & planning', 'body' => 'Database schema, third-party integrations, and a rough sprint plan get agreed before development starts.'],
+            ['title' => 'Development in increments', 'body' => 'You see working software in weeks, not months — features ship incrementally so you can course-correct early.'],
+            ['title' => 'Testing', 'body' => 'Feature and unit tests around the logic that matters most (payments, permissions, data integrity), not 100% coverage for its own sake.'],
+            ['title' => 'Deployment & handoff', 'body' => 'CI/CD, environment configuration, and documentation so the app is genuinely maintainable after launch — not just working on our machines.'],
+        ],
+        'tech_stack' => ['Laravel', 'PHP 8+', 'MySQL / PostgreSQL', 'Livewire', 'Laravel Sanctum', 'Redis', 'Queues & Horizon'],
+        'faqs' => [
+            ['question' => 'Do you work with an existing Laravel codebase, or only new projects?', 'answer' => 'Both. A large share of our Laravel work is maintaining, extending, or modernizing applications we didn\'t originally build.'],
+            ['question' => 'Can you build the API separately from the frontend?', 'answer' => 'Yes — we regularly build Laravel as a pure API backend for a separate React, Vue, or mobile frontend, or as a traditional Blade-rendered application, depending on what fits your team and roadmap.'],
+            ['question' => 'How do you handle ongoing support after launch?', 'answer' => 'We offer maintenance and support arrangements after delivery — bug fixes, security patches, and small feature work — scoped to what you actually need rather than a fixed generic retainer.'],
+            ['question' => 'What Laravel version do you build on?', 'answer' => 'We build on the current stable release of Laravel and PHP 8+ for new projects, and assess upgrade paths for older applications on a case-by-case basis.'],
+        ],
+        'related' => ['custom-software-development', 'web-development', 'devops'],
+        'hire_developer_slug' => 'laravel',
+    ],
+
+    'ai-development' => [
+        'title' => 'AI & Generative AI Development Services',
+        'meta_description' => 'Practical AI development — chatbots, LLM-powered features, and automation built to solve a specific business problem, not AI for its own sake.',
+        'tagline' => 'AI features built around a real workflow, not a demo.',
+        'intro' => [
+            'Generative AI is genuinely useful for a narrower set of problems than the current hype suggests — and genuinely powerful for the problems it fits. We build AI-powered features (chat interfaces, document processing, internal knowledge search, automated drafting) where there\'s a clear, measurable task the model is doing, and a fallback for when it gets something wrong.',
+            'A lot of our AI work is integration, not model training: connecting an LLM API to your actual data and workflow through retrieval, function calling, and careful prompt design, with proper guardrails around cost, latency, and failure modes.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'We scope for the failure case first', 'body' => 'Before building, we define what happens when the model is wrong or unsure — a chatbot that confidently guesses is worse than one that says "let me connect you to a person."'],
+            ['title' => 'Grounded in your data', 'body' => 'Where accuracy matters, we use retrieval-augmented generation against your actual documents/database rather than relying on a model\'s general knowledge.'],
+            ['title' => 'Cost and latency are part of the design', 'body' => 'LLM API calls have a real, ongoing cost — we design around that from the start instead of discovering it after launch.'],
+            ['title' => 'Not every problem needs AI', 'body' => 'Part of our job is telling you when a simpler rules-based system or a better-designed form would solve the problem more reliably and cheaply than a model.'],
+        ],
+        'process' => [
+            ['title' => 'Problem definition', 'body' => 'We identify the specific task, the acceptable error rate, and what a human fallback looks like.'],
+            ['title' => 'Data & integration mapping', 'body' => 'What data does the model need access to, and how does it get there securely?'],
+            ['title' => 'Prototype', 'body' => 'A working proof-of-concept against real (or representative) data before committing to full build-out.'],
+            ['title' => 'Build & guardrails', 'body' => 'Production integration with rate limiting, monitoring, and fallback behavior for API failures or low-confidence responses.'],
+            ['title' => 'Evaluation & iteration', 'body' => 'AI features need ongoing evaluation against real usage — prompts and retrieval get tuned after launch, not just before it.'],
+        ],
+        'tech_stack' => ['OpenAI / Anthropic APIs', 'LangChain', 'Vector databases (pgvector, Pinecone)', 'Python', 'Laravel / Node.js integration layers'],
+        'faqs' => [
+            ['question' => 'Can you build a chatbot for our website?', 'answer' => 'Yes — the more useful question is what it should handle versus hand off to a human, which we work through with you before writing any code.'],
+            ['question' => 'Do you train custom models?', 'answer' => 'Most business use cases are better served by retrieval-augmented generation against an existing foundation model rather than training a model from scratch, which is expensive and rarely necessary. We\'ll tell you honestly if your use case is an exception.'],
+            ['question' => 'How do you handle data privacy with AI APIs?', 'answer' => 'We review what data is sent to third-party model providers and use their business/enterprise terms (which typically exclude your data from training) rather than consumer-tier API access where that matters.'],
+            ['question' => 'What if the AI gives a wrong answer to a customer?', 'answer' => 'We design explicit confidence thresholds and human handoff points as part of the build — this is scoped before development, not left as an afterthought.'],
+        ],
+        'related' => ['custom-software-development', 'crm-erp-integration', 'power-bi-data-solutions'],
+        'hire_developer_slug' => 'gen-ai',
+    ],
+
+    'custom-software-development' => [
+        'title' => 'Custom Software Development',
+        'meta_description' => 'End-to-end custom software development — from a first working version through ongoing support — for businesses that have outgrown off-the-shelf tools.',
+        'tagline' => 'Software built around how your business actually works.',
+        'intro' => [
+            'Off-the-shelf software is built for the average customer. When your process is specific enough that you\'re working around a tool instead of with it — duplicate data entry, spreadsheets bridging two systems, manual steps that should be automated — that\'s usually the point where custom software starts paying for itself.',
+            'We build web applications, internal tools, and system integrations end to end: requirements, architecture, development, QA, deployment, and support after launch. Most projects are Laravel or Node.js on the backend with React or server-rendered views on the front, chosen based on what your team can maintain long-term.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'We start with the problem, not the tech stack', 'body' => 'The technology choice comes after we understand what the software actually needs to do — not the other way around.'],
+            ['title' => 'Incremental delivery', 'body' => 'You get working software early and often, so requirements gaps surface in week three, not month six.'],
+            ['title' => 'Built to be maintained', 'body' => 'Clean, documented code and standard framework conventions — not clever code that only we understand.'],
+            ['title' => 'Honest about scope', 'body' => 'If a requirement will meaningfully increase cost or timeline, you hear about it when it comes up, not at the final invoice.'],
+        ],
+        'process' => [
+            ['title' => 'Discovery workshop', 'body' => 'Understanding your current process, pain points, and what "done" looks like.'],
+            ['title' => 'Technical scoping', 'body' => 'Architecture, integrations, and a realistic project plan.'],
+            ['title' => 'Design & prototyping', 'body' => 'Key screens and workflows validated before full development begins.'],
+            ['title' => 'Development sprints', 'body' => 'Regular check-ins and working demos throughout the build.'],
+            ['title' => 'QA & launch', 'body' => 'Structured testing, staged rollout, and a clear go-live plan.'],
+            ['title' => 'Support', 'body' => 'Post-launch maintenance and iteration based on real usage.'],
+        ],
+        'tech_stack' => ['Laravel', 'Node.js', 'React', 'PostgreSQL / MySQL', 'REST & GraphQL APIs', 'AWS / DigitalOcean'],
+        'faqs' => [
+            ['question' => 'How long does a custom software project take?', 'answer' => 'It depends entirely on scope — a focused internal tool might take 6-8 weeks; a full customer-facing platform is usually several months. We give a realistic estimate after the discovery phase, not before.'],
+            ['question' => 'Do you build MVPs for startups?', 'answer' => 'Yes — we scope a minimum viable version focused on the core workflow you need to validate, rather than building every feature on a wishlist before launch.'],
+            ['question' => 'What if our requirements change mid-project?', 'answer' => 'They usually do, to some degree. We work in short sprints specifically so changes get absorbed incrementally instead of derailing the whole timeline.'],
+            ['question' => 'Do you sign an NDA?', 'answer' => 'Yes, we\'re glad to sign an NDA before discussing project details.'],
+        ],
+        'related' => ['laravel-development', 'web-development', 'crm-erp-integration'],
+        'hire_developer_slug' => null,
+    ],
+
+    'web-development' => [
+        'title' => 'Web Development Services',
+        'meta_description' => 'Business websites and web applications built for speed, accessibility, and search visibility — not just visual design.',
+        'tagline' => 'Websites and web apps built to actually perform, not just look good in a portfolio.',
+        'intro' => [
+            'A website is infrastructure, not just a brochure — it needs to load fast, work on mobile, be findable on Google, and be maintainable by whoever manages it after launch. We build everything from marketing sites to full web applications with that in mind from the start.',
+            'Depending on the project, that means a Laravel/Blade site like this one, a headless setup with a separate frontend, or a simpler stack when a simpler stack is genuinely the right call — we don\'t default to the most complex option available.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'Performance is a requirement, not an afterthought', 'body' => 'Image optimization, minimal blocking JavaScript, and clean markup are part of the build, not a separate "optimization pass" tacked on at the end.'],
+            ['title' => 'SEO-aware from the start', 'body' => 'Proper semantic HTML, meta tags, and structured data get built in during development — retrofitting SEO onto a finished site is always more expensive.'],
+            ['title' => 'Accessible by default', 'body' => 'Keyboard navigation, alt text, and color contrast are checked as part of QA, not treated as optional.'],
+            ['title' => 'CMS options that fit your team', 'body' => 'We\'ll recommend a simple admin panel, a full CMS, or a code-based content workflow based on who\'s actually going to update the site.'],
+        ],
+        'process' => [
+            ['title' => 'Content & structure planning', 'body' => 'Sitemap and page structure based on what your visitors actually need to find.'],
+            ['title' => 'Design', 'body' => 'Wireframes and visual design reviewed with you before development starts.'],
+            ['title' => 'Development', 'body' => 'Responsive, semantic build with performance and accessibility checked throughout.'],
+            ['title' => 'Content & QA', 'body' => 'Real content loaded in, cross-browser and cross-device testing.'],
+            ['title' => 'Launch & monitoring', 'body' => 'DNS/hosting setup, analytics, and a post-launch check for Core Web Vitals and crawl errors.'],
+        ],
+        'tech_stack' => ['Laravel', 'Bootstrap / Tailwind CSS', 'Vite', 'MySQL', 'Cloudflare / CDN'],
+        'faqs' => [
+            ['question' => 'Do you build on WordPress?', 'answer' => 'We can, when it\'s the right fit for a content-heavy site with a non-technical editorial team — but we\'ll tell you if a lighter, faster, custom-built option makes more sense for your case.'],
+            ['question' => 'Will the site be mobile-friendly?', 'answer' => 'Yes, responsive design across device sizes is a standard part of every build, not an add-on.'],
+            ['question' => 'Do you handle hosting and domains?', 'answer' => 'We can set up and manage hosting, or work within your existing infrastructure — whichever you prefer.'],
+            ['question' => 'Can you redesign an existing site without losing our SEO rankings?', 'answer' => 'Yes — that requires careful URL mapping, 301 redirects, and preserving indexed content structure, which we plan for explicitly before touching anything live.'],
+        ],
+        'related' => ['laravel-development', 'custom-software-development', 'ui-ux-design'],
+        'hire_developer_slug' => 'php',
+    ],
+
+    'mobile-app-development' => [
+        'title' => 'Mobile App Development Services',
+        'meta_description' => 'Native and cross-platform mobile app development for iOS and Android, built with a backend that scales with the app.',
+        'tagline' => 'Mobile apps backed by an API that\'s built to last, not just launch.',
+        'intro' => [
+            'A mobile app is only as good as the backend behind it. We build both sides together — the app itself (usually React Native or Flutter for cross-platform reach) and the API that powers it, so authentication, data sync, and push notifications are designed as one system instead of two separately-built halves that don\'t quite fit.',
+            'For most business apps, cross-platform development gets you to both app stores faster without a meaningful quality tradeoff. We\'ll recommend fully native development instead when the app genuinely needs it — heavy use of device-specific APIs, for example.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'Backend and app built together', 'body' => 'The API is designed around what the app actually needs, not adapted after the fact from an existing web backend.'],
+            ['title' => 'Cross-platform by default, native when it matters', 'body' => 'We recommend the approach that fits your actual requirements and budget, not the one that\'s most interesting to build.'],
+            ['title' => 'Offline and sync handled properly', 'body' => 'Apps that need to work with unreliable connectivity get designed for that from the start, not patched in later.'],
+            ['title' => 'App store submission included', 'body' => 'We handle the App Store and Google Play submission process, including the parts that trip up first-time submitters.'],
+        ],
+        'process' => [
+            ['title' => 'Discovery & platform decision', 'body' => 'Native vs. cross-platform, offline requirements, and core user flows.'],
+            ['title' => 'API & data design', 'body' => 'Backend architecture built around the app\'s actual data and sync needs.'],
+            ['title' => 'UI/UX design', 'body' => 'Platform-appropriate design — an app that follows iOS/Android conventions feels native even when cross-platform.'],
+            ['title' => 'Development', 'body' => 'App and API built in parallel, tested together throughout.'],
+            ['title' => 'Store submission & launch', 'body' => 'App Store / Play Store review process managed end to end.'],
+            ['title' => 'Post-launch support', 'body' => 'OS updates and store policy changes require ongoing maintenance — we plan for that, not just the initial release.'],
+        ],
+        'tech_stack' => ['React Native', 'Flutter', 'Laravel / Node.js API backend', 'Firebase', 'Push notifications (FCM/APNs)'],
+        'faqs' => [
+            ['question' => 'Should we build native or cross-platform?', 'answer' => 'For most business apps, cross-platform (React Native or Flutter) reaches both iOS and Android faster without a real quality tradeoff. We\'ll recommend native only when your app genuinely needs deep device-specific integration.'],
+            ['question' => 'Do you handle App Store and Play Store submission?', 'answer' => 'Yes, including the account setup, review requirements, and the common rejection reasons that catch first-time submitters off guard.'],
+            ['question' => 'Can the app work offline?', 'answer' => 'Yes, if that\'s a requirement — offline data storage and sync need to be designed in from the start rather than added later, so it\'s worth flagging early in discovery.'],
+            ['question' => 'Do you also build the backend, or just the app?', 'answer' => 'Both, typically — building the API and the app together avoids the mismatches that happen when they\'re designed separately.'],
+        ],
+        'related' => ['custom-software-development', 'ai-development', 'ui-ux-design'],
+        'hire_developer_slug' => 'react-native',
+    ],
+
+    'zoho-development' => [
+        'title' => 'Zoho Development & Customization',
+        'meta_description' => 'Zoho CRM, Zoho Books, and Zoho One customization and integration — configured around your actual sales and operations process.',
+        'tagline' => 'Zoho configured around how your team actually sells and operates.',
+        'intro' => [
+            'Zoho\'s suite (CRM, Books, Desk, Campaigns, and the rest of Zoho One) covers a lot of ground out of the box, but most businesses need custom fields, workflow automation, or integrations with other tools to make it fit their actual process. We handle that configuration and custom development work.',
+            'This ranges from setting up automated lead-routing and deal pipelines in Zoho CRM, to building custom functions (Deluge scripting) for business logic Zoho doesn\'t handle natively, to connecting Zoho with your website, accounting software, or other internal systems via API.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'Configuration before custom code', 'body' => 'A lot of what looks like a "custom development" need can be solved with Zoho\'s built-in workflow and automation tools — we check that first before writing custom scripts.'],
+            ['title' => 'Deluge scripting when you need it', 'body' => 'For logic Zoho\'s no-code tools can\'t handle, we write custom functions that stay maintainable rather than becoming unreadable over time.'],
+            ['title' => 'Real integration work', 'body' => 'Connecting Zoho CRM to your website\'s contact forms, your accounting system, or other internal tools via API — not just recommending a pre-built connector and hoping it fits.'],
+            ['title' => 'Migration support', 'body' => 'Moving from another CRM or from spreadsheets into Zoho, with data cleaned and mapped properly rather than dumped in as-is.'],
+        ],
+        'process' => [
+            ['title' => 'Process audit', 'body' => 'Understanding your actual sales/ops workflow before touching any configuration.'],
+            ['title' => 'Configuration plan', 'body' => 'What\'s solved with native Zoho tools vs. what needs custom development.'],
+            ['title' => 'Setup & customization', 'body' => 'Fields, layouts, automation rules, and custom functions built out.'],
+            ['title' => 'Integration', 'body' => 'Connecting Zoho to your website and other business tools where needed.'],
+            ['title' => 'Training & handoff', 'body' => 'Your team needs to actually use the system — we make sure the configuration is understandable, not just functional.'],
+        ],
+        'tech_stack' => ['Zoho CRM', 'Zoho Books / Desk / Campaigns', 'Deluge scripting', 'Zoho API / Webhooks', 'REST integrations'],
+        'faqs' => [
+            ['question' => 'Do you set up Zoho CRM from scratch, or only customize existing setups?', 'answer' => 'Both — new implementations and improving/extending an existing setup that\'s grown unwieldy over time.'],
+            ['question' => 'Can you connect Zoho to our website?', 'answer' => 'Yes — connecting web forms, e-commerce, or other tools to Zoho CRM via API or webhook is common work for us.'],
+            ['question' => 'Do you migrate data from another CRM into Zoho?', 'answer' => 'Yes, with data cleaning and field mapping so the migration doesn\'t just import a mess into a new system.'],
+            ['question' => 'Do we need Zoho One, or can this work with individual Zoho apps?', 'answer' => 'It depends on which parts of your process need to connect to each other — we\'ll assess that as part of the process audit rather than assuming you need the full suite.'],
+        ],
+        'related' => ['crm-erp-integration', 'salesforce-development', 'hubspot-development'],
+        'hire_developer_slug' => 'zoho',
+    ],
+
+    'salesforce-development' => [
+        'title' => 'Salesforce Development & Customization',
+        'meta_description' => 'Salesforce customization, Apex development, and integration work for teams that have outgrown out-of-the-box configuration.',
+        'tagline' => 'Salesforce customized for processes the standard configuration doesn\'t cover.',
+        'intro' => [
+            'Salesforce is built to be customized — declarative tools like Flow cover a lot, and Apex/Visualforce/Lightning Web Components cover what they can\'t. We do both: configuring the platform\'s native automation tools where that\'s sufficient, and writing custom Apex or LWC development where the business logic genuinely needs code.',
+            'A recurring piece of this work is integration — connecting Salesforce to other systems (your website, an ERP, a support tool) through REST/SOAP APIs or middleware, so data doesn\'t have to be manually re-entered across systems.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'Declarative-first approach', 'body' => 'Flow, Process Builder, and validation rules solve more than most teams realize — we reach for Apex when the requirement actually needs it, not by default.'],
+            ['title' => 'Clean Apex when custom code is needed', 'body' => 'Bulkified, tested Apex code that follows Salesforce\'s governor limits and best practices, not code that works in a demo and breaks at scale.'],
+            ['title' => 'Integration expertise', 'body' => 'Connecting Salesforce to external systems is often the highest-value work — we treat it as a first-class part of the engagement, not an afterthought.'],
+            ['title' => 'AppExchange awareness', 'body' => 'We\'ll recommend a proven AppExchange package over custom development when that\'s genuinely the better option for your budget and timeline.'],
+        ],
+        'process' => [
+            ['title' => 'Requirements & org review', 'body' => 'Understanding your current Salesforce org and what\'s actually driving the need for change.'],
+            ['title' => 'Solution design', 'body' => 'Declarative vs. custom code decisions made explicitly, with tradeoffs explained.'],
+            ['title' => 'Development in a sandbox', 'body' => 'Changes built and tested in a sandbox environment before touching production.'],
+            ['title' => 'Testing', 'body' => 'Apex test coverage and user acceptance testing before deployment.'],
+            ['title' => 'Deployment & training', 'body' => 'Production deployment with a rollback plan, and training for the team who\'ll use it.'],
+        ],
+        'tech_stack' => ['Salesforce Apex', 'Lightning Web Components', 'Salesforce Flow', 'REST/SOAP APIs', 'Salesforce Sales/Service Cloud'],
+        'faqs' => [
+            ['question' => 'Do you work with an existing Salesforce org, or only new setups?', 'answer' => 'Mostly existing orgs — extending, cleaning up, or integrating a Salesforce instance that\'s already in production is more common than greenfield implementations.'],
+            ['question' => 'Can you integrate Salesforce with our website or other tools?', 'answer' => 'Yes, that\'s a core part of our Salesforce work — via REST API, middleware, or platform events depending on the requirement.'],
+            ['question' => 'Do you write custom Apex code?', 'answer' => 'Yes, when the requirement genuinely needs it. We\'ll always check whether a declarative (no-code) solution covers it first.'],
+            ['question' => 'Can you help if our Salesforce org has become messy over time?', 'answer' => 'Yes — cleaning up validation rules, duplicate automation, and unused custom fields is common work, and it usually makes the org meaningfully faster and easier to maintain.'],
+        ],
+        'related' => ['crm-erp-integration', 'zoho-development', 'hubspot-development'],
+        'hire_developer_slug' => 'salesforce',
+    ],
+
+    'hubspot-development' => [
+        'title' => 'HubSpot Development & Integration',
+        'meta_description' => 'HubSpot CRM setup, custom integrations, and marketing/sales automation configured around your actual funnel.',
+        'tagline' => 'HubSpot set up around your real marketing and sales funnel, not the default template.',
+        'intro' => [
+            'HubSpot works well once it\'s configured around your actual lead flow — how leads come in, how they get scored and routed, and what "closed" means for your sales process. We set that up, along with custom integrations connecting HubSpot to your website, other tools, or internal systems via its API.',
+            'This includes custom properties and pipelines, workflow automation, HubSpot CMS development when the marketing site lives on HubSpot itself, and API-level integration work for anything the native connectors don\'t cover.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'Funnel-first setup', 'body' => 'Properties, pipelines, and automation get built around your actual lead-to-customer journey, not HubSpot\'s generic default.'],
+            ['title' => 'Integration beyond the marketplace', 'body' => 'When the App Marketplace doesn\'t have what you need, we build custom API integrations connecting HubSpot to your other systems.'],
+            ['title' => 'HubSpot CMS development', 'body' => 'For sites built on HubSpot CMS, we can build custom modules and templates rather than working purely within pre-built themes.'],
+            ['title' => 'Marketing and sales alignment', 'body' => 'Lead scoring and handoff rules that both teams actually agree on and use — a common gap in HubSpot implementations.'],
+        ],
+        'process' => [
+            ['title' => 'Funnel mapping', 'body' => 'How leads actually move from first touch to customer today.'],
+            ['title' => 'Configuration plan', 'body' => 'Properties, pipelines, lists, and automation workflows scoped out.'],
+            ['title' => 'Build', 'body' => 'HubSpot configuration and any custom integration development.'],
+            ['title' => 'Testing', 'body' => 'Workflows tested with real (or realistic) data before going live.'],
+            ['title' => 'Training & handoff', 'body' => 'Documentation and training so your marketing/sales team can maintain it going forward.'],
+        ],
+        'tech_stack' => ['HubSpot CRM', 'HubSpot CMS', 'HubSpot API', 'Workflow automation', 'REST integrations'],
+        'faqs' => [
+            ['question' => 'Do you build on HubSpot CMS, or just configure the CRM?', 'answer' => 'Both, depending on your needs — CRM/marketing automation setup, and CMS development if your site is built on HubSpot.'],
+            ['question' => 'Can you connect HubSpot to our other business systems?', 'answer' => 'Yes — via the HubSpot API for anything the native App Marketplace connectors don\'t cover.'],
+            ['question' => 'Do you help with lead scoring setup?', 'answer' => 'Yes — getting marketing and sales aligned on what a qualified lead actually looks like is usually as important as the technical configuration itself.'],
+            ['question' => 'Can you migrate us from another CRM to HubSpot?', 'answer' => 'Yes, including data mapping and cleanup as part of the migration.'],
+        ],
+        'related' => ['crm-erp-integration', 'zoho-development', 'salesforce-development'],
+        'hire_developer_slug' => 'hubspot',
+    ],
+
+    'devops' => [
+        'title' => 'DevOps Services',
+        'meta_description' => 'CI/CD pipelines, infrastructure automation, and deployment reliability for teams that need to ship without breaking production.',
+        'tagline' => 'Deployment and infrastructure that don\'t depend on one person remembering the steps.',
+        'intro' => [
+            'A lot of the DevOps work we do isn\'t exotic — it\'s replacing manual, error-prone deployment steps with a repeatable pipeline, setting up monitoring so problems get caught before customers report them, and making sure infrastructure changes are documented and reversible instead of living in one person\'s memory.',
+            'We work with whatever a team already has in place where possible — improving an existing pipeline is usually faster and lower-risk than replacing it — and build from scratch when there isn\'t one yet.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'Start with what breaks today', 'body' => 'We prioritize fixing the deployment/infrastructure pain that\'s actually costing you time, not implementing every DevOps best practice on a checklist.'],
+            ['title' => 'CI/CD that matches your workflow', 'body' => 'Automated testing and deployment pipelines built around how your team actually branches and reviews code.'],
+            ['title' => 'Infrastructure as code, where it earns its keep', 'body' => 'Reproducible infrastructure for environments that need it — not adding complexity to a setup that\'s genuinely simple enough not to need it.'],
+            ['title' => 'Monitoring and alerting', 'body' => 'Knowing about a problem before a customer does is the actual goal — not just a dashboard nobody checks.'],
+        ],
+        'process' => [
+            ['title' => 'Infrastructure & workflow audit', 'body' => 'What\'s manual today, and where does it actually break or slow the team down?'],
+            ['title' => 'Pipeline design', 'body' => 'CI/CD stages — build, test, deploy — mapped to your branching and release process.'],
+            ['title' => 'Implementation', 'body' => 'Pipeline, infrastructure automation, and monitoring set up incrementally.'],
+            ['title' => 'Testing & rollback planning', 'body' => 'Every deployment change is tested with a rollback path, not just a forward path.'],
+            ['title' => 'Documentation & handoff', 'body' => 'Your team can operate and modify the pipeline after we\'re done, not just watch it work.'],
+        ],
+        'tech_stack' => ['GitHub Actions / GitLab CI', 'Docker', 'AWS / DigitalOcean', 'Terraform', 'Monitoring (Grafana, Sentry)'],
+        'faqs' => [
+            ['question' => 'Do you set up CI/CD from scratch?', 'answer' => 'Yes, and we also improve existing pipelines that have grown fragile or slow over time.'],
+            ['question' => 'Can you help us move to containerized deployment?', 'answer' => 'Yes — Docker-based deployment, when it\'s actually the right fit for your team\'s size and infrastructure, not just because it\'s the current default recommendation.'],
+            ['question' => 'Do you manage cloud infrastructure on an ongoing basis?', 'answer' => 'We can set up infrastructure and hand it off with documentation, or continue managing it under a support arrangement — depending on what your team needs.'],
+            ['question' => 'What if we already have a DevOps setup that mostly works?', 'answer' => 'We\'ll focus on the specific gaps or pain points rather than proposing a full replacement of something that\'s already working reasonably well.'],
+        ],
+        'related' => ['custom-software-development', 'laravel-development', 'crm-erp-integration'],
+        'hire_developer_slug' => 'devops',
+    ],
+
+    'crm-erp-integration' => [
+        'title' => 'CRM & ERP Integration Services',
+        'meta_description' => 'Connecting your CRM, ERP, accounting, and website systems so data flows automatically instead of being re-entered by hand.',
+        'tagline' => 'Stop re-typing the same data into three different systems.',
+        'intro' => [
+            'A common pattern we see: a business has a CRM, an accounting/ERP system, and a website — and none of them talk to each other, so someone\'s manually copying data between them. That\'s slow, error-prone, and it means reporting from any one system is never quite up to date.',
+            'We build the integration layer that connects these systems — via native APIs, webhooks, or custom middleware when there\'s no off-the-shelf connector — so a lead, order, or customer record created in one place shows up correctly everywhere it needs to.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'We map the data flow before building anything', 'body' => 'Understanding exactly which system is the source of truth for each piece of data prevents sync conflicts later.'],
+            ['title' => 'Works with what you already have', 'body' => 'Zoho, Salesforce, HubSpot, custom ERPs, accounting software — we integrate with your existing stack rather than requiring you to replace it.'],
+            ['title' => 'Handles the edge cases', 'body' => 'Duplicate detection, partial failures, and retry logic are part of the build — not something discovered when the sync breaks in production.'],
+            ['title' => 'Built to be monitored', 'body' => 'You\'ll know when a sync fails, rather than finding out weeks later that records have been silently out of date.'],
+        ],
+        'process' => [
+            ['title' => 'System & data audit', 'body' => 'What systems are involved, what data needs to flow where, and what\'s the source of truth for each field.'],
+            ['title' => 'Integration design', 'body' => 'API-based, webhook-based, or middleware approach chosen based on what the systems actually support.'],
+            ['title' => 'Development', 'body' => 'Integration built and tested against real data structures, including error handling.'],
+            ['title' => 'Testing', 'body' => 'Edge cases — duplicates, partial failures, out-of-order events — tested explicitly, not just the happy path.'],
+            ['title' => 'Monitoring & handoff', 'body' => 'Alerting for sync failures, and documentation for how the integration works.'],
+        ],
+        'tech_stack' => ['REST / SOAP APIs', 'Webhooks', 'Zapier / Make (for lighter integrations)', 'Custom middleware (Laravel/Node.js)', 'Queue-based processing'],
+        'faqs' => [
+            ['question' => 'What systems can you integrate?', 'answer' => 'Most systems with a documented API — CRMs (Zoho, Salesforce, HubSpot), accounting/ERP software, e-commerce platforms, and custom internal systems.'],
+            ['question' => 'What if one of our systems doesn\'t have a public API?', 'answer' => 'We\'ll assess what\'s actually possible — some systems support integration through other means (scheduled exports, database access), though the reliability depends on what\'s available.'],
+            ['question' => 'How do you handle data conflicts between systems?', 'answer' => 'We define a clear source of truth for each field during the design phase, so conflicts are resolved by a documented rule, not ad hoc.'],
+            ['question' => 'Is this a one-time integration or does it need maintenance?', 'answer' => 'Most integrations need occasional maintenance as the connected systems change their APIs over time — we can hand off with documentation or continue supporting it.'],
+        ],
+        'related' => ['zoho-development', 'salesforce-development', 'hubspot-development'],
+        'hire_developer_slug' => null,
+    ],
+
+    'power-bi-data-solutions' => [
+        'title' => 'Power BI & Data Solutions',
+        'meta_description' => 'Power BI dashboards and reporting built on properly modeled data — so the numbers are trustworthy, not just visually polished.',
+        'tagline' => 'Dashboards you can actually trust, because the data model underneath is right.',
+        'intro' => [
+            'A Power BI dashboard is only as good as the data model behind it. A lot of our work here isn\'t the visual layer — it\'s pulling data from wherever it actually lives (a CRM, an ERP, spreadsheets, a custom database), cleaning and modeling it properly, and then building reports that answer the specific questions your team is actually asking.',
+            'We build both one-off reporting projects and ongoing data pipelines that keep dashboards updated automatically, rather than requiring someone to manually refresh a spreadsheet every week.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'Data modeling first', 'body' => 'A clean star schema and correct relationships matter more to report accuracy than which chart type you pick.'],
+            ['title' => 'Built around actual business questions', 'body' => 'We start from "what decision does this report inform" rather than building a generic dashboard and hoping it\'s useful.'],
+            ['title' => 'Automated data refresh', 'body' => 'Where possible, we connect Power BI directly to live data sources so reports update automatically instead of depending on manual exports.'],
+            ['title' => 'Explains the data, doesn\'t just visualize it', 'body' => 'We\'ll flag data quality issues we find along the way — a dashboard built on bad data just makes bad numbers look more official.'],
+        ],
+        'process' => [
+            ['title' => 'Requirements gathering', 'body' => 'What decisions need to be made from this data, and who\'s making them?'],
+            ['title' => 'Data source audit', 'body' => 'Where does the relevant data actually live, and what shape is it in?'],
+            ['title' => 'Data modeling', 'body' => 'Cleaning, transforming, and structuring data for accurate, performant reporting.'],
+            ['title' => 'Dashboard build', 'body' => 'Reports and visuals built around the specific questions identified in discovery.'],
+            ['title' => 'Automation & handoff', 'body' => 'Scheduled refresh where possible, and training so your team can extend the reports themselves.'],
+        ],
+        'tech_stack' => ['Power BI', 'SQL', 'Power Query / DAX', 'Azure Data Factory', 'API-based data connectors'],
+        'faqs' => [
+            ['question' => 'Can you connect Power BI to our CRM/ERP automatically?', 'answer' => 'In most cases, yes — via native connectors or a custom API integration, so reports refresh without manual export/import work.'],
+            ['question' => 'Our current dashboards don\'t match, which one is right?', 'answer' => 'That usually points to a data modeling issue — inconsistent definitions or joins — which we\'d audit and fix as part of the engagement.'],
+            ['question' => 'Do you clean up messy or inconsistent data?', 'answer' => 'Yes, that\'s often the majority of the actual work behind a reliable dashboard.'],
+            ['question' => 'Can our team maintain the reports after handoff?', 'answer' => 'Yes — we document the data model and provide training so your team can build on what we\'ve set up rather than depending on us for every change.'],
+        ],
+        'related' => ['crm-erp-integration', 'ai-development', 'custom-software-development'],
+        'hire_developer_slug' => 'power-bi',
+    ],
+
+    'ui-ux-design' => [
+        'title' => 'UI/UX & Graphic Design Services',
+        'meta_description' => 'Interface design and graphic design grounded in usability — wireframes, prototypes, and visual design for web and mobile products.',
+        'tagline' => 'Design that\'s judged by whether people can use it, not just how it looks in a mockup.',
+        'intro' => [
+            'Good interface design is mostly about removing friction — making the next action obvious, keeping forms short, and making sure the visual hierarchy matches what actually matters on the page. We handle this alongside development, which means design decisions get validated against real technical constraints instead of becoming a wishlist someone else has to implement.',
+            'This covers UX research and wireframing, UI design for web and mobile products, and general graphic design (branding assets, marketing materials) for projects that need it.',
+        ],
+        'why_ducodes' => [
+            ['title' => 'Wireframes before visual design', 'body' => 'Structure and flow get validated before we spend time on color and typography — fixing a bad flow after visual design is expensive.'],
+            ['title' => 'Designed alongside development', 'body' => 'Because we also build the software, designs are grounded in what\'s actually feasible to build well, not just what looks good in Figma.'],
+            ['title' => 'Consistent design systems', 'body' => 'Reusable components and a documented style guide, so the product stays visually consistent as it grows past the initial launch.'],
+            ['title' => 'Accessibility considered from the start', 'body' => 'Color contrast, touch target sizing, and readable typography are part of the design process, not a compliance checklist applied afterward.'],
+        ],
+        'process' => [
+            ['title' => 'Research', 'body' => 'Understanding your users and the core tasks the product needs to support well.'],
+            ['title' => 'Wireframing', 'body' => 'Low-fidelity structure and flow, reviewed and revised before visual design starts.'],
+            ['title' => 'Visual design', 'body' => 'UI design with a consistent system of components, color, and typography.'],
+            ['title' => 'Prototyping', 'body' => 'Interactive prototypes for key flows, tested before development begins.'],
+            ['title' => 'Developer handoff', 'body' => 'Design specs and assets prepared for implementation — smoother when the same team builds both.'],
+        ],
+        'tech_stack' => ['Figma', 'Design systems / component libraries', 'Prototyping tools', 'Accessibility auditing (WCAG)'],
+        'faqs' => [
+            ['question' => 'Do you only design, or do you also build the final product?', 'answer' => 'We do both, which is part of why our designs tend to be realistic about what\'s feasible to build well within a given timeline and budget.'],
+            ['question' => 'Can you redesign our existing product without a full rebuild?', 'answer' => 'Yes — a lot of design work is incremental improvement to an existing product rather than a ground-up redesign.'],
+            ['question' => 'Do you do branding and logo design?', 'answer' => 'Yes, for projects that need it alongside the product design work.'],
+            ['question' => 'How do you handle design feedback and revisions?', 'answer' => 'We review wireframes and designs with you at defined checkpoints so feedback gets incorporated before, not after, development starts on a given screen.'],
+        ],
+        'related' => ['web-development', 'mobile-app-development', 'custom-software-development'],
+        'hire_developer_slug' => 'graphic-designer',
+    ],
+
+];

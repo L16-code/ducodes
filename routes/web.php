@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HireDeveloperController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LegalController;
+use App\Http\Controllers\ServiceController;
 // user routes
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
@@ -19,6 +20,9 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/privacy-policy', [LegalController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/terms-and-conditions', [LegalController::class, 'terms'])->name('terms');
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+// Service Routes
+Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
+Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
 // Hire Developer Routes
 Route::get('/hire-developer/{slug}', [HireDeveloperController::class, 'show'])->name('hire.developer');
 // route for user login

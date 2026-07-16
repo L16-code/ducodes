@@ -24,7 +24,7 @@
 
                     <!--begin:landings-->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="{{ route('homepage') }}" role="button"
+                        <a class="nav-link dropdown-toggle active" href="{{ route('services.index') }}" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services
                         </a>
                         <div class="dropdown-menu dropdown-menu-md dropdown-menu-start py-0 pe-lg-0">
@@ -32,29 +32,19 @@
                                 <div class="row mx-0">
                                     <div class="col-lg-5 position-relative">
                                         <div class="py-1 py-lg-3 d-lg-flex flex-column">
-                                            <a href="{{ route('hire.developer', 'react-native') }}" class="dropdown-item">Mobile App Development</a>
-                                            <a href="{{ route('contact') }}" class="dropdown-item">Software
-                                                Development</a>
-                                            <a href="{{ route('hire.developer', 'zoho') }}" class="dropdown-item">Zoho
-                                                Development</a>
-                                            <a href="{{ route('hire.developer', 'salesforce') }}" class="dropdown-item">Salesforce
-                                                Development</a>
-                                            <a href="{{ route('hire.developer', 'hubspot') }}" class="dropdown-item">HubSpot
-                                                Development</a>
-                                            <a href="{{ route('hire.developer', 'gen-ai') }}" class="dropdown-item">Gen Ai
-                                                Chatbot</a>
-                                            <a href="{{ route('hire.developer', 'power-bi') }}" class="dropdown-item">Power BI
-                                                Solutions</a>
-                                            <a href="{{ route('contact') }}" class="dropdown-item">Payment Gateway
-                                                Integrations</a>
-                                            <a href="{{ route('hire.developer', 'seo') }}" class="dropdown-item">Digital Marketing
-                                                Solutions</a>
-                                            <a href="{{ route('hire.developer', 'laravel') }}" class="dropdown-item">Web
-                                                Development</a>
-                                            <a href="{{ route('hire.developer', 'shopify') }}" class="dropdown-item">E-commerce
-                                                development</a>
-                                            <a href="{{ route('hire.developer', 'graphic-designer') }}" class="dropdown-item">Graphic
-                                                Designing</a>
+                                            <a href="{{ route('services.show', 'custom-software-development') }}" class="dropdown-item">Custom Software Development</a>
+                                            <a href="{{ route('services.show', 'laravel-development') }}" class="dropdown-item">Laravel Development</a>
+                                            <a href="{{ route('services.show', 'web-development') }}" class="dropdown-item">Web Development</a>
+                                            <a href="{{ route('services.show', 'mobile-app-development') }}" class="dropdown-item">Mobile App Development</a>
+                                            <a href="{{ route('services.show', 'ai-development') }}" class="dropdown-item">AI &amp; Generative AI</a>
+                                            <a href="{{ route('services.show', 'zoho-development') }}" class="dropdown-item">Zoho Development</a>
+                                            <a href="{{ route('services.show', 'salesforce-development') }}" class="dropdown-item">Salesforce Development</a>
+                                            <a href="{{ route('services.show', 'hubspot-development') }}" class="dropdown-item">HubSpot Development</a>
+                                            <a href="{{ route('services.show', 'devops') }}" class="dropdown-item">DevOps Services</a>
+                                            <a href="{{ route('services.show', 'crm-erp-integration') }}" class="dropdown-item">CRM &amp; ERP Integration</a>
+                                            <a href="{{ route('services.show', 'power-bi-data-solutions') }}" class="dropdown-item">Power BI &amp; Data Solutions</a>
+                                            <a href="{{ route('services.show', 'ui-ux-design') }}" class="dropdown-item">UI/UX &amp; Graphic Design</a>
+                                            <a href="{{ route('services.index') }}" class="dropdown-item fw-semibold text-primary">View all services <i class="bi bi-arrow-right ms-1"></i></a>
                                         </div>
                                     </div>
                                     <!--/.col-->

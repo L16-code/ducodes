@@ -24,7 +24,16 @@ class SitemapController extends Controller
                 ['loc' => route('blogs'), 'priority' => '0.8', 'changefreq' => 'daily'],
                 ['loc' => route('privacy-policy'), 'priority' => '0.3', 'changefreq' => 'yearly'],
                 ['loc' => route('terms'), 'priority' => '0.3', 'changefreq' => 'yearly'],
+                ['loc' => route('services.index'), 'priority' => '0.9', 'changefreq' => 'monthly'],
             ];
+
+            foreach (array_keys(config('service_pages')) as $slug) {
+                $urls[] = [
+                    'loc' => route('services.show', $slug),
+                    'priority' => '0.8',
+                    'changefreq' => 'monthly',
+                ];
+            }
 
             foreach ($this->hireDeveloperSlugs as $slug) {
                 $urls[] = [

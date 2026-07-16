@@ -78,6 +78,7 @@
                     <div class="col-md-4">
                         <h5 class="mb-4 text-white">Company</h5>
                         <nav class="nav flex-column">
+                            <a href="{{ route('services.index') }}" class="nav-link p-0 mb-3">Services</a>
                             <a href="{{ route('about') }}" class="nav-link p-0 mb-3">About us</a>
                             <a href="{{ route('contact') }}" class="nav-link p-0 mb-3">Contact us</a>
                             <a href="{{ route('blogs') }}" class="nav-link p-0">Blog</a>

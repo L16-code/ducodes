@@ -24,7 +24,12 @@ class HomeController extends Controller
     }
     public function homepage()
     {
-        return view('frontend.pages.home');
+        $latestBlogs = Blog::where('status', 'active')
+            ->latest('posted_on')
+            ->take(3)
+            ->get();
+
+        return view('frontend.pages.home', compact('latestBlogs'));
     }
     public function about()
     {
