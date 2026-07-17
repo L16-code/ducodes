@@ -1,10 +1,11 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Contact DuCodes - Get a Free Project Quote')
-@section('meta_description', 'Get in touch with DuCodes for a free software development quote. Call +91 9549312341, email support@ducodes.com, or use the contact form below.')
+@section('meta_description', 'Get in touch with DuCodes for a free software development quote. Call +91 9119101224,
+    email support@ducodes.com, or use the contact form below.')
 
-@push('schema')
-<script type="application/ld+json">{!! json_encode([
+    @push('schema')
+        <script type="application/ld+json">{!! json_encode([
     App\Support\Seo::webPageSchema(
         'Contact DuCodes',
         'Get in touch with DuCodes for a free software development quote.',
@@ -15,7 +16,7 @@
         'Contact Us' => url()->current(),
     ]),
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
-@endpush
+    @endpush
 
 @section('content')
     <section class="position-relative">
@@ -30,7 +31,8 @@
                 </div>
             </div>
             <!--/.row-->
-            <img src="{{ asset('assets/img/1200x600/2.jpg') }}" class="img-fluid rounded-block" alt="DuCodes software development team collaborating on a client project">
+            <img src="{{ asset('assets/img/1200x600/2.jpg') }}" class="img-fluid rounded-block"
+                alt="DuCodes software development team collaborating on a client project">
         </div>
         <!--/.content-->
     </section>
@@ -55,7 +57,7 @@
                     <p class="mb-3 small">
                         Want to Discuss in details about your next project?, Join us on skype
                     </p>
-                    <a href="#" class="btn text-lowercase btn-sm btn-light shadow-sm">
+                    <a href="skype:rakesh.sharma856?chat" class="btn text-lowercase btn-sm btn-light shadow-sm">
                         <i class="bi bi-skype align-middle fw-normal me-1"></i> rakesh.sharma856
                     </a>
                 </div>
@@ -64,14 +66,17 @@
                     <p class="mb-3 small">
                         Give us a call Monday to Friday<br> 10:AM to 5:PM
                     </p>
-                    <a href="tel:+919549312341" class="btn btn-sm btn-light shadow-sm">
-                        <i class="bi bi-phone align-middle fw-normal me-1"></i> +91 9549312341
+                    <a href="tel:+919119101224" class="btn btn-sm btn-light shadow-sm">
+                        <i class="bi bi-phone align-middle fw-normal me-1"></i> +91 9119101224
                     </a>
                 </div>
             </div>
             <div class="overflow-hidden mb-9 mb-lg-11 shadow border rounded-3">
                 <div id='map' class="rounded-3" style='width: 100%; height: 350px;'>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28471.675413009787!2d75.75061068476563!3d26.873030133265424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5debf22fa8f%3A0x79ea81d0af2764a3!2sCityPark%20Jaipur!5e0!3m2!1sen!2sin!4v1750410537697!5m2!1sen!2sin" height="350px" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28471.675413009787!2d75.75061068476563!3d26.873030133265424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5debf22fa8f%3A0x79ea81d0af2764a3!2sCityPark%20Jaipur!5e0!3m2!1sen!2sin!4v1750410537697!5m2!1sen!2sin"
+                        height="350px" width="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <div class="row">
@@ -83,7 +88,8 @@
                             be happy to help you:
                         </p>
                         <div class="width-7x pt-1 bg-primary mb-7"></div>
-                        <form id="contactForm" action="{{ route('contact.store') }}" method="POST" class="needs-validation mb-5 mb-lg-7" novalidate>
+                        <form id="contactForm" action="{{ route('contact.store') }}" method="POST"
+                            class="needs-validation mb-5 mb-lg-7" novalidate>
                             @csrf
                             <!-- Honeypot: hidden from real users via CSS, only bots fill this in -->
                             <div class="d-none" aria-hidden="true">
@@ -128,7 +134,8 @@
                             </div>
 
                             <div class="form-check mb-4">
-                                <input class="form-check-input" type="checkbox" name="grid_check" value="1" id="grid_check" required>
+                                <input class="form-check-input" type="checkbox" name="grid_check" value="1"
+                                    id="grid_check" required>
                                 <label class="form-check-label small" for="grid_check">
                                     I agree to be contacted by DuCodes regarding my inquiry.
                                 </label>
@@ -149,14 +156,13 @@
             </div>
         </div>
     </section>
-    
+
     <section>
         <div class="container pb-9">
             <div class="px-4 rounded-3 shadow-lg py-6 px-lg-5 py-lg-7 bg-primary text-white position-relative overflow-hidden"
                 data-aos="fade-up">
                 <svg class="position-absolute end-0 bottom-0 mb-4 text-success" width="200" height="400"
-                    preserveAspectRatio="none" viewBox="0 0 150 300" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                    preserveAspectRatio="none" viewBox="0 0 150 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M150 300C130.302 300 110.796 296.12 92.5975 288.582C74.3986 281.044 57.8628 269.995 43.934 256.066C30.0052 242.137 18.9563 225.601 11.4181 207.403C3.87986 189.204 -6.2614e-07 169.698 0 150C6.2614e-07 130.302 3.87987 110.796 11.4181 92.5975C18.9563 74.3987 30.0052 57.8628 43.934 43.934C57.8628 30.0052 74.3987 18.9563 92.5975 11.4181C110.796 3.87986 130.302 3.51961e-06 150 5.00679e-06L150 37.5C135.226 37.5 120.597 40.4099 106.948 46.0636C93.299 51.7172 80.8971 60.0039 70.4505 70.4505C60.0039 80.8971 51.7172 93.299 46.0636 106.948C40.4099 120.597 37.5 135.226 37.5 150C37.5 164.774 40.4099 179.403 46.0636 193.052C51.7172 206.701 60.0039 219.103 70.4505 229.55C80.8971 239.996 93.299 248.283 106.948 253.936C120.597 259.59 135.226 262.5 150 262.5V300Z"
                         fill="currentColor" />
@@ -164,12 +170,12 @@
 
                 <div class="row align-items-end position-relative">
                     <div class="col-lg-7 text-center text-lg-start">
-                        <p class="text-white mb-2">Let's start building</p>
-                        <h2 class="mb-5 mb-lg-0">Stunning websites ease</h2>
+                        <p class="text-white mb-2">Not sure where to start?</p>
+                        <h2 class="mb-5 mb-lg-0">Browse what we build</h2>
                     </div>
                     <div class="col-lg-5 text-lg-end text-center">
-                        <a href="{{ route('contact') }}" class="btn btn-outline-white btn-lg rounded-3 me-2 mb-2 mb-lg-0">Contact sales</a>
-                        <a href="#!" class="btn btn-white btn-lg rounded-3">Purchase Now</a>
+                        <a href="{{ route('services.index') }}" class="btn btn-white btn-lg rounded-3">View our
+                            services</a>
                     </div>
                 </div>
             </div>

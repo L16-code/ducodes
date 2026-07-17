@@ -25,12 +25,4 @@ JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
     <!-- Services Section -->
     @include('frontend.components.services-section', ['latestBlogs' => $latestBlogs])
     <!-- End Services Section -->
-
-    {{-- Contact Form --}}
-    {{-- @include('frontend.components.contact-form') --}}
-    {{-- End Contact Form --}}
-
-    {{-- Blog Section --}}
-    {{-- @include('frontend.components.blog-section') --}}
-    {{-- End Blog Section --}}
 @endsection

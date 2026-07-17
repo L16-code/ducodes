@@ -47,7 +47,7 @@ return [
         // is a generic template wordmark, not the real DuCodes brand mark).
         // Set this once a real logo file is added, e.g. 'assets/img/logo/ducodes-logo.svg'.
         'logo' => null,
-        'telephone' => '+91-9549312341',
+        'telephone' => '+91-9119101224',
         'email' => 'support@ducodes.com',
         'address' => [
             'addressLocality' => 'Jaipur',

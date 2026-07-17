@@ -155,6 +155,28 @@ class Seo
     }
 
     /**
+     * SpeakableSpecification JSON-LD, attached to a WebPage. Points at the
+     * CSS selector(s) of a genuinely short, self-contained, quotable block —
+     * not the whole page. Google/voice assistants use this to identify what
+     * can be read aloud or lifted as a direct answer.
+     *
+     * @param  array<int, string>  $cssSelectors
+     */
+    public static function speakableWebPageSchema(string $name, string $url, array $cssSelectors): array
+    {
+        return [
+            '@context' => 'https://schema.org',
+            '@type' => 'WebPage',
+            'name' => $name,
+            'url' => $url,
+            'speakable' => [
+                '@type' => 'SpeakableSpecification',
+                'cssSelector' => $cssSelectors,
+            ],
+        ];
+    }
+
+    /**
      * FAQPage JSON-LD. Content must genuinely appear on the page — FAQ schema
      * must mirror visible content per Google's structured data guidelines.
      *

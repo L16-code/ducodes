@@ -90,7 +90,7 @@
             <div class="col-lg-5 ms-auto">
                 <div class="py-5 bg-white-25 bg-gradient px-4 rounded-4">
                     <h5 class="mb-4 text-white">Contact</h5>
-                    <div class="mb-2"><a href="tel:+919549312341" class="fs-5 link-hover-underline">+91 9549312341</a>
+                    <div class="mb-2"><a href="tel:+919119101224" class="fs-5 link-hover-underline">+91 9119101224</a>
                     </div>
                     <div><a href="mailto:support@ducodes.com?subject=Hello!"
                             class="fs-5 link-hover-underline">support@ducodes.com</a>

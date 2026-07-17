@@ -6,6 +6,7 @@ return [
         'title' => 'Laravel Development Services',
         'meta_description' => 'Custom Laravel development for web applications, APIs, and internal tools — from greenfield builds to modernizing legacy PHP systems.',
         'tagline' => 'Custom Laravel applications built for maintainability, not just launch day.',
+        'quick_answer' => 'Laravel development is building custom web applications, APIs, and internal tools using the Laravel PHP framework. DuCodes builds and maintains Laravel applications end to end — from new builds to modernizing legacy PHP systems — with code that\'s built to be handed off and maintained.',
         'intro' => [
             'Laravel is our primary framework for building web applications — this site itself runs on it. We use it for customer-facing platforms, internal admin tools, APIs that power mobile apps, and integrations that connect a business\'s existing software together.',
             'Laravel\'s strength is how much groundwork it removes: authentication, queues, caching, and database migrations are handled by well-tested framework conventions instead of custom code that someone has to maintain forever. That lets us spend engineering time on the parts of your application that are actually unique to your business.',
@@ -38,6 +39,7 @@ return [
         'title' => 'AI & Generative AI Development Services',
         'meta_description' => 'Practical AI development — chatbots, LLM-powered features, and automation built to solve a specific business problem, not AI for its own sake.',
         'tagline' => 'AI features built around a real workflow, not a demo.',
+        'quick_answer' => 'AI development, in a business context, means building features — chatbots, document processing, automated drafting — powered by large language models connected to your own data. DuCodes builds these with explicit fallback behavior for when the model is uncertain, rather than shipping something that guesses confidently.',
         'intro' => [
             'Generative AI is genuinely useful for a narrower set of problems than the current hype suggests — and genuinely powerful for the problems it fits. We build AI-powered features (chat interfaces, document processing, internal knowledge search, automated drafting) where there\'s a clear, measurable task the model is doing, and a fallback for when it gets something wrong.',
             'A lot of our AI work is integration, not model training: connecting an LLM API to your actual data and workflow through retrieval, function calling, and careful prompt design, with proper guardrails around cost, latency, and failure modes.',
@@ -70,6 +72,7 @@ return [
         'title' => 'Custom Software Development',
         'meta_description' => 'End-to-end custom software development — from a first working version through ongoing support — for businesses that have outgrown off-the-shelf tools.',
         'tagline' => 'Software built around how your business actually works.',
+        'quick_answer' => 'Custom software development is building an application specifically for one business\'s workflow, rather than adapting an off-the-shelf tool to fit. DuCodes handles the full lifecycle — requirements, architecture, development, QA, and post-launch support — typically on a Laravel or Node.js backend.',
         'intro' => [
             'Off-the-shelf software is built for the average customer. When your process is specific enough that you\'re working around a tool instead of with it — duplicate data entry, spreadsheets bridging two systems, manual steps that should be automated — that\'s usually the point where custom software starts paying for itself.',
             'We build web applications, internal tools, and system integrations end to end: requirements, architecture, development, QA, deployment, and support after launch. Most projects are Laravel or Node.js on the backend with React or server-rendered views on the front, chosen based on what your team can maintain long-term.',
@@ -103,6 +106,7 @@ return [
         'title' => 'Web Development Services',
         'meta_description' => 'Business websites and web applications built for speed, accessibility, and search visibility — not just visual design.',
         'tagline' => 'Websites and web apps built to actually perform, not just look good in a portfolio.',
+        'quick_answer' => 'Web development is building a website or web application that\'s fast, accessible, and structured for search visibility. DuCodes builds business websites and web apps with performance, SEO, and accessibility treated as requirements from the start, not a separate optimization pass.',
         'intro' => [
             'A website is infrastructure, not just a brochure — it needs to load fast, work on mobile, be findable on Google, and be maintainable by whoever manages it after launch. We build everything from marketing sites to full web applications with that in mind from the start.',
             'Depending on the project, that means a Laravel/Blade site like this one, a headless setup with a separate frontend, or a simpler stack when a simpler stack is genuinely the right call — we don\'t default to the most complex option available.',
@@ -135,6 +139,7 @@ return [
         'title' => 'Mobile App Development Services',
         'meta_description' => 'Native and cross-platform mobile app development for iOS and Android, built with a backend that scales with the app.',
         'tagline' => 'Mobile apps backed by an API that\'s built to last, not just launch.',
+        'quick_answer' => 'Mobile app development is building an iOS and Android application, typically alongside the backend API that powers it. DuCodes builds both together — usually with React Native or Flutter for cross-platform apps — so authentication, data sync, and push notifications are designed as one system.',
         'intro' => [
             'A mobile app is only as good as the backend behind it. We build both sides together — the app itself (usually React Native or Flutter for cross-platform reach) and the API that powers it, so authentication, data sync, and push notifications are designed as one system instead of two separately-built halves that don\'t quite fit.',
             'For most business apps, cross-platform development gets you to both app stores faster without a meaningful quality tradeoff. We\'ll recommend fully native development instead when the app genuinely needs it — heavy use of device-specific APIs, for example.',
@@ -168,6 +173,7 @@ return [
         'title' => 'Zoho Development & Customization',
         'meta_description' => 'Zoho CRM, Zoho Books, and Zoho One customization and integration — configured around your actual sales and operations process.',
         'tagline' => 'Zoho configured around how your team actually sells and operates.',
+        'quick_answer' => 'Zoho development is configuring and customizing Zoho CRM, Books, and the wider Zoho One suite to match a business\'s actual sales and operations process. DuCodes handles workflow automation, custom Deluge scripting, and integrating Zoho with a business\'s website or other software via API.',
         'intro' => [
             'Zoho\'s suite (CRM, Books, Desk, Campaigns, and the rest of Zoho One) covers a lot of ground out of the box, but most businesses need custom fields, workflow automation, or integrations with other tools to make it fit their actual process. We handle that configuration and custom development work.',
             'This ranges from setting up automated lead-routing and deal pipelines in Zoho CRM, to building custom functions (Deluge scripting) for business logic Zoho doesn\'t handle natively, to connecting Zoho with your website, accounting software, or other internal systems via API.',
@@ -200,6 +206,7 @@ return [
         'title' => 'Salesforce Development & Customization',
         'meta_description' => 'Salesforce customization, Apex development, and integration work for teams that have outgrown out-of-the-box configuration.',
         'tagline' => 'Salesforce customized for processes the standard configuration doesn\'t cover.',
+        'quick_answer' => 'Salesforce development is customizing the Salesforce platform — through declarative tools like Flow or custom Apex code — to handle business logic beyond the standard configuration. DuCodes does both configuration and custom Apex/LWC development, with a particular focus on integrating Salesforce with other business systems.',
         'intro' => [
             'Salesforce is built to be customized — declarative tools like Flow cover a lot, and Apex/Visualforce/Lightning Web Components cover what they can\'t. We do both: configuring the platform\'s native automation tools where that\'s sufficient, and writing custom Apex or LWC development where the business logic genuinely needs code.',
             'A recurring piece of this work is integration — connecting Salesforce to other systems (your website, an ERP, a support tool) through REST/SOAP APIs or middleware, so data doesn\'t have to be manually re-entered across systems.',
@@ -232,6 +239,7 @@ return [
         'title' => 'HubSpot Development & Integration',
         'meta_description' => 'HubSpot CRM setup, custom integrations, and marketing/sales automation configured around your actual funnel.',
         'tagline' => 'HubSpot set up around your real marketing and sales funnel, not the default template.',
+        'quick_answer' => 'HubSpot development is configuring HubSpot\'s CRM, marketing automation, and (optionally) CMS around a business\'s actual lead-to-customer funnel. DuCodes sets up custom properties, pipelines, and automation, and builds custom API integrations connecting HubSpot to other systems.',
         'intro' => [
             'HubSpot works well once it\'s configured around your actual lead flow — how leads come in, how they get scored and routed, and what "closed" means for your sales process. We set that up, along with custom integrations connecting HubSpot to your website, other tools, or internal systems via its API.',
             'This includes custom properties and pipelines, workflow automation, HubSpot CMS development when the marketing site lives on HubSpot itself, and API-level integration work for anything the native connectors don\'t cover.',
@@ -264,6 +272,7 @@ return [
         'title' => 'DevOps Services',
         'meta_description' => 'CI/CD pipelines, infrastructure automation, and deployment reliability for teams that need to ship without breaking production.',
         'tagline' => 'Deployment and infrastructure that don\'t depend on one person remembering the steps.',
+        'quick_answer' => 'DevOps services cover CI/CD pipelines, infrastructure automation, and deployment reliability — replacing manual deployment steps with a repeatable, monitored process. DuCodes builds and improves CI/CD pipelines, containerized deployments, and monitoring so problems get caught before customers notice.',
         'intro' => [
             'A lot of the DevOps work we do isn\'t exotic — it\'s replacing manual, error-prone deployment steps with a repeatable pipeline, setting up monitoring so problems get caught before customers report them, and making sure infrastructure changes are documented and reversible instead of living in one person\'s memory.',
             'We work with whatever a team already has in place where possible — improving an existing pipeline is usually faster and lower-risk than replacing it — and build from scratch when there isn\'t one yet.',
@@ -296,6 +305,7 @@ return [
         'title' => 'CRM & ERP Integration Services',
         'meta_description' => 'Connecting your CRM, ERP, accounting, and website systems so data flows automatically instead of being re-entered by hand.',
         'tagline' => 'Stop re-typing the same data into three different systems.',
+        'quick_answer' => 'CRM and ERP integration is connecting a business\'s CRM, accounting/ERP, and website so data flows automatically instead of being manually re-entered across systems. DuCodes builds this integration layer via APIs, webhooks, or custom middleware, including handling for duplicates, failures, and monitoring.',
         'intro' => [
             'A common pattern we see: a business has a CRM, an accounting/ERP system, and a website — and none of them talk to each other, so someone\'s manually copying data between them. That\'s slow, error-prone, and it means reporting from any one system is never quite up to date.',
             'We build the integration layer that connects these systems — via native APIs, webhooks, or custom middleware when there\'s no off-the-shelf connector — so a lead, order, or customer record created in one place shows up correctly everywhere it needs to.',
@@ -328,6 +338,7 @@ return [
         'title' => 'Power BI & Data Solutions',
         'meta_description' => 'Power BI dashboards and reporting built on properly modeled data — so the numbers are trustworthy, not just visually polished.',
         'tagline' => 'Dashboards you can actually trust, because the data model underneath is right.',
+        'quick_answer' => 'Power BI and data solutions means building dashboards and reports on top of a properly modeled data layer, pulled from a CRM, ERP, or other business systems. DuCodes focuses on the data modeling first, since report accuracy depends more on the underlying model than the chart types chosen.',
         'intro' => [
             'A Power BI dashboard is only as good as the data model behind it. A lot of our work here isn\'t the visual layer — it\'s pulling data from wherever it actually lives (a CRM, an ERP, spreadsheets, a custom database), cleaning and modeling it properly, and then building reports that answer the specific questions your team is actually asking.',
             'We build both one-off reporting projects and ongoing data pipelines that keep dashboards updated automatically, rather than requiring someone to manually refresh a spreadsheet every week.',
@@ -360,6 +371,7 @@ return [
         'title' => 'UI/UX & Graphic Design Services',
         'meta_description' => 'Interface design and graphic design grounded in usability — wireframes, prototypes, and visual design for web and mobile products.',
         'tagline' => 'Design that\'s judged by whether people can use it, not just how it looks in a mockup.',
+        'quick_answer' => 'UI/UX design is the process of designing how a product\'s interface looks and functions, validated through wireframes and prototypes before visual design begins. DuCodes designs alongside development, so interface decisions are grounded in what\'s actually feasible to build well.',
         'intro' => [
             'Good interface design is mostly about removing friction — making the next action obvious, keeping forms short, and making sure the visual hierarchy matches what actually matters on the page. We handle this alongside development, which means design decisions get validated against real technical constraints instead of becoming a wishlist someone else has to implement.',
             'This covers UX research and wireframing, UI design for web and mobile products, and general graphic design (branding assets, marketing materials) for projects that need it.',

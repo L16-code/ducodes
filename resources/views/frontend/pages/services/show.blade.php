@@ -16,6 +16,11 @@
         $service['title'] => url()->current(),
     ]),
     !empty($service['faqs']) ? App\Support\Seo::faqSchema($service['faqs']) : null,
+    !empty($service['quick_answer']) ? App\Support\Seo::speakableWebPageSchema(
+        $service['title'],
+        url()->current(),
+        ['#quick-answer']
+    ) : null,
 ])) !!}</script>
 @endpush
 
@@ -41,6 +46,21 @@
             </div>
         </div>
     </section>
+
+    @if(!empty($service['quick_answer']))
+    <section class="position-relative pt-5 pb-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div id="quick-answer" class="border-start border-4 border-primary bg-primary-subtle bg-opacity-25 rounded-3 p-4 p-lg-5">
+                        <p class="text-uppercase small fw-bold text-primary mb-2">In short</p>
+                        <p class="mb-0 fs-5">{{ $service['quick_answer'] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @endif
 
     <section class="position-relative py-9 py-lg-11">
         <div class="container">

@@ -60,4 +60,47 @@ class SitemapController extends Controller
             ->view('sitemap.xml', ['urls' => $urls])
             ->header('Content-Type', 'application/xml');
     }
+
+    public function llmsTxt()
+    {
+        $content = Cache::remember('llms.txt.content', now()->addHour(), function () {
+            $services = config('service_pages');
+            $latestBlogs = Blog::where('status', 'active')->latest('posted_on')->take(10)->get();
+
+            $lines = [];
+            $lines[] = '# DuCodes';
+            $lines[] = '';
+            $lines[] = '> DuCodes is a custom software development company based in Jaipur, India, building web platforms, mobile apps, AI solutions, and CRM/ERP integrations for businesses worldwide.';
+            $lines[] = '';
+            $lines[] = 'DuCodes builds with Laravel, React, and Node.js, and integrates business systems including Zoho, Salesforce, and HubSpot. Get in touch at ' . route('contact') . ' or ' . config('seo.organization.email') . '.';
+            $lines[] = '';
+            $lines[] = '## Services';
+            $lines[] = '';
+            foreach ($services as $slug => $service) {
+                $lines[] = '- [' . $service['title'] . '](' . route('services.show', $slug) . '): ' . $service['quick_answer'];
+            }
+            $lines[] = '';
+            $lines[] = '## Company';
+            $lines[] = '';
+            $lines[] = '- [About](' . route('about') . '): Who DuCodes is and what the company builds.';
+            $lines[] = '- [Contact](' . route('contact') . '): Get in touch for a project quote.';
+            $lines[] = '- [Blog](' . route('blogs') . '): Articles on Laravel, AI, CRM/ERP integration, and web development.';
+            $lines[] = '- [Privacy Policy](' . route('privacy-policy') . ')';
+            $lines[] = '- [Terms and Conditions](' . route('terms') . ')';
+
+            if ($latestBlogs->count() > 0) {
+                $lines[] = '';
+                $lines[] = '## Recent blog posts';
+                $lines[] = '';
+                foreach ($latestBlogs as $blog) {
+                    $lines[] = '- [' . $blog->blog_title . '](' . route('blog.details', $blog->blog_slug) . '): ' . $blog->short_desc;
+                }
+            }
+
+            return implode("\n", $lines) . "\n";
+        });
+
+        return response($content, 200)
+            ->header('Content-Type', 'text/markdown; charset=UTF-8');
+    }
 }
