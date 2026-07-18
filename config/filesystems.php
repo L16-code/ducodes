@@ -33,7 +33,12 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),
-            'serve' => true,
+            // 'serve' is intentionally NOT enabled here — it would otherwise
+            // register a competing route at the same /storage/{path} URI as
+            // our custom route in routes/web.php, and since this disk isn't
+            // public-visibility, it would win (registers later in the boot
+            // cycle) and 403 every request. See routes/web.php for the
+            // actual storage-serving route.
             'throw' => false,
             'report' => false,
         ],

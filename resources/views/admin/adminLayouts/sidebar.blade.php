@@ -42,8 +42,8 @@
                 <div class="menu-divider m-0"></div>
             </div>
             <div class="menu-header">Navigation</div>
-            <div class="menu-item has-sub">
-                <a href="javascript:;" class="menu-link">
+            <div class="menu-item">
+                <a href="{{ route('admin.leads.index') }}" class="menu-link">
                     <div class="menu-icon">
                         <i class="fa fa-sitemap"></i>
                     </div>
@@ -51,28 +51,36 @@
                 </a>
             </div>
 
-            {{-- <div class="menu-item">
-                <a href="calendar.html" class="menu-link">
-                    <div class="menu-icon">
-                        <i class="fa fa-calendar"></i>
-                    </div>
-                    <div class="menu-text">Calendar</div>
-                </a>
-            </div> --}}
             <div class="menu-item">
-                <a href="{{ url('admin/blog-listing') }}" class="menu-link">
+                <a href="{{ route('admin.leads.index') }}" class="menu-link">
                     <div class="menu-icon">
-                        <i class="fa fa-calendar"></i>
+                        <i class="fa fa-address-book"></i>
                     </div>
-                    <div class="menu-text">blogs</div>
+                    <div class="menu-text">Leads (CRM)</div>
                 </a>
             </div>
             <div class="menu-item">
-                <a href="calendar.html" class="menu-link">
+                <a href="{{ url('admin/blog-listing') }}" class="menu-link">
                     <div class="menu-icon">
-                        <i class="fa fa-calendar"></i>
+                        <i class="fa fa-newspaper"></i>
                     </div>
-                    <div class="menu-text">Case Studies</div>
+                    <div class="menu-text">Blogs</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="{{ route('admin.faqs.index') }}" class="menu-link">
+                    <div class="menu-icon">
+                        <i class="fa fa-question-circle"></i>
+                    </div>
+                    <div class="menu-text">FAQs</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="{{ route('admin.users.index') }}" class="menu-link">
+                    <div class="menu-icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <div class="menu-text">Users</div>
                 </a>
             </div>
             <!-- BEGIN minify-button -->

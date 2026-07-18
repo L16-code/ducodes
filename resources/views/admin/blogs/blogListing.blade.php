@@ -5,11 +5,11 @@
 <head>
     @include('./admin.adminLayouts.adminStyles')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('admincss/assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css ') }} "
+    <link href="{{ asset('admincss/assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}"
         rel="stylesheet" />
     <link href="{{ asset('admincss/assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css') }}"
         rel="stylesheet" />
-    <link href="{{ asset('admincss/assets/plugins/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css ') }} "
+    <link href="{{ asset('admincss/assets/plugins/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css') }}"
         rel="stylesheet" />
     <link href="{{ asset('admincss/assets/plugins/datatables.net-colreorder-bs5/css/colReorder.bootstrap5.min.css') }}"
         rel="stylesheet" />
@@ -17,9 +17,51 @@
         rel="stylesheet" />
     <link href="{{ asset('admincss/assets/plugins/datatables.net-rowreorder-bs5/css/rowReorder.bootstrap5.min.css') }}"
         rel="stylesheet" />
-    <link href="{{ asset('admincss/assets/plugins/datatables.net-select-bs5/css/select.bootstrap5.min.css ') }} "
+    <link href="{{ asset('admincss/assets/plugins/datatables.net-select-bs5/css/select.bootstrap5.min.css') }}"
         rel="stylesheet" />
-    <link href="{{ asset('admincss/assets/plugins/switchery/dist/switchery.min.css ') }} " rel="stylesheet" />
+    <link href="{{ asset('admincss/assets/plugins/switchery/dist/switchery.min.css') }}" rel="stylesheet" />
+    <style>
+        /* DataTables' built-in sort indicators rely on a Unicode-character
+           CSS `content` trick that isn't rendering reliably in this theme —
+           replaced with plain CSS border-triangles that can't fail to
+           render regardless of font/glyph support. */
+        table.dataTable thead th.dt-orderable-asc,
+        table.dataTable thead th.dt-orderable-desc {
+            position: relative;
+            padding-right: 22px !important;
+            cursor: pointer;
+        }
+        table.dataTable thead th.dt-orderable-asc span.dt-column-order,
+        table.dataTable thead th.dt-orderable-desc span.dt-column-order {
+            width: 12px;
+        }
+        table.dataTable thead th.dt-orderable-asc span.dt-column-order:before,
+        table.dataTable thead th.dt-orderable-desc span.dt-column-order:before,
+        table.dataTable thead th.dt-orderable-asc span.dt-column-order:after,
+        table.dataTable thead th.dt-orderable-desc span.dt-column-order:after {
+            content: '' !important;
+            position: absolute;
+            right: 6px;
+            left: auto;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            opacity: .3;
+        }
+        table.dataTable thead th span.dt-column-order:before {
+            top: 3px;
+            border-bottom: 5px solid currentColor;
+        }
+        table.dataTable thead th span.dt-column-order:after {
+            bottom: 3px;
+            border-top: 5px solid currentColor;
+        }
+        table.dataTable thead th.dt-ordering-asc span.dt-column-order:before {
+            opacity: 1;
+        }
+        table.dataTable thead th.dt-ordering-desc span.dt-column-order:after {
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,10 +89,6 @@
 
     @include('./admin.adminLayouts.adminJs')
     <script src="http://parsleyjs.org/dist/parsley.js"></script>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-        integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-        data-cf-beacon='{"rayId":"9213e8312ffde195","version":"2025.1.0","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"4db8c6ef997743fda032d4f73cfeff63","b":1}'
-        crossorigin="anonymous"></script>
 </body>
 <!-- Summernote CSS -->
 <link href="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-bs4.min.css" rel="stylesheet">
@@ -94,6 +132,13 @@
 
 <script>
     $(document).ready(function() {
+        function truncateWords(text, limit) {
+            if (!text) return '';
+            const words = text.trim().split(/\s+/);
+            if (words.length <= limit) return text;
+            return words.slice(0, limit).join(' ') + '…';
+        }
+
         // Fetch blog data asynchronously
         function fetchBlogs() {
             $.ajax({
@@ -108,7 +153,7 @@
                             <td width="1%"><img src="/storage/${blog.thumbnail_img}" class="rounded h-30px my-n1 mx-n1" /></td>
                             <td>${blog.blog_title}</td>
                             <td>${blog.blog_type}</td>
-                            <td>${blog.short_desc}</td>
+                            <td title="${blog.short_desc}">${truncateWords(blog.short_desc, 30)}</td>
                             <td>${new Date(blog.posted_on).toLocaleDateString()}</td>
                             <td>
                                 <input type="checkbox" class="status-switch" data-id="${blog.id}" ${blog.status == "active" ? 'checked' : ''}>

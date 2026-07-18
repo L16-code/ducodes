@@ -15,5 +15,9 @@ class Contact extends Model
         'msg_subject',
         'message',
         'grid_check',
+        'status',
+        'notes',
     ];
+
+    public const STATUSES = ['new', 'contacted', 'won', 'lost'];
 }

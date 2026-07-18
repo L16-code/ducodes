@@ -28,23 +28,25 @@
                 <!-- END panel-heading -->
                 <!-- BEGIN panel-body -->
                 <div class="panel-body">
-                    <table id="data-table-combine" width="100%"
-                        class="table table-striped table-bordered align-middle text-nowrap">
-                        <thead>
-                            <tr>
-                                <th width="1%"></th>
-                                <th width="1%" data-orderable="false"></th>
-                                <th class="text-nowrap">Title</th>
-                                <th class="text-nowrap">Type</th>
-                                <th class="text-nowrap">short desc</th>
-                                <th class="text-nowrap">posted on </th>
-                                <th class="text-nowrap">status</th>
-                                <th class="text-nowrap">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table id="data-table-combine" width="100%"
+                            class="table table-striped table-bordered align-middle text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th width="1%"></th>
+                                    <th width="1%" data-orderable="false"></th>
+                                    <th class="text-nowrap">Title</th>
+                                    <th class="text-nowrap">Type</th>
+                                    <th class="text-nowrap">short desc</th>
+                                    <th class="text-nowrap">posted on </th>
+                                    <th class="text-nowrap">status</th>
+                                    <th class="text-nowrap">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <!-- END panel-body -->
                 <!-- BEGIN hljs-wrapper -->

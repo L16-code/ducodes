@@ -16,7 +16,7 @@ class HomeController extends Controller
             if($userType=='user'){
                 return view('dashboard');
             }else if($userType=='admin'){
-                return view('admin.index');
+                return redirect()->route('admin.leads.index');
             }else{
                 return redirect()->back();
             }

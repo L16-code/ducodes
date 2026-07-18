@@ -10,8 +10,26 @@ use Illuminate\Support\Str; // Import Str for slug generation
 class BlogController extends Controller
 {
     public function add_blog()
-    {   
+    {
         return view('admin.blogs.addBlogs');
+    }
+
+    /**
+     * Handles inline image uploads from the Summernote editor toolbar.
+     * Without this, Summernote embeds pasted images as base64 data URIs
+     * directly in the saved HTML — bloating the database and bypassing
+     * lazy-loading/caching entirely. This stores a real file instead and
+     * returns its URL for the editor to insert as a normal <img src="">.
+     */
+    public function uploadContentImage(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+        ]);
+
+        $path = $request->file('image')->store('blogs/content', 'public');
+
+        return response()->json(['url' => asset('storage/'.$path)]);
     }
 
     public function store(Request $request)
