@@ -38,7 +38,7 @@
                     <p class="lead mb-5">
                         {{ $description }}
                     </p>
-                    <a href="{{ route('contact') }}" class="btn btn-primary btn-lg hover-lift">Get Started</a>
+                    <a href="{{ route('contact', ['subject' => 'Hire ' . $title . ' Developer']) }}" class="btn btn-primary btn-lg hover-lift">Get Started</a>
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@
                     <p class="lead mb-0">Let's discuss your project requirements and get started today</p>
                 </div>
                 <div class="col-lg-4 text-center text-lg-end">
-                    <a href="{{ route('contact') }}" class="btn btn-white btn-lg hover-lift">Contact Us Now</a>
+                    <a href="{{ route('contact', ['subject' => 'Hire ' . $title . ' Developer']) }}" class="btn btn-white btn-lg hover-lift">Contact Us Now</a>
                 </div>
             </div>
         </div>

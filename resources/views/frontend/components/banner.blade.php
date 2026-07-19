@@ -78,6 +78,8 @@
                         </div>
                         <div class="col-md-6 mb-3 mb-lg-0 col-lg-4">
                             <input type="tel" name="phone_number" placeholder="Phone" required
+                                pattern="\+?[0-9\s\-\(\)]{7,20}"
+                                title="Enter a valid phone number (7-20 digits, may include +, spaces, dashes, or parentheses)"
                                 class="form-control bg-dark bg-opacity-10 text-white form-control-lg shadow-none border-0">
                         </div>
                         <div class="col-md-12 col-lg-4">

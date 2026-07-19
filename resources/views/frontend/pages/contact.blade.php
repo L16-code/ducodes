@@ -106,12 +106,19 @@
                                 <div class="col-sm-6 mb-3">
                                     <label class="form-label" for="phone_number">Your phone number</label>
                                     <input type="tel" name="phone_number" class="form-control" id="phone_number"
-                                        placeholder="+91 98765 43210" required>
+                                        placeholder="+91 98765 43210"
+                                        pattern="\+?[0-9\s\-\(\)]{7,20}"
+                                        title="Enter a valid phone number (7-20 digits, may include +, spaces, dashes, or parentheses)"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid phone number.
+                                    </div>
                                 </div>
 
                                 <div class="col-sm-6 mb-3">
                                     <label class="form-label" for="subject">Subject</label>
                                     <input type="text" class="form-control" name="msg_subject" id="subject"
+                                        value="{{ old('msg_subject', request('subject')) }}"
                                         placeholder="Web Design" required>
                                 </div>
                             </div>

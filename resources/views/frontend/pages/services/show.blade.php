@@ -38,7 +38,7 @@
                     </nav>
                     <h1 class="display-4 mb-3">{{ $service['title'] }}</h1>
                     <p class="mb-5 pe-lg-9 lead">{{ $service['tagline'] }}</p>
-                    <a href="{{ route('contact') }}" class="btn btn-primary btn-lg hover-lift">Get a free quote</a>
+                    <a href="{{ route('contact', ['subject' => 'Inquiry about ' . $service['title']]) }}" class="btn btn-primary btn-lg hover-lift">Get a free quote</a>
                     @if(!empty($service['hire_developer_slug']))
                         <a href="{{ route('hire.developer', $service['hire_developer_slug']) }}" class="btn btn-outline-primary btn-lg hover-lift ms-2">Hire a developer</a>
                     @endif
@@ -213,7 +213,7 @@
                         <h2 class="mb-5 mb-lg-0">Let's discuss {{ strtolower($service['title']) }}</h2>
                     </div>
                     <div class="col-lg-5 text-lg-end text-center">
-                        <a href="{{ route('contact') }}" class="btn btn-white btn-lg rounded-3">Contact us</a>
+                        <a href="{{ route('contact', ['subject' => 'Inquiry about ' . $service['title']]) }}" class="btn btn-white btn-lg rounded-3">Contact us</a>
                     </div>
                 </div>
             </div>
