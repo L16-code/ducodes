@@ -40,8 +40,8 @@
 
     <section class="position-relative">
         <div class="container py-9 py-lg-11">
-            <div class="row mb-9 mb-lg-11">
-                <div class="col-lg-4 mb-5 mb-lg-0 text-center">
+            <div class="row mb-9 mb-lg-11 justify-content-center">
+                <div class="col-lg-5 mb-5 mb-lg-0 text-center">
                     <h5 class="mb-2">Customer support</h5>
                     <p class="mb-3 small">
                         If you are already a customer with us, we will be happy to help you in our
@@ -51,17 +51,7 @@
                         <i class="bi bi-headset align-middle fw-normal me-1"></i> Customer support
                     </a>
                 </div>
-
-                <div class="col-lg-4 mb-5 mb-lg-0 text-center">
-                    <h5 class="mb-2"> Skype</h5>
-                    <p class="mb-3 small">
-                        Want to Discuss in details about your next project?, Join us on skype
-                    </p>
-                    <a href="skype:rakesh.sharma856?chat" class="btn text-lowercase btn-sm btn-light shadow-sm">
-                        <i class="bi bi-skype align-middle fw-normal me-1"></i> rakesh.sharma856
-                    </a>
-                </div>
-                <div class="col-lg-4 text-center">
+                <div class="col-lg-5 text-center">
                     <h5 class="mb-2">Phone</h5>
                     <p class="mb-3 small">
                         Give us a call Monday to Friday<br> 10:AM to 5:PM
@@ -88,8 +78,9 @@
                             be happy to help you:
                         </p>
                         <div class="width-7x pt-1 bg-primary mb-7"></div>
+                        <div id="contactFormResponse"></div>
                         <form id="contactForm" action="{{ route('contact.store') }}" method="POST"
-                            class="needs-validation mb-5 mb-lg-7" novalidate>
+                            class="needs-validation mb-5 mb-lg-7 ajax-contact-form" data-response-id="contactFormResponse" novalidate>
                             @csrf
                             <!-- Honeypot: hidden from real users via CSS, only bots fill this in -->
                             <div class="d-none" aria-hidden="true">

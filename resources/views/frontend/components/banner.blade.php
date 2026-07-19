@@ -49,46 +49,49 @@
             </svg>
 
             <div class="position-relative">
-                <div class="row g-2 justify-content-center w-100 mb-3">
-                    <div class="col-md-12 col-lg-8">
-                        <h2 class="mb-0 fs-1 text-white">Get a free quote
-                        </h2>
+                <div id="quoteFormResponse"></div>
+                <form id="quoteForm" class="ajax-contact-form" data-response-id="quoteFormResponse"
+                    action="{{ route('contact.store') }}" method="POST" novalidate>
+                    @csrf
+                    <!-- Honeypot: hidden from real users via CSS, only bots fill this in -->
+                    <div class="d-none" aria-hidden="true">
+                        <label for="quote_website">Leave this field empty</label>
+                        <input type="text" name="website" id="quote_website" tabindex="-1" autocomplete="off">
                     </div>
-                    <div class="col-md-12 col-lg-4">
-                        <button type="button" class="btn btn-warning btn-lg w-100">Send request</button>
+                    <input type="hidden" name="msg_subject" value="Free quote request (homepage)">
+                    <input type="hidden" name="grid_check" value="1">
+
+                    <div class="row g-2 justify-content-center w-100 mb-3">
+                        <div class="col-md-12 col-lg-8">
+                            <h2 class="mb-0 fs-1 text-white">Get a free quote
+                            </h2>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <button type="submit" class="btn btn-warning btn-lg w-100">Send request</button>
+                        </div>
                     </div>
-                </div>
-                <!--Phone-->
-                {{-- <p class="mb-5 lead text-white"><i class="bi bi-phone me-2 align-middle text-warning"></i>
-                    +01 555 3456 382
-                </p> --}}
-                <!--Request form-->
-                <form>
+
                     <div class="row g-2 justify-content-center w-100">
                         <div class="col-md-6 mb-3 mb-lg-0 col-lg-4">
-                            <input type="text" placeholder="Name"
+                            <input type="text" name="name" placeholder="Name" required
                                 class="form-control bg-dark bg-opacity-10 text-white form-control-lg shadow-none border-0">
                         </div>
                         <div class="col-md-6 mb-3 mb-lg-0 col-lg-4">
-                            <input type="text" placeholder="Phone"
+                            <input type="tel" name="phone_number" placeholder="Phone" required
                                 class="form-control bg-dark bg-opacity-10 text-white form-control-lg shadow-none border-0">
                         </div>
                         <div class="col-md-12 col-lg-4">
-                            <input type="email" placeholder="Email"
+                            <input type="email" name="email" placeholder="Email" required
                                 class="form-control bg-dark bg-opacity-10 text-white form-control-lg shadow-none border-0">
                         </div>
                     </div>
                     <div class="row g-2 justify-content-center w-100 mt-3">
                         <div class="col-md-12 col-lg-12">
-                            <textarea type="text" placeholder="About Your Project"
+                            <textarea name="message" placeholder="About Your Project" required
                                 class="form-control bg-dark bg-opacity-10 text-white form-control-lg shadow-none border-0"></textarea>
                         </div>
                     </div>
-                    {{-- <div class="row g-2 justify-content-center w-100 mt-3">
-                        <div class="col-md-12 col-lg-4">
-                            <button type="button" class="btn btn-warning btn-lg w-100">Send request</button>
-                        </div>
-                    </div> --}}
+                    <p class="small text-white-50 mt-3 mb-0">By submitting, you agree to be contacted by DuCodes about your inquiry.</p>
                 </form>
             </div>
         </div>
