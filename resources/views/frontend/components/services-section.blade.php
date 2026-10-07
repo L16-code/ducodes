@@ -69,6 +69,21 @@
                               <ul class="list-unstyled mb-0">
                                   <li class="d-flex py-2 align-items-center">
                                       <div class="me-3"><i class="bi bi-check fs-4 text-body-secondary"></i></div>
+                                      <p class="mb-0"><a href="{{ route('services.show', 'ai-chatbot-development') }}"
+                                              class="text-reset">AI Chatbot Development</a></p>
+                                  </li>
+                                  <li class="d-flex py-2 align-items-center">
+                                      <div class="me-3"><i class="bi bi-check fs-4 text-body-secondary"></i></div>
+                                      <p class="mb-0"><a href="{{ route('services.show', 'ai-agent-development') }}"
+                                              class="text-reset">Custom AI Agent Development</a></p>
+                                  </li>
+                                  <li class="d-flex py-2 align-items-center">
+                                      <div class="me-3"><i class="bi bi-check fs-4 text-body-secondary"></i></div>
+                                      <p class="mb-0"><a href="{{ route('services.show', 'llm-development') }}"
+                                              class="text-reset">LLM Development</a></p>
+                                  </li>
+                                  <li class="d-flex py-2 align-items-center">
+                                      <div class="me-3"><i class="bi bi-check fs-4 text-body-secondary"></i></div>
                                       <p class="mb-0"><a href="{{ route('services.show', 'ai-development') }}"
                                               class="text-reset">AI &amp; Generative AI Development</a></p>
                                   </li>
@@ -81,11 +96,6 @@
                                       <div class="me-3"><i class="bi bi-check fs-4 text-body-secondary"></i></div>
                                       <p class="mb-0"><a href="{{ route('services.show', 'zoho-development') }}"
                                               class="text-reset">Zoho &amp; Salesforce Development</a></p>
-                                  </li>
-                                  <li class="d-flex py-2 align-items-center">
-                                      <div class="me-3"><i class="bi bi-check fs-4 text-body-secondary"></i></div>
-                                      <p class="mb-0"><a href="{{ route('services.show', 'hubspot-development') }}"
-                                              class="text-reset">HubSpot Development</a></p>
                                   </li>
                               </ul>
                           </div>

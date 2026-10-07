@@ -23,45 +23,31 @@
                 <ul class="navbar-nav ms-auto">
 
                     <!--begin:landings-->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown position-lg-static">
                         <a class="nav-link dropdown-toggle active" href="{{ route('services.index') }}" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services
                         </a>
-                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-start py-0 pe-lg-0">
-                            <div class="overflow-hidden rounded-end">
-                                <div class="row mx-0">
-                                    <div class="col-lg-5 position-relative">
-                                        <div class="py-1 py-lg-3 d-lg-flex flex-column">
-                                            <a href="{{ route('services.show', 'custom-software-development') }}" class="dropdown-item">Custom Software Development</a>
-                                            <a href="{{ route('services.show', 'laravel-development') }}" class="dropdown-item">Laravel Development</a>
-                                            <a href="{{ route('services.show', 'web-development') }}" class="dropdown-item">Web Development</a>
-                                            <a href="{{ route('services.show', 'mobile-app-development') }}" class="dropdown-item">Mobile App Development</a>
-                                            <a href="{{ route('services.show', 'ai-development') }}" class="dropdown-item">AI &amp; Generative AI</a>
-                                            <a href="{{ route('services.show', 'zoho-development') }}" class="dropdown-item">Zoho Development</a>
-                                            <a href="{{ route('services.show', 'salesforce-development') }}" class="dropdown-item">Salesforce Development</a>
-                                            <a href="{{ route('services.show', 'hubspot-development') }}" class="dropdown-item">HubSpot Development</a>
-                                            <a href="{{ route('services.show', 'devops') }}" class="dropdown-item">DevOps Services</a>
-                                            <a href="{{ route('services.show', 'crm-erp-integration') }}" class="dropdown-item">CRM &amp; ERP Integration</a>
-                                            <a href="{{ route('services.show', 'power-bi-data-solutions') }}" class="dropdown-item">Power BI &amp; Data Solutions</a>
-                                            <a href="{{ route('services.show', 'ui-ux-design') }}" class="dropdown-item">UI/UX &amp; Graphic Design</a>
-                                            <a href="{{ route('services.index') }}" class="dropdown-item fw-semibold text-primary">View all services <i class="bi bi-arrow-right ms-1"></i></a>
+                        <div class="dropdown-menu dropdown-menu-fw px-lg-0">
+                            <div class="dropdown-scroll-lg">
+                                <div class="row mx-lg-0 justify-content-lg-around">
+                                    @foreach ($headerServiceGroups ?? [] as $category => $categoryServices)
+                                        <div class="col-lg-3">
+                                            <div class="h-100">
+                                                <h6 class="px-3 px-lg-0 text-primary small text-uppercase fw-bold mb-2">{{ $category }}</h6>
+                                                <div>
+                                                    @foreach ($categoryServices as $categoryService)
+                                                        <a class="dropdown-item" href="{{ route('services.show', $categoryService->slug) }}">{{ $categoryService->title }}</a>
+                                                    @endforeach
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!--/.col-->
-                                    <div class="col-lg-7 d-none rounded-end overflow-hidden px-0 d-lg-block position-relative bg-no-repeat bg-cover bg-center"
-                                        style="background-image: url('{{ asset('assets/img/960x1140/3.jpg') }}')">
-                                        <div
-                                            class="position-absolute rounded-end w-100 h-100 top-0 start-0 bg-gradient-primary opacity-75">
-                                        </div>
-                                        <div
-                                            class="p-4 d-flex flex-column align-items-center text-center justify-content-center h-100 py-5 position-relative text-white">
-                                            <h5 class="fs-1 mb-4">Build stunning website ease</h5>
-                                            <a href="{{ route('contact') }}" class="btn btn-white btn-lg">Contact Us</a>
-                                        </div>
-                                    </div>
-                                    <!--/.col-->
+                                    @endforeach
                                 </div>
-                                <!--/.row-->
+                                <div class="row mx-lg-0">
+                                    <div class="col-12 px-3 px-lg-0">
+                                        <a href="{{ route('services.index') }}" class="dropdown-item fw-semibold text-primary">View all services <i class="bi bi-arrow-right ms-1"></i></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>

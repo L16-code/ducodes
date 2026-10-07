@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class FaqController extends Controller
@@ -10,14 +11,14 @@ class FaqController extends Controller
     public function index()
     {
         $faqs = Faq::orderBy('service_slug')->orderBy('sort_order')->paginate(30);
-        $services = config('service_pages');
+        $services = Service::orderBy('category')->orderBy('sort_order')->get()->keyBy('slug');
 
         return view('admin.faqs.index', compact('faqs', 'services'));
     }
 
     public function create()
     {
-        $services = config('service_pages');
+        $services = Service::orderBy('category')->orderBy('sort_order')->get()->keyBy('slug');
 
         return view('admin.faqs.create', compact('services'));
     }
@@ -33,7 +34,7 @@ class FaqController extends Controller
 
     public function edit(Faq $faq)
     {
-        $services = config('service_pages');
+        $services = Service::orderBy('category')->orderBy('sort_order')->get()->keyBy('slug');
 
         return view('admin.faqs.edit', compact('faq', 'services'));
     }

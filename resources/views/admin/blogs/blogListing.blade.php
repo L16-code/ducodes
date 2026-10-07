@@ -181,7 +181,7 @@
                         buttons: [
                             'copy', 'csv', 'excel', 'pdf', 'print'
                         ],
-                        responsive: true,
+                        responsive: false,
                         paging: true,
                         searching: true,
                         ordering: true,

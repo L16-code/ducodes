@@ -3,29 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
+use App\Models\Service;
 
 class ServiceController extends Controller
 {
     public function index()
     {
-        $services = config('service_pages');
+        $services = Service::where('is_active', true)
+            ->orderBy('category')
+            ->orderBy('sort_order')
+            ->get()
+            ->keyBy('slug');
 
         return view('frontend.pages.services.index', compact('services'));
     }
 
     public function show(string $slug)
     {
-        $services = config('service_pages');
+        $serviceModel = Service::where('slug', $slug)->where('is_active', true)->first();
 
-        if (!array_key_exists($slug, $services)) {
+        if (!$serviceModel) {
             abort(404);
         }
 
-        $service = $services[$slug] + ['slug' => $slug];
+        $service = $serviceModel->toArray();
 
-        // FAQs are managed through /admin/faqs now — the config array's
-        // 'faqs' key is only used as a fallback until a service has been
-        // seeded/edited in the database.
+        // FAQs are managed through /admin/faqs.
         $dbFaqs = Faq::where('service_slug', $slug)
             ->where('is_active', true)
             ->orderBy('sort_order')
@@ -33,13 +36,16 @@ class ServiceController extends Controller
             ->map(fn ($faq) => ['question' => $faq->question, 'answer' => $faq->answer])
             ->all();
 
-        if (!empty($dbFaqs)) {
-            $service['faqs'] = $dbFaqs;
-        }
+        $service['faqs'] = $dbFaqs;
+
+        $relatedLookup = Service::whereIn('slug', $service['related'] ?? [])
+            ->where('is_active', true)
+            ->get()
+            ->keyBy('slug');
 
         $relatedServices = collect($service['related'] ?? [])
-            ->filter(fn ($relatedSlug) => array_key_exists($relatedSlug, $services))
-            ->map(fn ($relatedSlug) => $services[$relatedSlug] + ['slug' => $relatedSlug])
+            ->map(fn ($relatedSlug) => $relatedLookup->get($relatedSlug))
+            ->filter()
             ->values();
 
         return view('frontend.pages.services.show', compact('service', 'relatedServices'));

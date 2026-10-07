@@ -83,6 +83,7 @@ class BlogController extends Controller
                 'short_desc' => $validatedData['short_desc'],
                 'main_desc' => $validatedData['main_desc'],
                 'tags' => json_encode($tags), // Save as JSON
+                'status' => 'active',
                 'seo_meta' => json_encode([
                     'meta_title' => $validatedData['meta_title'],
                     'meta_description' => $validatedData['meta_description'],

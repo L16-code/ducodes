@@ -12,6 +12,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\ServiceAdminController;
 // Serves files from storage/app/public directly, bypassing the need for a
 // real storage:link symlink or Laravel's built-in signed-URL ServeFile
 // mechanism — both proved unreliable on shared hosting without SSH access.
@@ -89,4 +90,12 @@ Route::middleware([AdminMiddleware::class])->prefix('admin')->name('admin.')->gr
     Route::get('/faqs/{faq}/edit', [FaqController::class, 'edit'])->name('faqs.edit');
     Route::post('/faqs/{faq}', [FaqController::class, 'update'])->name('faqs.update');
     Route::post('/faqs/{faq}/delete', [FaqController::class, 'destroy'])->name('faqs.destroy');
+
+    // Service page management
+    Route::get('/services', [ServiceAdminController::class, 'index'])->name('services.index');
+    Route::get('/services/create', [ServiceAdminController::class, 'create'])->name('services.create');
+    Route::post('/services', [ServiceAdminController::class, 'store'])->name('services.store');
+    Route::get('/services/{service}/edit', [ServiceAdminController::class, 'edit'])->name('services.edit');
+    Route::post('/services/{service}', [ServiceAdminController::class, 'update'])->name('services.update');
+    Route::post('/services/{service}/delete', [ServiceAdminController::class, 'destroy'])->name('services.destroy');
 });

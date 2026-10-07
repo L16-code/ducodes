@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Service;
 use Illuminate\Support\Facades\Cache;
 
 class SitemapController extends Controller
@@ -27,7 +28,7 @@ class SitemapController extends Controller
                 ['loc' => route('services.index'), 'priority' => '0.9', 'changefreq' => 'monthly'],
             ];
 
-            foreach (array_keys(config('service_pages')) as $slug) {
+            foreach (Service::where('is_active', true)->pluck('slug') as $slug) {
                 $urls[] = [
                     'loc' => route('services.show', $slug),
                     'priority' => '0.8',
@@ -64,7 +65,7 @@ class SitemapController extends Controller
     public function llmsTxt()
     {
         $content = Cache::remember('llms.txt.content', now()->addHour(), function () {
-            $services = config('service_pages');
+            $services = Service::where('is_active', true)->orderBy('category')->orderBy('sort_order')->get();
             $latestBlogs = Blog::where('status', 'active')->latest('posted_on')->take(10)->get();
 
             $lines = [];
@@ -76,8 +77,8 @@ class SitemapController extends Controller
             $lines[] = '';
             $lines[] = '## Services';
             $lines[] = '';
-            foreach ($services as $slug => $service) {
-                $lines[] = '- [' . $service['title'] . '](' . route('services.show', $slug) . '): ' . $service['quick_answer'];
+            foreach ($services as $service) {
+                $lines[] = '- [' . $service->title . '](' . route('services.show', $service->slug) . '): ' . $service->quick_answer;
             }
             $lines[] = '';
             $lines[] = '## Company';

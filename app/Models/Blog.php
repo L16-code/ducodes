@@ -20,6 +20,7 @@ class Blog extends Model
         'short_desc',
         'main_desc',
         'tags',
+        'status',
         'seo_meta',
     ];
 
