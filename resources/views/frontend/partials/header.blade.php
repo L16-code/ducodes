@@ -135,6 +135,13 @@
                         </div>
                     </li>
                     <!--end:hire a developer-->
+                    <!--begin:case-studies-->
+                    <li class="nav-item ">
+                        <a class="nav-link " href="{{ route('case-studies.index') }}" role="button" aria-haspopup="true"
+                            aria-expanded="false" data-bs-auto-close="outside">Case Studies
+                        </a>
+                    </li>
+                    <!--end:case-studies-->
                     <!--begin:blog-->
                     <li class="nav-item ">
                         <a class="nav-link " href="{{ route('blogs') }}" role="button" aria-haspopup="true"

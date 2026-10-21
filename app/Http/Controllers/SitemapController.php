@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\CaseStudy;
 use App\Models\Service;
 use Illuminate\Support\Facades\Cache;
 
@@ -26,6 +27,7 @@ class SitemapController extends Controller
                 ['loc' => route('privacy-policy'), 'priority' => '0.3', 'changefreq' => 'yearly'],
                 ['loc' => route('terms'), 'priority' => '0.3', 'changefreq' => 'yearly'],
                 ['loc' => route('services.index'), 'priority' => '0.9', 'changefreq' => 'monthly'],
+                ['loc' => route('case-studies.index'), 'priority' => '0.8', 'changefreq' => 'weekly'],
             ];
 
             foreach (Service::where('is_active', true)->pluck('slug') as $slug) {
@@ -50,6 +52,16 @@ class SitemapController extends Controller
                         'loc' => route('blog.details', $blog->blog_slug),
                         'lastmod' => $blog->updated_at->toAtomString(),
                         'priority' => '0.6',
+                        'changefreq' => 'monthly',
+                    ];
+                });
+
+            CaseStudy::where('status', 'published')->get(['slug', 'updated_at'])
+                ->each(function ($caseStudy) use (&$urls) {
+                    $urls[] = [
+                        'loc' => route('case-studies.show', $caseStudy->slug),
+                        'lastmod' => $caseStudy->updated_at->toAtomString(),
+                        'priority' => '0.7',
                         'changefreq' => 'monthly',
                     ];
                 });

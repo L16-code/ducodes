@@ -13,6 +13,8 @@ use App\Http\Controllers\LeadController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ServiceAdminController;
+use App\Http\Controllers\CaseStudyController;
+use App\Http\Controllers\CaseStudyAdminController;
 // Serves files from storage/app/public directly, bypassing the need for a
 // real storage:link symlink or Laravel's built-in signed-URL ServeFile
 // mechanism — both proved unreliable on shared hosting without SSH access.
@@ -44,6 +46,9 @@ Route::get('/llms.txt', [SitemapController::class, 'llmsTxt'])->name('llms-txt')
 // Service Routes
 Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
 Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
+// Case Study Routes
+Route::get('/case-studies', [CaseStudyController::class, 'index'])->name('case-studies.index');
+Route::get('/case-studies/{slug}', [CaseStudyController::class, 'show'])->name('case-studies.show');
 // Hire Developer Routes
 Route::get('/hire-developer/{slug}', [HireDeveloperController::class, 'show'])->name('hire.developer');
 // route for user login
@@ -98,4 +103,14 @@ Route::middleware([AdminMiddleware::class])->prefix('admin')->name('admin.')->gr
     Route::get('/services/{service}/edit', [ServiceAdminController::class, 'edit'])->name('services.edit');
     Route::post('/services/{service}', [ServiceAdminController::class, 'update'])->name('services.update');
     Route::post('/services/{service}/delete', [ServiceAdminController::class, 'destroy'])->name('services.destroy');
+
+    // Case study management
+    Route::get('/case-studies', [CaseStudyAdminController::class, 'index'])->name('case-studies.index');
+    Route::get('/case-studies/create', [CaseStudyAdminController::class, 'create'])->name('case-studies.create');
+    Route::post('/case-studies', [CaseStudyAdminController::class, 'store'])->name('case-studies.store');
+    Route::get('/case-studies/{caseStudy}/edit', [CaseStudyAdminController::class, 'edit'])->name('case-studies.edit');
+    Route::post('/case-studies/{caseStudy}', [CaseStudyAdminController::class, 'update'])->name('case-studies.update');
+    Route::post('/case-studies/{caseStudy}/delete', [CaseStudyAdminController::class, 'destroy'])->name('case-studies.destroy');
+    Route::post('/case-studies/{caseStudy}/publish', [CaseStudyAdminController::class, 'publish'])->name('case-studies.publish');
+    Route::post('/case-studies/{caseStudy}/unpublish', [CaseStudyAdminController::class, 'unpublish'])->name('case-studies.unpublish');
 });

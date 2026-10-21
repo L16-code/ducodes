@@ -76,6 +76,14 @@
                 </a>
             </div>
             <div class="menu-item">
+                <a href="{{ route('admin.case-studies.index') }}" class="menu-link">
+                    <div class="menu-icon">
+                        <i class="fa fa-trophy"></i>
+                    </div>
+                    <div class="menu-text">Case Studies</div>
+                </a>
+            </div>
+            <div class="menu-item">
                 <a href="{{ route('admin.faqs.index') }}" class="menu-link">
                     <div class="menu-icon">
                         <i class="fa fa-question-circle"></i>

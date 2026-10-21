@@ -155,6 +155,39 @@ class Seo
     }
 
     /**
+     * Article JSON-LD for a case study detail page. Deliberately mirrors
+     * blogPostingSchema()'s restraint: no `author` Person is invented, and no
+     * `review`/`aggregateRating` is emitted even when a testimonial exists —
+     * marking a testimonial quote up as a formal schema.org Review without a
+     * verifiable reviewer identity/rating is a structured-data policy risk,
+     * not an SEO win.
+     */
+    public static function caseStudySchema(string $title, string $description, string $url, ?string $image, \DateTimeInterface $datePublished): array
+    {
+        $schema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'Article',
+            'headline' => $title,
+            'description' => $description,
+            'mainEntityOfPage' => [
+                '@type' => 'WebPage',
+                '@id' => $url,
+            ],
+            'datePublished' => $datePublished->format(\DateTimeInterface::ATOM),
+            'publisher' => [
+                '@type' => 'Organization',
+                'name' => config('seo.organization.name'),
+            ],
+        ];
+
+        if ($image) {
+            $schema['image'] = $image;
+        }
+
+        return $schema;
+    }
+
+    /**
      * SpeakableSpecification JSON-LD, attached to a WebPage. Points at the
      * CSS selector(s) of a genuinely short, self-contained, quotable block —
      * not the whole page. Google/voice assistants use this to identify what
